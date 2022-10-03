@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="/global/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="stylesheet" href="/global/style.css">
+        <link rel="stylesheet" href="page.css">
+        <title>256 Arts</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#111113" media="(prefers-color-scheme: dark)">
+        <meta name="og:image" content="/global/opengraph.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="keywords" content="256 Arts, open source, free, developer, iOS, swift, macOS, sprite, pixel, art, pencil, app">
+        <meta name="description" content="Swift/iOS developers making open source apps.">
+        <meta name="apple-itunes-app" content="app-id=1437835952">
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRJ540QVW4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JRJ540QVW4');
+        </script>
+    </head>
+    <body ontouchstart>
+        <header>
+            <nav class="content">
+                <a class="selected" href="/">256 Arts</a>
+                <a href="/spritepencil/">Apps</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+        </header>
+        <section class="header-space"></section>
+		<section class="banner dark-theme">
+			<section class="intro">
+				<img srcset="profile.jpg" alt="profile photo">
+				<h1>Welcome, to 256 Arts.</h1>
+		    </section>
+		</section>
+        <section class="developer" id="developer">
+            <section class="summary">
+                <h1>Mission</h1>
+                <p>Creating human art and building tools cooperatively, against corrupt profit incentives.</p>
+                <a href="/pushupsar/">View App Webpages <span class="nav-arrow">›</span></a>
+            </section>
+            <div class="apps dark-theme" id="apps" onscroll="devBG();">
+                <a href="https://apps.apple.com/app/id1437835952" target="_blank">
+                    <img srcset="/phone.png 2x" id="shot-spencil" alt="sprite pencil screenshot">
+                    <h3>Sprite Pencil</h3>
+                    <p>Graphic Editor</p>
+                </a>
+                <a href="https://apps.apple.com/app/id1450589559" target="_blank">
+                    <img srcset="/phone.png 2x" id="shot-pushups" alt="pushups ar screenshot">
+                    <h3>Pushups AR</h3>
+                    <p>Push-Up Counter</p>
+                </a>
+                <a href="https://apps.apple.com/app/id1494402514" target="_blank">
+                    <img srcset="/phone.png 2x" id="shot-spaceui">
+                    <h3>Space UI</h3>
+                    <p>Experience</p>
+                </a>
+                <!--<a class="landscape" href="" target="_blank">
+                    <img srcset="/phone_landscape.png 2x" id="shot-sparty">
+                    <h3>Sprite Party</h3>
+                    <p>Drawing Game</p>
+                </a>-->
+            </div>
+        </section>
+        <section>
+            <section>
+                <form class="contact-form">
+                    <h1>Get in Touch</h1>
+                    <input id="name" type="text" placeholder="Name" onchange="updateBody()">
+                    <textarea id="message" class="message" placeholder="What can I help you with?" rows="6" onchange="updateBody()"></textarea>
+                    <div class="g-recaptcha" data-sitekey="6LcQcSYUAAAAALtjWvhPbze67F7y-HcDY5XD6F6R" data-callback="gRecaptchaTrue" data-expired-callback="gRecaptchaFalse"></div>
+                    <a class="button disabled" id="review-message">Review Message</a>
+                </form>
+            </section>
+        </section>
+        <script async src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script async src="/contact/contact.js"></script>
+        <script async src="script.js"></script>
+        <script async src='https://www.google.com/recaptcha/api.js'></script>
+        <footer>
+            <section class="content">
+                <p class="secondary">Copyright &#169; Jayden Irwin. All rights reserved.</p>
+                <a href="https://discord.gg/WZrTPqP" target="_blank">Community</a>
+                <a href="/contact/">Contact</a>
+            </section>
+        </footer>
+    </body>
+</html>

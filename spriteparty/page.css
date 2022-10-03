@@ -1,0 +1,64 @@
+@supports (-webkit-background-clip: text) {
+    #title {
+        background: linear-gradient(#fc0 0%, #fc0 49.9%, #fff 50.1%, #fff 100%);
+        background-attachment: fixed;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+}
+.banner {
+    background: conic-gradient(#FF332A, #FF9400, #FFCC00, #4ED964, #007AFF, #5957D6, #FF332A, #FF9400, #FFCC00, #4ED964, #007AFF, #5957D6, #FF332A, #FF9400, #FFCC00, #4ED964, #007AFF, #5957D6, #FF332A);
+    height: initial;
+}
+@media (prefers-color-scheme: dark) {
+	.banner {
+		background: radial-gradient(transparent, #000000bb), conic-gradient(#FF332A, #FF9400, #FFCC00, #4ED964, #007AFF, #5957D6, #FF332A, #FF9400, #FFCC00, #4ED964, #007AFF, #5957D6, #FF332A, #FF9400, #FFCC00, #4ED964, #007AFF, #5957D6, #FF332A);
+	}
+}
+.chapter-nav {
+    background-color: var(--chapter-nav-bg-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.button.app-buy {
+    background: linear-gradient(#fc0 0%, #fc0 49.9%, #007aff 50.1%, #007aff 100%);
+    background-attachment: fixed;
+}
+.router-link:hover {
+    text-decoration: none;
+}
+.router {
+    background: linear-gradient(45deg, #FDDE00, #FEB8C8);
+}
+@media (prefers-color-scheme: dark) {
+	.router {
+		background: linear-gradient(45deg, #6c5e00, #412145);
+	}
+}
+.router, .router>section {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.router>section>div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.router>section .content {
+    margin: 26px 0;
+}
+.router>section p {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    color: #d80;
+}
+.router>section h3 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.router>section img {
+    margin: 0;
+}
+a:hover .router h2, a:hover .router h3 {
+    color: var(--heading-text-color);
+}

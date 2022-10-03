@@ -1,0 +1,32 @@
+@supports (-webkit-background-clip: text) {
+    #title {
+        background: linear-gradient(#5EB5FA 0%, #5EB5FA 49.9%, var(--heading-text-color) 50.1%, var(--heading-text-color) 100%);
+        background-attachment: fixed;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+}
+.banner {
+    background: url("banner.jpg") no-repeat center center;
+    background-size: cover;
+    image-rendering: crisp-edges;
+}
+@supports (image-rendering: pixelated) {
+    .banner {
+        image-rendering: pixelated;
+    }
+}
+.app-info section div {
+    display: inline-block;
+}
+.button.app-buy {
+    background: linear-gradient(#000 0%, #000 49.9%, #007aff 50.1%, #007aff 100%);
+    background-attachment: fixed;
+}
+.button.web-app-get {
+    color: var(--accent-color);
+    background: var(--control-color);
+}
+.button.web-app-get:hover {
+    color: var(--accent-color);
+}

@@ -1,0 +1,109 @@
+.banner {
+    background: url("apps_tiled.png"), linear-gradient(22deg, #f6f, #77f);
+    background-size: 512px, 100%;
+    display: flex;
+    align-items: center;
+}
+@media (prefers-color-scheme: dark) {
+    .banner {
+        background: url("apps_tiled.png"), linear-gradient(22deg, #bc45bf, #693fca);
+        background-size: 512px, 100%;
+    }
+}
+.intro img {
+    width: 128px;
+    height: 128px;
+    border-radius: 64px;
+}
+.intro h1 {
+    font-size: 52px;
+}
+.developer {
+    padding-bottom: 0;
+    background: url("backdrop_game.jpg") no-repeat center center;
+    background-size: cover;
+}
+@media (prefers-color-scheme: dark) {
+    .developer {
+        background: url("backdrop_game_dark.jpg") no-repeat center center;
+        background-size: cover;
+    }
+}
+.developer .summary p {
+    color: var(--heading-text-color);
+}
+.developer .summary a {
+    display: inline-block;
+    margin: 12px 0;
+    color: var(--heading-text-color);
+}
+.developer .summary a .nav-arrow {
+    font-size: 1.3em;
+}
+.apps {
+    display: flex;
+    padding: 12px 0;
+    padding-bottom: 64px;
+    overflow-x: scroll;
+    align-items: center;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+.apps a {
+    scroll-snap-align: center;
+    text-align: center;
+    text-decoration: none;
+    min-width: 350px;
+    margin: 0 calc(25vw - 105px);
+    flex-shrink: 0;
+}
+.apps a:first-child {
+    min-width: calc(50vw + 175px);
+    margin-left: 0;
+    padding-left: calc(50vw - 175px);
+}
+.apps a:last-child {
+    min-width: calc(50vw + 175px);
+    margin-right: 0;
+    padding-right: calc(50vw - 175px);
+}
+.apps a:hover h3 {
+    color: var(--heading-text-color);
+    text-decoration: underline;
+}
+@media (max-width: 400px) /* Fix For Small Phones */ {
+    .apps a:first-child, .apps a:last-child {
+        padding-left: initial;
+        padding-right: initial;
+    }
+}
+.apps a img {
+    margin: 0;
+    max-width: 80vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 89%;
+}
+.apps a.landscape img {
+    background-size: 95%;
+}
+.apps a h3 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-size: 1.4em;
+}
+.apps a p {
+	font-size: 1.1em;
+}
+#shot-spencil {
+    background-image: url(shot_spencil.jpg);
+}
+#shot-pushups {
+    background-image: url(shot_pushups.jpg);
+}
+#shot-spaceui {
+    background-image: url(shot_spaceui.jpg);
+}
+#shot-sparty {
+    background-image: url(shot_sparty.png);
+}

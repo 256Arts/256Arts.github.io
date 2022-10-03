@@ -1,0 +1,12 @@
+.banner {
+    background: url("banner.png") no-repeat center center, linear-gradient(270deg, #11C8FB, #1B70F2), #1B70F2;
+    background-size: contain, 100%;
+}
+.faq {
+	width: 800px;
+	text-align: left;
+}
+.faq h4 {
+	padding-top: 8px;
+	padding-bottom: 0;
+}

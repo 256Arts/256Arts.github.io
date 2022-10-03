@@ -1,0 +1,30 @@
+@supports (-webkit-background-clip: text) {
+    #title {
+        background: linear-gradient(#00B9EE 0%, #00B9EE 49.9%, var(--heading-text-color) 50.1%, var(--heading-text-color) 100%);
+        background-attachment: fixed;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+}
+.banner {
+    background: url("banner.png") no-repeat center center;
+    background-size: cover;
+    height: 340px;
+}
+.button.app-buy {
+    background: linear-gradient(#00b9ee 0%, #00b9ee 49.9%, #007aff 50.1%, #007aff 100%);
+    background-attachment: fixed;
+}
+.full-promo {
+    padding: 0;
+}
+.full-promo img {
+    width: 100vw;
+    height: auto;
+    margin: 0;
+}
+@media (max-width: 490px) {
+    .links {
+        display: none;
+    }
+}

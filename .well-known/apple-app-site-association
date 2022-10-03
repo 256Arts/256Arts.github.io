@@ -1,0 +1,18 @@
+{
+  "applinks": {
+      "details": [
+           {
+             "appIDs": [ "VA3SY54YU8.com.jaydenirwin.spritepencil" ],
+             "components": [
+               {
+                  "/": "/spritepencil/importfromapp",
+                  "comment": "Matches any URL whose path starts with /buy/"
+               }
+             ]
+           }
+       ]
+   },
+   "webcredentials": {
+      "apps": [ "VA3SY54YU8.com.jaydenirwin.spritepencil" ]
+   }
+}

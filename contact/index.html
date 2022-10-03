@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <link rel="shortcut icon" href="/global/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="stylesheet" href="/global/style.css">
+        <link rel="stylesheet" href="page.css">
+        <title>Contact - 256 Arts</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#111113" media="(prefers-color-scheme: dark)">
+        <meta name="og:image" content="/global/opengraph.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="keywords" content="256 Arts, LEGO, star wars, contract, developer, web, ontario, iOS, swift">
+        <meta name="description" content="iOS developer and student based in Ontario.">
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRJ540QVW4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JRJ540QVW4');
+        </script>
+    </head>
+    <body ontouchstart>
+        <header>
+            <nav class="content">
+                <a href="/">256 Arts</a>
+                <a href="/spritepencil/">Apps</a>
+                <a class="selected" href="/contact/">Contact</a>
+            </nav>
+        </header>
+        <section class="header-space"></section>
+		<section class="banner"></section>
+		<section>
+			<section class="faq">
+				<h1>FAQ</h1>
+				<h4>I have a bug/suggestion for one of your apps.</h4>
+				<p>Please contact us for support.</p>
+				<h4>I can help translate one of your apps to a new language.</h4>
+				<p>Contact us and we can set you up with a list of strings.</p>
+			</section>
+			<section>
+				<form class="contact-form">
+					<h2>Contact</h2>
+					<input id="name" type="text" placeholder="Name" onchange="updateBody()">
+					<textarea id="message" class="message" placeholder="Message" rows="6" onchange="updateBody()"></textarea>
+					<div class="g-recaptcha" data-sitekey="6LcQcSYUAAAAALtjWvhPbze67F7y-HcDY5XD6F6R" data-callback="gRecaptchaTrue" data-expired-callback="gRecaptchaFalse"></div>
+					<a class="button disabled" id="review-message">Review Message</a>
+				</form>
+			</section>
+		</section>
+		<script async src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script async src="contact.js"></script>
+		<script async src='https://www.google.com/recaptcha/api.js'></script>
+		<footer>
+			<section class="content">
+				<p class="secondary">Copyright &#169; Jayden Irwin. All rights reserved.</p>
+				<a href="https://discord.gg/WZrTPqP" target="_blank">Community</a>
+				<a href="/contact/">Contact</a>
+	        </section>
+	    </footer>
+	</body>
+</html>
