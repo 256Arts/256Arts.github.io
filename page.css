@@ -10,11 +10,6 @@
         background-size: 512px, 100%;
     }
 }
-.intro img {
-    width: 128px;
-    height: 128px;
-    border-radius: 64px;
-}
 .intro h1 {
     font-size: 52px;
 }
