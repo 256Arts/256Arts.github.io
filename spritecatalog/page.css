@@ -16,17 +16,7 @@
         image-rendering: pixelated;
     }
 }
-.app-info section div {
-    display: inline-block;
-}
 .button.app-buy {
     background: linear-gradient(#5EB5FA 0%, #5EB5FA 49.9%, #007aff 50.1%, #007aff 100%);
     background-attachment: fixed;
-}
-.button.web-app-get {
-    color: var(--accent-color);
-    background: var(--control-color);
-}
-.button.web-app-get:hover {
-    color: var(--accent-color);
 }
