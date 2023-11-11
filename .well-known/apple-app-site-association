@@ -6,7 +6,7 @@
              "components": [
                {
                   "/": "/spritepencil/importfromapp",
-                  "comment": "Matches any URL whose path starts with /buy/"
+                  "comment": "Matches any URL whose path starts with /spritepencil/importfromapp/"
                }
              ]
            }
