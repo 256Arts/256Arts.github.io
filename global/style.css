@@ -12,7 +12,7 @@
     --text-color: #333;
     --secondary-text-color: #888;
     --inverted-text-color: #fff;
-    --transparent-header-color: rgba(247, 247, 247, 0.85);
+    --transparent-header-color: #f7f7f7;
     --chapter-nav-bg-color: #fff8;
     --border-color: #b3b3b3;
     --accent-color: #e6e;
@@ -31,7 +31,7 @@
 	    --text-color: #ddd;
         --secondary-text-color: #888;
 	    --inverted-text-color: #000;
-	    --transparent-header-color: rgba(28, 28, 30, 0.75);
+	    --transparent-header-color: #1c1c1e;
         --chapter-nav-bg-color: #24242688;
         --control-color: #fff2;
         --control-text-color: #fff;
@@ -48,7 +48,7 @@
     --text-color: #ddd;
     --secondary-text-color: #888;
     --inverted-text-color: #000;
-    --transparent-header-color: rgba(28, 28, 30, 0.75);
+    --transparent-header-color: #1c1c1e;
     --chapter-nav-bg-color: #24242688;
     --control-color: #fff2;
     --control-text-color: #fff;
