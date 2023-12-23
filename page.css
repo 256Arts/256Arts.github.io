@@ -13,14 +13,6 @@
 .intro h1 {
     font-size: 52px;
 }
-.mission a {
-    display: inline-block;
-    margin: 12px 0;
-    color: var(--heading-text-color);
-}
-.mission a .nav-arrow {
-    font-size: 1.3em;
-}
 .apps {
     display: flex;
     padding: 12px 0;
