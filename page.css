@@ -13,26 +13,12 @@
 .intro h1 {
     font-size: 52px;
 }
-.developer {
-    padding-bottom: 0;
-    background: url("backdrop_game.jpg") no-repeat center center;
-    background-size: cover;
-}
-@media (prefers-color-scheme: dark) {
-    .developer {
-        background: url("backdrop_game_dark.jpg") no-repeat center center;
-        background-size: cover;
-    }
-}
-.developer .summary p {
-    color: var(--heading-text-color);
-}
-.developer .summary a {
+.mission a {
     display: inline-block;
     margin: 12px 0;
     color: var(--heading-text-color);
 }
-.developer .summary a .nav-arrow {
+.mission a .nav-arrow {
     font-size: 1.3em;
 }
 .apps {
@@ -77,7 +63,7 @@
     max-width: 80vw;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 89%;
+    background-size: 91%;
 }
 .apps a.landscape img {
     background-size: 95%;
@@ -89,16 +75,4 @@
 }
 .apps a p {
 	font-size: 1.1em;
-}
-#shot-spencil {
-    background-image: url(shot_spencil.jpg);
-}
-#shot-pushups {
-    background-image: url(shot_pushups.jpg);
-}
-#shot-spaceui {
-    background-image: url(shot_spaceui.jpg);
-}
-#shot-sparty {
-    background-image: url(shot_sparty.png);
 }
