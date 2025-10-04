@@ -1,18 +1,95 @@
 {
   "applinks": {
-      "details": [
-           {
-             "appIDs": [ "VA3SY54YU8.com.jaydenirwin.spritepencil" ],
-             "components": [
-               {
-                  "/": "/spritepencil/importfromapp",
-                  "comment": "Matches any URL whose path starts with /spritepencil/importfromapp/"
-               }
-             ]
-           }
-       ]
-   },
-   "webcredentials": {
-      "apps": [ "VA3SY54YU8.com.jaydenirwin.spritepencil" ]
-   }
+    "details": [
+      {
+        "appIDs": [ "VA3SY54YU8.com.jaydenirwin.appsales" ],
+        "components": [
+          {
+            "/": "/appsales/appstoreevent"
+          }
+        ]
+      },
+      {
+        "appIDs": [ "VA3SY54YU8.com.jaydenirwin.brickdeals" ],
+        "components": [
+          {
+            "/": "/brickdeals/appstoreevent"
+          }
+        ]
+      },
+      {
+        "appIDs": [ "VA3SY54YU8.com.256arts.countdowns" ],
+        "components": [
+          {
+            "/": "/countdowns/appstoreevent"
+          }
+        ]
+      },
+      {
+        "appIDs": [ "VA3SY54YU8.com.jaydenirwin.holidaygiftslist" ],
+        "components": [
+          {
+            "/": "/giftlists/appstoreevent"
+          }
+        ]
+      },
+      {
+        "appIDs": [ "VA3SY54YU8.com.jaydenirwin.myassets" ],
+        "components": [
+          {
+            "/": "/myassets/appstoreevent"
+          }
+        ]
+      },
+      {
+        "appIDs": [ "VA3SY54YU8.com.jaydenirwin.palette3d" ],
+        "components": [
+          {
+            "/": "/palette3d/appstoreevent"
+          }
+        ]
+      },
+      {
+        "appIDs": [ "VA3SY54YU8.com.jaydenirwin.spritecatalog" ],
+        "components": [
+          {
+            "/": "/spritecatalog/appstoreevent"
+          }
+        ]
+      },
+      {
+        "appIDs": [ "VA3SY54YU8.com.jaydenirwin.spritecutter" ],
+        "components": [
+          {
+            "/": "/spritecutter/appstoreevent"
+          }
+        ]
+      },
+	    {
+        "appIDs": [ "VA3SY54YU8.com.jaydenirwin.spritepencil" ],
+        "components": [
+          {
+            "/": "/spritepencil/appstoreevent"
+          },
+          {
+            "/": "/spritepencil/importfromapp",
+            "comment": "Matches any URL whose path starts with /spritepencil/importfromapp/"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "VA3SY54YU8.com.jaydenirwin.appsales",
+      "VA3SY54YU8.com.jaydenirwin.brickdeals",
+	    "VA3SY54YU8.com.256arts.countdowns",
+      "VA3SY54YU8.com.jaydenirwin.holidaygiftslist",
+      "VA3SY54YU8.com.jaydenirwin.myassets",
+      "VA3SY54YU8.com.jaydenirwin.palette3d",
+      "VA3SY54YU8.com.jaydenirwin.spritecatalog",
+      "VA3SY54YU8.com.jaydenirwin.spritecutter",
+	    "VA3SY54YU8.com.jaydenirwin.spritepencil"
+    ]
+  }
 }
