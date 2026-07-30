@@ -6,6 +6,17 @@
   HTML/CSS files directly.
 - **Design goal:** clear and modern
 
+## Universal links
+
+[.well-known/apple-app-site-association](.well-known/apple-app-site-association)
+is the server half of every app's universal links. When adding an app, add it to
+**both** `applinks.details` and `webcredentials.apps` — keep the two lists
+mirrored. Entries are ordered by URL slug.
+
+App Store in-app event links follow `/<slug>/appstoreevent`. The slug matches the
+app's *current* App Store name (not always its bundle ID), and no page is served
+at that path — it exists only to route into the app.
+
 ## Brand
 
 - **Logo:** a glossy droplet/blob filled with the full color wheel — the whole
