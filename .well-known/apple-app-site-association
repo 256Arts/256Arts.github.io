@@ -18,10 +18,27 @@
         ]
       },
       {
+        "appIDs": [ "VA3SY54YU8.com.jaydenirwin.burgertycoon" ],
+        "components": [
+          {
+            "/": "/burgerfactory/appstoreevent",
+            "comment": "Burger Factory kept its original burgertycoon bundle ID"
+          }
+        ]
+      },
+      {
         "appIDs": [ "VA3SY54YU8.com.256arts.countdowns" ],
         "components": [
           {
             "/": "/countdowns/appstoreevent"
+          }
+        ]
+      },
+      {
+        "appIDs": [ "VA3SY54YU8.com.256arts.gametips" ],
+        "components": [
+          {
+            "/": "/gametips/appstoreevent"
           }
         ]
       },
@@ -50,6 +67,14 @@
         ]
       },
       {
+        "appIDs": [ "VA3SY54YU8.com.256arts.Project-Progress" ],
+        "components": [
+          {
+            "/": "/projectprogress/appstoreevent"
+          }
+        ]
+      },
+      {
         "appIDs": [ "VA3SY54YU8.com.jaydenirwin.spritecatalog" ],
         "components": [
           {
@@ -66,6 +91,14 @@
         ]
       },
       {
+        "appIDs": [ "VA3SY54YU8.com.jaydenirwin.spriteparty" ],
+        "components": [
+          {
+            "/": "/spriteparty/appstoreevent"
+          }
+        ]
+      },
+      {
         "appIDs": [ "VA3SY54YU8.com.jaydenirwin.spritepencil" ],
         "components": [
           {
@@ -74,6 +107,14 @@
           {
             "/": "/spritepencil/importfromapp",
             "comment": "Matches any URL whose path starts with /spritepencil/importfromapp/"
+          }
+        ]
+      },
+      {
+        "appIDs": [ "VA3SY54YU8.com.256arts.timeofuse" ],
+        "components": [
+          {
+            "/": "/timeofuse/appstoreevent"
           }
         ]
       },
@@ -91,13 +132,18 @@
     "apps": [
       "VA3SY54YU8.com.jaydenirwin.appsales",
       "VA3SY54YU8.com.jaydenirwin.brickdeals",
+      "VA3SY54YU8.com.jaydenirwin.burgertycoon",
       "VA3SY54YU8.com.256arts.countdowns",
+      "VA3SY54YU8.com.256arts.gametips",
       "VA3SY54YU8.com.jaydenirwin.holidaygiftslist",
       "VA3SY54YU8.com.jaydenirwin.myassets",
       "VA3SY54YU8.com.jaydenirwin.palette3d",
+      "VA3SY54YU8.com.256arts.Project-Progress",
       "VA3SY54YU8.com.jaydenirwin.spritecatalog",
       "VA3SY54YU8.com.jaydenirwin.spritecutter",
+      "VA3SY54YU8.com.jaydenirwin.spriteparty",
       "VA3SY54YU8.com.jaydenirwin.spritepencil",
+      "VA3SY54YU8.com.256arts.timeofuse",
       "VA3SY54YU8.com.256arts.tvparty"
     ]
   }
