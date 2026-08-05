@@ -51,6 +51,14 @@
         ]
       },
       {
+        "appIDs": [ "VA3SY54YU8.com.jaydenirwin.incognito" ],
+        "components": [
+          {
+            "/": "/incognito/appstoreevent"
+          }
+        ]
+      },
+      {
         "appIDs": [ "VA3SY54YU8.com.jaydenirwin.myassets" ],
         "components": [
           {
@@ -136,6 +144,7 @@
       "VA3SY54YU8.com.256arts.countdowns",
       "VA3SY54YU8.com.256arts.gametips",
       "VA3SY54YU8.com.jaydenirwin.holidaygiftslist",
+      "VA3SY54YU8.com.jaydenirwin.incognito",
       "VA3SY54YU8.com.jaydenirwin.myassets",
       "VA3SY54YU8.com.jaydenirwin.palette3d",
       "VA3SY54YU8.com.256arts.Project-Progress",
