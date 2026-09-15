@@ -11,16 +11,26 @@ if (tabs.length) {
     const rows = [...document.querySelectorAll(".nav-row")];
     // The page's own category is the resting state, not "everything closed".
     const current = rows.find((row) => row.classList.contains("current"));
-    const show = (row) => rows.forEach((other) => other.classList.toggle("open", other === row));
+    // A row you open from the nav is pinned to the window; the page's own row is
+    // part of the page, so it scrolls away. A closing row keeps whichever it was,
+    // so it slides out from where it sits — off screen either way once closed.
+    const show = (row, pinned) => rows.forEach((other) => {
+        other.classList.toggle("open", other === row);
+        if (other === row) other.classList.toggle("pinned", pinned);
+    });
     let restTimer;
 
     const hold = (row) => {
         clearTimeout(restTimer);
-        show(row);
+        show(row, true);
+    };
+    const rest = () => {
+        clearTimeout(restTimer);
+        show(current, false);
     };
     const release = () => {
         clearTimeout(restTimer);
-        restTimer = setTimeout(() => show(current), 160);
+        restTimer = setTimeout(rest, 160);
     };
 
     tabs.forEach((tab) => {
@@ -30,12 +40,12 @@ if (tabs.length) {
             hold(row);
         });
         tab.addEventListener("pointerleave", () => hoverable.matches && release());
-        tab.addEventListener("focus", () => show(row));
+        tab.addEventListener("focus", () => hold(row));
         row.addEventListener("pointerenter", () => hold(row));
         row.addEventListener("pointerleave", () => release());
     });
 
     document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") hold(current);
+        if (event.key === "Escape") rest();
     });
 }

@@ -248,13 +248,17 @@ body header.site-header nav {
 .nav-label-short {
     display: none;
 }
-/* Full-bleed band pinned to the top edge — the nav pill floats over it, so the
-   apps clear it by --header-clearance. Closed rows sit above the window. */
+/* Full-bleed band at the top edge — the nav pill floats over it, so the apps
+   clear it by --header-clearance. Closed rows sit above the band's top edge.
+   The page's own row belongs to the page: it is anchored to the top of the
+   document and scrolls away with the banner behind it. A row opened from the
+   nav is an overlay instead, so it pins to the top of the window. */
 .nav-row {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 98;
     padding: calc(var(--header-clearance) + 4px) max(12px, env(safe-area-inset-left)) 16px max(12px, env(safe-area-inset-right));
     background-color: var(--glass-panel-tint);
     backdrop-filter: blur(24px) saturate(190%);
@@ -265,6 +269,9 @@ body header.site-header nav {
     visibility: hidden;
     transform: translateY(-100%);
     transition: transform 0.4s var(--ease), visibility 0s linear 0.4s;
+}
+.nav-row.pinned {
+    position: fixed;
 }
 .nav-row.open {
     visibility: visible;

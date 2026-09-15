@@ -58,14 +58,20 @@ Every pill looks and behaves the same — the brand is a pill too, marked
 first app, so a tab is useful on its own and works without JavaScript. Contact
 and the brand are the same kind of pill.
 
-**The apps row** is a full-bleed band pinned to the top edge of the window: a
-translucent blurred strip running edge to edge, with the apps centred inside it
-in columns of two (`grid-auto-flow: column`, two rows) using the same app
-buttons as before. The nav pill floats *over* the band, so the apps clear it by
-`--header-clearance`. Rows slide in and out from the top edge
-(`transform: translateY(-100%)` → `0`); a closed row sits above the window, so
-nothing needs clipping. Narrow windows scroll the row horizontally rather than
-reflowing it.
+**The apps row** is a full-bleed band at the top edge: a translucent blurred
+strip running edge to edge, with the apps centred inside it in columns of two
+(`grid-auto-flow: column`, two rows) using the same app buttons as before. The
+nav pill floats *over* the band, so the apps clear it by `--header-clearance`.
+Rows slide in and out from the top edge (`transform: translateY(-100%)` → `0`);
+a closed row sits above the band's top edge, so nothing needs clipping. Narrow
+windows scroll the row horizontally rather than reflowing it.
+
+**Only a row you opened is sticky.** Rows live *outside* the fixed header and are
+`position: absolute` at the top of the document, so the page's own row scrolls
+away with the banner behind it. `menu.js` adds `pinned` (`position: fixed`) to a
+row it opens from the nav, so a hovered or focused row is an overlay that stays
+at the top of the window; resting back on the page's own row drops the class.
+A closing row keeps whichever it had — it is off screen once closed either way.
 
 The row for the category the current page belongs to carries `current open` in
 the HTML, so an app page shows its own apps row on load and leaving the nav
