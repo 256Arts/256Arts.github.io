@@ -16,7 +16,3 @@
         image-rendering: pixelated;
     }
 }
-.button.app-buy {
-    background: linear-gradient(#5EB5FA 0%, #5EB5FA 49.9%, #007aff 50.1%, #007aff 100%);
-    background-attachment: fixed;
-}

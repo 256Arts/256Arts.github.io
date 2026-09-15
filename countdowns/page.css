@@ -15,7 +15,3 @@
 		background: linear-gradient(160deg, #A6673A, #93342A 55%, #5C1B2C);
 	}
 }
-.button.app-buy {
-    background: linear-gradient(#F05848 0%, #F05848 49.9%, #007aff 50.1%, #007aff 100%);
-    background-attachment: fixed;
-}

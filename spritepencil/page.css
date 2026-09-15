@@ -28,10 +28,6 @@
 .banner:hover .credit-link {
     opacity: 1;
 }
-.button.app-buy {
-    background: linear-gradient(#F0CA00 0%, #F0CA00 49.9%, #007aff 50.1%, #007aff 100%);
-    background-attachment: fixed;
-}
 .supported-features {
     background-color: var(--secondary-bg-color);
 }

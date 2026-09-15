@@ -1,0 +1,21 @@
+{%- comment -%}
+One full-bleed row of apps per category, rendered at build time from
+_data/apps.yml. The row for the category the current page belongs to is `open`;
+the others slide down when their tab in the nav is hovered or focused.
+Used by header.html.
+{%- endcomment -%}
+{%- assign current = page.url | remove: "index.html" -%}
+{%- for group in site.data.apps.groups -%}
+{%- assign selected = false -%}
+{%- for app in group.apps -%}{%- if app.url == current -%}{%- assign selected = true -%}{%- endif -%}{%- endfor %}
+            <div class="nav-row{% if selected %} current open{% endif %}" id="nav-row-{{ forloop.index }}" role="group" aria-label="{{ group.title }}">
+                <div class="nav-row-apps">
+                    {%- for app in group.apps %}
+                    <a class="nav-app{% if app.url == current %} selected{% endif %}" href="{{ app.url }}">
+                        <img srcset="{{ app.icon }} 2x" src="{{ app.icon }}" alt="{{ app.name }} icon">
+                        <span><strong>{{ app.name }}</strong><small>{{ app.tagline }}</small></span>
+                    </a>
+                    {%- endfor %}
+                </div>
+            </div>
+{%- endfor %}

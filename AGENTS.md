@@ -45,35 +45,38 @@ and a `short` label (used below 860px).
 
 Includes:
 
-- `{% include header.html %}` — floating liquid-glass nav. On every page.
+- `{% include header.html %}` — floating liquid-glass nav plus the apps rows.
+  On every page.
 - `{% include footer.html %}` — on every page.
-- `{% include apps-menu.html %}` — one `<details>` per category; used by
+- `{% include apps-rows.html %}` — one apps row per category; used by
   `header.html`.
 
 Every pill looks and behaves the same — the brand is a pill too, marked
 `selected` on the home page. No disclosure arrows.
 
-**The apps row.** Opening a category drops a row of apps out from under the
-whole nav (not a dropdown under its pill): a glass row laid out
-`grid-auto-flow: column` with two apps per column. It slides down from the top
-edge — the row animates from `translateY(-100%)` inside `.nav-panel`, whose
-`clip-path` is pinned to the nav's bottom edge, so the row emerges from behind
-the nav instead of fading in mid-air. Below 700px the row stacks into one
-scrolling column.
+**Tabs are links.** Each category pill is a real `<a>` pointing at the group's
+first app, so a tab is useful on its own and works without JavaScript. Contact
+and the brand are the same kind of pill.
 
-A category opens on hover, and the category the current page belongs to is
-`open` in the HTML — so an app page shows its own apps row on load (animating
-in), and leaving the nav returns to that row rather than closing everything.
-Visitors still only see one category at a time, so the graphics apps are never
-presented alongside the Minecraft data packs. App pages start with a `.banner`,
-which the row floats over.
+**The apps row** is a full-bleed band pinned to the top edge of the window: a
+translucent blurred strip running edge to edge, with the apps centred inside it
+in columns of two (`grid-auto-flow: column`, two rows) using the same app
+buttons as before. The nav pill floats *over* the band, so the apps clear it by
+`--header-clearance`. Rows slide in and out from the top edge
+(`transform: translateY(-100%)` → `0`); a closed row sits above the window, so
+nothing needs clipping. Narrow windows scroll the row horizontally rather than
+reflowing it.
 
-[global/menu.js](global/menu.js) is **behaviour only**: pointer devices open a
-category on **hover** and fall back to the page's own row when the pointer
-leaves; click-outside and Escape close everything. Touch and keyboard use the
-native `<details>` toggle, so the rows still work without the script. The gap
-between the nav and the row is `.nav-panel`'s padding, so the pointer can travel
-across it without the row closing.
+The row for the category the current page belongs to carries `current open` in
+the HTML, so an app page shows its own apps row on load and leaving the nav
+returns to that row rather than closing everything. Visitors still see one
+category at a time, so the graphics apps are never presented alongside the
+Minecraft data packs. App pages start with a `.banner`, which the row floats
+over.
+
+[global/menu.js](global/menu.js) is **behaviour only**: pointer devices drop a
+row down on **hover**, keyboard users get it on **focus**, and Escape returns to
+the page's own row. Without the script every tab and every app link still works.
 
 Groups are by *audience*, not by app family: **Graphics Apps**,
 **Everyday Apps**, **Fun Stuff**.
@@ -133,6 +136,8 @@ hardcoding values:
 - `--content-width`, `--section-space`, `--radius-sm/lg`, `--ease` — layout rhythm.
 - `--header-height` / `--header-clearance` — the floating nav's size and the room
   content needs to clear it.
+- `--badge-height` — store badge size (48px, 44px compact). The `.app-buy` pills
+  match it so the actions row lines up.
 
 The nav **floats over the content**: page backgrounds run to the top of the
 window, and the first section pads itself down by `--header-clearance` unless it
@@ -140,3 +145,15 @@ is a `.banner`, which runs full-bleed behind the nav. There is no spacer element
 
 Type is Inter (loaded via `@import` in `global/style.css`) with the SF Pro / system
 stack as fallback. Headings use fluid `clamp()` sizing and negative letter-spacing.
+
+## Download buttons
+
+Every app page's download link is the **official store badge**, not a styled
+pill: `global/app-store-badge.svg` for the App Store,
+`global/modrinth-badge.webp` for the data packs. Markup is an `<a class="store-badge">`
+wrapping the `<img>` — badge artwork is never recoloured or restyled, only scaled
+to `--badge-height`. Sources live in `Raw Assets/` (excluded from the build).
+
+Secondary links (GitHub, web app) stay `.button filled app-buy secondary` pills.
+They sit beside the badge in `<section class="actions">`, one `<div>` per link so
+its `.tag` (platform list) sits underneath.

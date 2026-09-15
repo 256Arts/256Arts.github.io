@@ -10,10 +10,6 @@
     background: url("banner.webp") no-repeat center center;
     background-size: cover;
 }
-.button.app-buy {
-    background: linear-gradient(#57AD3F 0%, #57AD3F 49.9%, #00AF5C 50.1%, #00AF5C 100%);
-    background-attachment: fixed;
-}
 .screenshot {
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);

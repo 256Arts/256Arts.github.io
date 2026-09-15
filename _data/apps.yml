@@ -1,5 +1,5 @@
 # Released apps only — unreleased apps are deliberately left out (see AGENTS.md).
-# Drives the header's category apps rows.
+# Drives the header's category tabs and their apps rows.
 # title = nav label when there is room, short = compact label.
 groups:
   - title: Graphics Apps

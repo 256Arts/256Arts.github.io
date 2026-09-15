@@ -18,6 +18,7 @@
     --header-height: 46px;
     --header-clearance: calc(var(--header-height) + max(10px, env(safe-area-inset-top)) + 20px);
     --section-space: clamp(48px, 8vw, 96px);
+    --badge-height: 48px;
     --radius-sm: 10px;
     --radius-lg: 22px;
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -182,18 +183,19 @@ body section section, body footer section {
 body header.site-header {
     position: fixed;
     z-index: 99;
-    top: max(10px, env(safe-area-inset-top));
+    top: 0;
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
-    padding: 0 max(12px, env(safe-area-inset-left)) 0 max(12px, env(safe-area-inset-right));
+    padding: max(10px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-left)) 0 max(12px, env(safe-area-inset-right));
     background-color: transparent;
     border: none;
     pointer-events: none;
 }
 body header.site-header nav {
     position: relative;
+    z-index: 1;
     pointer-events: auto;
     display: flex;
     align-items: center;
@@ -221,8 +223,7 @@ body header.site-header nav {
     margin: 0;
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
 }
-.site-header nav > a,
-.site-header nav > .nav-menu > summary {
+.site-header nav > a {
     line-height: 34px;
     margin: 0;
     padding: 0 14px;
@@ -232,53 +233,60 @@ body header.site-header nav {
     color: var(--text-color);
     list-style: none;
 }
-.site-header nav > a:hover,
-.site-header nav > .nav-menu > summary:hover {
+.site-header nav > a:hover {
     text-decoration: none;
     color: var(--heading-text-color);
     background-color: var(--glass-hover);
 }
-.site-header nav > a.selected,
-.site-header nav > .nav-menu.selected > summary {
+.site-header nav > a.selected {
     color: var(--heading-text-color) !important;
     background-color: var(--glass-selected);
     box-shadow: inset 0 1px 0 var(--glass-shine);
 }
 
-/* Category menus — each opens a row of apps under the whole nav */
-.nav-menu {
-    position: static;
-}
+/* Category tabs, and the apps row each one opens */
 .nav-label-short {
     display: none;
 }
-/* Clipping window: its top edge sits on the nav's bottom edge, so the row
-   slides out from behind the nav instead of appearing in mid-air. The negative
-   insets let the row's own shadow spill out to the sides and below. */
-.nav-panel {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: calc(100vw - 24px);
-    padding-top: 10px;
-    clip-path: inset(0 -150px -150px -150px);
-}
+/* Full-bleed band pinned to the top edge — the nav pill floats over it, so the
+   apps clear it by --header-clearance. Closed rows sit above the window. */
 .nav-row {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: calc(var(--header-clearance) + 4px) max(12px, env(safe-area-inset-left)) 16px max(12px, env(safe-area-inset-right));
+    background-color: var(--glass-panel-tint);
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
+    border-bottom: 1px solid var(--glass-edge);
+    box-shadow: var(--shadow-md);
+    pointer-events: auto;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: transform 0.4s var(--ease), visibility 0s linear 0.4s;
+}
+.nav-row.open {
+    visibility: visible;
+    transform: translateY(0);
+    transition: transform 0.4s var(--ease), visibility 0s;
+}
+.nav-row-apps {
+    width: var(--content-width);
+    margin: auto;
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: repeat(2, auto);
-    grid-auto-columns: 210px;
-    gap: 2px;
-    padding: 8px;
-    border-radius: 26px;
-    background-color: var(--glass-panel-tint);
+    grid-auto-columns: 220px;
+    justify-content: safe center;
+    gap: 2px 6px;
     text-align: left;
-    animation: nav-row-in 0.34s var(--ease);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
 }
-@keyframes nav-row-in {
-    from { opacity: 0; transform: translateY(-100%); }
-    to   { opacity: 1; transform: translateY(0); }
+.nav-row-apps::-webkit-scrollbar {
+    display: none;
 }
 a.nav-app {
     display: flex;
@@ -324,27 +332,9 @@ a.nav-app.selected {
     font-size: 0.8em;
     color: var(--secondary-text-color);
 }
-/* Too narrow for columns of two — stack the apps and scroll instead. */
-@media (max-width: 700px) {
-    .nav-panel {
-        left: 0;
-        right: 0;
-        width: auto;
-        max-width: none;
-        transform: none;
-    }
-    .nav-row {
-        grid-auto-flow: row;
-        grid-template-rows: none;
-        grid-auto-columns: auto;
-        max-height: min(60vh, 560px);
-        overflow-y: auto;
-        overscroll-behavior: contain;
-    }
-}
 @media (prefers-reduced-motion: reduce) {
     .nav-row {
-        animation: none;
+        transition: none;
     }
 }
 @media (max-width: 860px) {
@@ -357,11 +347,10 @@ a.nav-app.selected {
 }
 @media (max-width: 600px) {
     /* Not enough room for every pill — Contact still lives in the footer. */
-    .site-header nav > a:not(.nav-brand) {
+    .site-header nav > a:not(.nav-brand):not(.nav-tab) {
         display: none;
     }
-    .site-header nav > a,
-    .site-header nav > .nav-menu > summary {
+    .site-header nav > a {
         padding: 0 11px;
         font-size: 0.94em;
     }
@@ -595,13 +584,25 @@ pre code {
     margin-top: -8px;
     margin-bottom: 12px;
 }
+.app-info .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px 12px;
+}
+.app-info .actions > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .button.app-buy {
     display: inline-block;
     background-color: #08f;
     color: #fff;
     min-width: 120px;
-    line-height: 36px;
-    border-radius: 20px;
+    line-height: var(--badge-height);
+    border-radius: calc(var(--badge-height) / 2);
     font-size: 20px;
     font-weight: 600;
 }
@@ -615,6 +616,29 @@ pre code {
 }
 .button.app-buy.secondary:hover {
     color: var(--accent-color);
+}
+/* Official store badges (App Store, Modrinth) — artwork is never restyled,
+   only scaled to --badge-height. */
+.store-badge {
+    display: inline-block;
+    margin: 4px;
+    line-height: 0;
+    border-radius: calc(var(--badge-height) / 2);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.store-badge img {
+    display: block;
+    height: var(--badge-height);
+    width: auto;
+    margin: 0;
+}
+.store-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+.store-badge:active {
+    transform: translateY(0) scale(0.98);
 }
 .app-info .tag {
     color: var(--secondary-text-color);
@@ -650,6 +674,9 @@ pre code {
     width: initial;
 }
 @media (max-width: 490px) /* Compact Width */ {
+    :root {
+        --badge-height: 44px;
+    }
     .app-info h1 {
         font-size: 34px;
     }

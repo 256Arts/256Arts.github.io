@@ -1,10 +1,18 @@
 {%- comment -%}
-Floating liquid-glass header. Include on every page:  {% include header.html %}
+Floating liquid-glass nav plus the apps rows it opens. Include on every page:
+{% include header.html %}
+Each category is a link to its first app, so a tab is useful on its own.
 {%- endcomment -%}
+{%- assign current = page.url | remove: "index.html" -%}
 <header class="site-header">
             <nav class="glass">
                 <a class="nav-brand{% if page.url == "/" %} selected{% endif %}" href="/"><img srcset="/profile.png 2x" src="/profile.png" alt=""><span>256 Arts</span></a>
-                {% include apps-menu.html %}
+                {%- for group in site.data.apps.groups -%}
+                {%- assign selected = false -%}
+                {%- for app in group.apps -%}{%- if app.url == current -%}{%- assign selected = true -%}{%- endif -%}{%- endfor %}
+                <a class="nav-tab{% if selected %} selected{% endif %}" href="{{ group.apps.first.url }}" aria-controls="nav-row-{{ forloop.index }}"><span class="nav-label-full">{{ group.title }}</span><span class="nav-label-short">{{ group.short }}</span></a>
+                {%- endfor %}
                 <a href="/contact/"{% if page.url == "/contact/" %} class="selected"{% endif %}>Contact</a>
             </nav>
+{% include apps-rows.html %}
         </header>
