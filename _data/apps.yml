@@ -1,0 +1,56 @@
+# Released apps only — unreleased apps are deliberately left out (see AGENTS.md).
+# Drives both the header's Apps menu and the icon strip on app pages.
+groups:
+  - title: Graphics
+    apps:
+      - name: Sprite Pencil
+        tagline: Pixel art editor
+        url: /spritepencil/
+        icon: /apps/icon_spencil.png
+      - name: Sprite Cutter
+        tagline: Split spritesheets
+        url: /spritecutter/
+        icon: /apps/icon_scutter.png
+      - name: Sprite Catalog
+        tagline: Ready-made sprites
+        url: /spritecatalog/
+        icon: /apps/icon_scatalog.png
+      - name: Palette Studio
+        tagline: Colors in 3D space
+        url: /palette3d/
+        icon: /apps/icon_palette3d.webp
+  - title: Everyday
+    apps:
+      - name: App Sales
+        tagline: App Store analytics
+        url: /appsales/
+        icon: /apps/icon_appsales.webp
+      - name: My Assets
+        tagline: Income & expenses
+        url: /myassets/
+        icon: /apps/icon_myassets.png
+      - name: Gift Lists
+        tagline: Holiday shopping
+        url: /giftlists/
+        icon: /apps/icon_giftslist.png
+  - title: Other
+    apps:
+      - name: Space UI
+        tagline: Sci-fi interfaces
+        url: /spaceui/
+        icon: /apps/icon_spaceui.png
+      - name: Insta Grow
+        tagline: Minecraft data pack
+        url: /instagrow/
+        icon: /apps/icon_instagrow.png
+      - name: Letter Banners
+        tagline: Minecraft data pack
+        url: /letterbanners/
+        icon: /apps/icon_letterbanners.png
+
+source:
+  name: GitHub
+  tagline: Every app, open source
+  url: https://github.com/orgs/256Arts/repositories/
+  icon: /apps/icon_git.webp
+  icon_dark: /apps/icon_git_dark.webp

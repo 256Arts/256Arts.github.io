@@ -1,0 +1,31 @@
+{%- comment -%}
+App icon strip shown in the banner of each app page, grouped like the Apps menu.
+{%- endcomment -%}
+{%- assign current = page.url | remove: "index.html" -%}
+<div class="chapter-nav">
+        		<section>
+        			{%- for group in site.data.apps.groups %}
+        			<div class="chapter-group" role="group" aria-label="{{ group.title }}">
+        				{%- for app in group.apps %}
+	        			<a href="{{ app.url }}"{% if app.url == current %} class="selected"{% endif %}>
+	        				<figure>
+	        					<img srcset="{{ app.icon }} 2x" src="{{ app.icon }}" alt="{{ app.name }} icon">
+	        					<figcaption>{{ app.name }}</figcaption>
+	        				</figure>
+	        			</a>
+	        			{%- endfor %}
+        			</div>
+        			{%- endfor %}
+        			<div class="chapter-group">
+	        			<a href="{{ site.data.apps.source.url }}" target="_blank" rel="noopener">
+	        				<figure>
+	        					<picture>
+	        						<source srcset="{{ site.data.apps.source.icon_dark }} 2x" media="(prefers-color-scheme: dark)">
+	        						<img srcset="{{ site.data.apps.source.icon }} 2x" src="{{ site.data.apps.source.icon }}" alt="{{ site.data.apps.source.name }} icon">
+	        					</picture>
+	        					<figcaption>{{ site.data.apps.source.name }}</figcaption>
+	        				</figure>
+	        			</a>
+        			</div>
+        		</section>
+        	</div>

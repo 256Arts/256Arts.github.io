@@ -1,0 +1,20 @@
+@supports (-webkit-background-clip: text) {
+    #title {
+        background: linear-gradient(#B02E26 0%, #B02E26 49.9%, var(--heading-text-color) 50.1%, var(--heading-text-color) 100%);
+        background-attachment: fixed;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+}
+.banner {
+    background: url("banner.webp") no-repeat center center;
+    background-size: cover;
+}
+.button.app-buy {
+    background: linear-gradient(#B02E26 0%, #B02E26 49.9%, #00AF5C 50.1%, #00AF5C 100%);
+    background-attachment: fixed;
+}
+.screenshot {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}

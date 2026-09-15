@@ -1,4 +1,6 @@
-<html>
+---
+---
+<html lang="en">
     <head>
         <link rel="shortcut icon" href="/global/favicon.ico" type="image/x-icon">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -23,8 +25,11 @@
           gtag('js', new Date());
           gtag('config', 'G-JRJ540QVW4');
         </script>
+        <script defer src="/global/menu.js"></script>
     </head>
     <body ontouchstart>
+        {% include header.html %}
+        <section class=\"header-space\"></section>
         <section class="app-info">
             <section></section>
             <section></section>
@@ -37,12 +42,6 @@
 				<a class="button filled app-buy" href="https://discord.gg/WZrTPqP" target="_blank">JOIN</a>
 			</section>
         </section>
-		<footer>
-			<section class="content">
-                <p class="secondary">Copyright &#169; 256 Arts Inc. All rights reserved.</p>
-                <a href="https://discord.gg/WZrTPqP" target="_blank">Community</a>
-                <a href="/contact/">Contact</a>
-            </section>
-	    </footer>
+        {% include footer.html %}
 	</body>
 </html>

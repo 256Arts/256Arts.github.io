@@ -1,4 +1,6 @@
-<html>
+---
+---
+<html lang="en">
     <head>
         <link rel="shortcut icon" href="/global/favicon.ico" type="image/x-icon">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -20,15 +22,10 @@
           gtag('js', new Date());
           gtag('config', 'G-JRJ540QVW4');
         </script>
+        <script defer src="/global/menu.js"></script>
     </head>
     <body ontouchstart>
-        <header>
-            <nav class="content">
-                <a href="/">256 Arts</a>
-                <a href="/spritepencil/">Apps</a>
-                <a class="selected" href="/contact/">Contact</a>
-            </nav>
-        </header>
+        {% include header.html %}
         <section class="header-space"></section>
 		<section class="banner"></section>
 		<section>
@@ -52,12 +49,6 @@
 		<script async src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script async src="contact.js"></script>
 		<script async src='https://www.google.com/recaptcha/api.js'></script>
-		<footer>
-			<section class="content">
-				<p class="secondary">Copyright &#169; 256 Arts Inc. All rights reserved.</p>
-				<a href="https://discord.gg/WZrTPqP" target="_blank">Community</a>
-				<a href="/contact/">Contact</a>
-	        </section>
-	    </footer>
+        {% include footer.html %}
 	</body>
 </html>

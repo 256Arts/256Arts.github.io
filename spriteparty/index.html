@@ -1,4 +1,8 @@
-<html>
+---
+# Unreleased — keep this page out of search until Sprite Party ships.
+noindex: true
+---
+<html lang="en">
     <head>
         <link rel="shortcut icon" href="/global/favicon.ico" type="image/x-icon">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -9,6 +13,7 @@
         <meta name="theme-color" content="#f7f7f7" media="(prefers-color-scheme: light)">
         <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
         <meta name="og:image" content="/global/opengraph.png">
+        <meta name="robots" content="noindex">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="keywords" content="256 Arts, iOS, sprite, party, pixel, art, app, iphone, ipad, game, guessing, apple tv, family, tv, airplay">
         <meta name="description" content="Draw on your iOS device, and your friends can see it on your Apple TV or AirPlay 2-enabled smart TV.">
@@ -21,84 +26,13 @@
           gtag('js', new Date());
           gtag('config', 'G-JRJ540QVW4');
         </script>
+        <script defer src="/global/menu.js"></script>
     </head>
     <body ontouchstart>
-        <header>
-            <nav class="content">
-                <a href="/">256 Arts</a>
-                <a href="/spritepencil/" class="selected">Apps</a>
-                <a href="/contact/">Contact</a>
-            </nav>
-        </header>
+        {% include header.html %}
         <section class="header-space"></section>
         <section class="chapter-container banner">
-        	<div class="chapter-nav">
-        		<section>
-	        		<a href="/spritepencil/">
-	        			<figure>
-		        			<img srcset="/apps/icon_spencil.png 2x" alt="sprite Pencil app icon">
-		        			<figcaption>Sprite Pencil</figcaption>
-	        			</figure>
-	        		</a>
-	        		<a href="/spritecutter/">
-	        			<figure>
-		        			<img srcset="/apps/icon_scutter.png 2x" alt="sprite cutter app icon">
-		        			<figcaption>Sprite Cutter</figcaption>
-	        			</figure>
-	        		</a>
-	        		<a href="/spritefonts/">
-	        			<figure>
-		        			<img srcset="/apps/icon_sfonts.png 2x" alt="sprite Fonts app icon">
-		        			<figcaption>Sprite Fonts</figcaption>
-	        			</figure>
-	        		</a>
-	        		<a href="/spritecatalog/">
-	        			<figure>
-		        			<img srcset="/apps/icon_scatalog.png 2x" alt="sprite Catalog app icon">
-		        			<figcaption>Sprite Catalog</figcaption>
-	        			</figure>
-	        		</a>
-	        		<a href="/pushupsar/">
-	        			<figure>
-		        			<img srcset="/apps/icon_pushups.png 2x" alt="pushups ar app icon">
-		        			<figcaption>
-		        				Pushups AR
-		        			</figcaption>
-	        			</figure>
-	        		</a>
-	        		<a href="/myassets/">
-	        			<figure>
-		        			<img srcset="/apps/icon_myassets.png 2x" alt="my assets app icon">
-		        			<figcaption>
-		        				My Assets
-		        			</figcaption>
-	        			</figure>
-	        		</a>
-					<a href="/palette3d/">
-	        			<figure>
-		        			<img srcset="/apps/icon_palette3d.webp 2x" alt="palette 3D app icon">
-		        			<figcaption>Palette 3D</figcaption>
-	        			</figure>
-	        		</a>
-	        		<a href="/spaceui/">
-	        			<figure>
-		        			<img srcset="/apps/icon_spaceui.png 2x" alt="space ui app icon">
-		        			<figcaption>
-		        				Space UI
-		        			</figcaption>
-	        			</figure>
-	        		</a>
-	        		<a href="https://github.com/orgs/256Arts/repositories/" target="_blank">
-	        			<figure>
-	        				<picture>
-		        				<source srcset="/apps/icon_packages_dark.png 2x" media="(prefers-color-scheme: dark)">
-			        			<img srcset="/apps/icon_packages.png 2x" alt="more icon">
-			        		</picture>
-		        			<figcaption>Packages</figcaption>
-	        			</figure>
-	        		</a>
-	        	</section>
-        	</div>
+        	{% include chapter-nav.html %}
         	<section>
         		<img src="tv.png">
         	</section>
@@ -161,12 +95,6 @@
 				</section>
 			</section>
 		</a>
-		<footer>
-			<section class="content">
-                <p class="secondary">Copyright &#169; 256 Arts Inc. All rights reserved.</p>
-                <a href="https://discord.gg/WZrTPqP" target="_blank">Community</a>
-                <a href="/contact/">Contact</a>
-            </section>
-	    </footer>
+        {% include footer.html %}
 	</body>
 </html>

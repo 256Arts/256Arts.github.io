@@ -1,0 +1,10 @@
+{%- comment -%}
+Floating liquid-glass header. Include on every page:  {% include header.html %}
+{%- endcomment -%}
+<header class="site-header">
+            <nav class="glass">
+                <a class="nav-brand" href="/"><img srcset="/profile.png 2x" src="/profile.png" alt=""><span>256 Arts</span></a>
+                {% include apps-menu.html %}
+                <a href="/contact/"{% if page.url == "/contact/" %} class="selected"{% endif %}>Contact</a>
+            </nav>
+        </header>
