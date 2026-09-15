@@ -193,6 +193,7 @@ body header.site-header {
     pointer-events: none;
 }
 body header.site-header nav {
+    position: relative;
     pointer-events: auto;
     display: flex;
     align-items: center;
@@ -244,35 +245,40 @@ body header.site-header nav {
     box-shadow: inset 0 1px 0 var(--glass-shine);
 }
 
-/* Category menus */
+/* Category menus — each opens a row of apps under the whole nav */
 .nav-menu {
-    position: relative;
+    position: static;
 }
 .nav-label-short {
     display: none;
 }
+/* Clipping window: its top edge sits on the nav's bottom edge, so the row
+   slides out from behind the nav instead of appearing in mid-air. The negative
+   insets let the row's own shadow spill out to the sides and below. */
 .nav-panel {
     position: absolute;
-    top: calc(100% + 12px);
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    width: 300px;
     max-width: calc(100vw - 24px);
-    max-height: min(70vh, 620px);
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    padding-top: 10px;
+    clip-path: inset(0 -150px -150px -150px);
+}
+.nav-row {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-columns: 210px;
+    gap: 2px;
     padding: 8px;
     border-radius: 26px;
     background-color: var(--glass-panel-tint);
     text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    animation: nav-panel-in 0.3s var(--ease);
+    animation: nav-row-in 0.34s var(--ease);
 }
-@keyframes nav-panel-in {
-    from { opacity: 0; transform: translate(-50%, -8px) scale(0.97); }
-    to   { opacity: 1; transform: translate(-50%, 0) scale(1); }
+@keyframes nav-row-in {
+    from { opacity: 0; transform: translateY(-100%); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 a.nav-app {
     display: flex;
@@ -299,29 +305,46 @@ a.nav-app.selected {
     border-radius: 9px;
     box-shadow: var(--shadow-sm);
 }
-.nav-app strong {
+.nav-app > span {
+    min-width: 0;
+}
+.nav-app strong,
+.nav-app small {
     display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.nav-app strong {
     font-size: 0.95em;
     font-weight: 600;
     color: var(--heading-text-color);
 }
 .nav-app small {
-    display: block;
     font-size: 0.8em;
     color: var(--secondary-text-color);
 }
-/* Invisible bridge across the gap, so the pointer can travel from the pill to
-   the panel without the menu closing on the way. */
-@media (hover: hover) and (min-width: 601px) {
-    .nav-menu[open]::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        width: 300px;
-        max-width: calc(100vw - 24px);
-        height: 12px;
-        transform: translateX(-50%);
+/* Too narrow for columns of two — stack the apps and scroll instead. */
+@media (max-width: 700px) {
+    .nav-panel {
+        left: 0;
+        right: 0;
+        width: auto;
+        max-width: none;
+        transform: none;
+    }
+    .nav-row {
+        grid-auto-flow: row;
+        grid-template-rows: none;
+        grid-auto-columns: auto;
+        max-height: min(60vh, 560px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .nav-row {
+        animation: none;
     }
 }
 @media (max-width: 860px) {
@@ -341,22 +364,6 @@ a.nav-app.selected {
     .site-header nav > .nav-menu > summary {
         padding: 0 11px;
         font-size: 0.94em;
-    }
-    /* Widen panels to the whole nav so they cannot run off the edge. */
-    .nav-menu {
-        position: static;
-    }
-    .nav-panel {
-        left: 0;
-        right: 0;
-        width: auto;
-        max-width: none;
-        transform: none;
-        animation: nav-panel-in-compact 0.3s var(--ease);
-    }
-    @keyframes nav-panel-in-compact {
-        from { opacity: 0; transform: translateY(-8px) scale(0.98); }
-        to   { opacity: 1; transform: translateY(0) scale(1); }
     }
 }
 @media (max-width: 490px) /* Compact Width */ {

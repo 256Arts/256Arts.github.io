@@ -39,7 +39,7 @@ Do not re-add `.nojekyll` — it disables all of the above.
 ## Navigation
 
 The floating nav is the **only** app switcher — there is no second row of app
-icons on app pages. [_data/apps.yml](_data/apps.yml) is the single source of
+icons inside the page. [_data/apps.yml](_data/apps.yml) is the single source of
 truth for the app list. Each group has a `title` (nav label when there is room)
 and a `short` label (used below 860px).
 
@@ -47,20 +47,33 @@ Includes:
 
 - `{% include header.html %}` — floating liquid-glass nav. On every page.
 - `{% include footer.html %}` — on every page.
-- `{% include apps-menu.html %}` — one `<details>` menu per category; used by
+- `{% include apps-menu.html %}` — one `<details>` per category; used by
   `header.html`.
 
-**Progressive disclosure is the point:** the nav shows one pill per category and
-a visitor only sees a category's apps after opening it, so the graphics apps are
-never presented alongside the Minecraft data packs. Every pill looks and behaves
-the same — the brand is a pill too, marked `selected` on the home page. No
-disclosure arrows.
+Every pill looks and behaves the same — the brand is a pill too, marked
+`selected` on the home page. No disclosure arrows.
+
+**The apps row.** Opening a category drops a row of apps out from under the
+whole nav (not a dropdown under its pill): a glass row laid out
+`grid-auto-flow: column` with two apps per column. It slides down from the top
+edge — the row animates from `translateY(-100%)` inside `.nav-panel`, whose
+`clip-path` is pinned to the nav's bottom edge, so the row emerges from behind
+the nav instead of fading in mid-air. Below 700px the row stacks into one
+scrolling column.
+
+A category opens on hover, and the category the current page belongs to is
+`open` in the HTML — so an app page shows its own apps row on load (animating
+in), and leaving the nav returns to that row rather than closing everything.
+Visitors still only see one category at a time, so the graphics apps are never
+presented alongside the Minecraft data packs. App pages start with a `.banner`,
+which the row floats over.
 
 [global/menu.js](global/menu.js) is **behaviour only**: pointer devices open a
-menu on **hover**, and it adds click-outside and Escape. Touch and keyboard use
-the native `<details>` toggle, so the menus still work without the script. An
-invisible `::after` bridge under an open pill spans the gap to its panel so the
-pointer can travel there without the menu closing.
+category on **hover** and fall back to the page's own row when the pointer
+leaves; click-outside and Escape close everything. Touch and keyboard use the
+native `<details>` toggle, so the rows still work without the script. The gap
+between the nav and the row is `.nav-panel`'s padding, so the pointer can travel
+across it without the row closing.
 
 Groups are by *audience*, not by app family: **Graphics Apps**,
 **Everyday Apps**, **Fun Stuff**.
@@ -74,7 +87,7 @@ link to **Modrinth** instead of the App Store, and they get **no AASA entry**
 
 `_data/apps.yml` lists **released apps only**. Unreleased apps get an AASA entry
 (so universal links work during development and the moment they ship) but are
-deliberately *not* linked from the nav or the app strip — that is why
+deliberately *not* linked from the nav — that is why
 [.well-known/apple-app-site-association](.well-known/apple-app-site-association)
 holds more apps than the site shows. When an app ships, add it to
 `_data/apps.yml`.
