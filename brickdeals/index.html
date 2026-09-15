@@ -1,0 +1,62 @@
+---
+---
+<html lang="en">
+    <head>
+        <link rel="shortcut icon" href="/global/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="stylesheet" href="/global/style.css">
+        <link rel="stylesheet" href="page.css">
+        <title>Brick Deals - 256 Arts</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="theme-color" content="#f7f7f7" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
+        <meta name="og:image" content="/global/opengraph.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="keywords" content="256 Arts, LEGO, brick, deals, discount, sale, sets, bricklink, safari extension, app, iphone, ipad, macOS, mac">
+        <meta name="description" content="Brick Deals finds discounted LEGO sets, tracks their price history, and tells you what a set is really worth.">
+        <meta name="apple-itunes-app" content="app-id=1576280300">
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRJ540QVW4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JRJ540QVW4');
+        </script>
+        <script defer src="/global/menu.js"></script>
+    </head>
+    <body ontouchstart>
+        {% include header.html %}
+        <section class="header-space"></section>
+        <section class="chapter-container banner">
+        	{% include chapter-nav.html %}
+        </section>
+        <section class="app-info">
+        	<section>
+        		<img src="/apps/icon_brickdeals.png" srcset="icon_brickdeals.png 2x" class="large-app-icon">
+				<h1 id="title">Brick Deals</h1>
+				<h3>Your Brick Building Companion</h3>
+				<p>Find the best discounts on LEGO sets, filter them by theme, and see what each set is really worth</p>
+			</section>
+			<section>
+				<div>
+					<a class="button filled app-buy secondary" href="https://github.com/256Arts/Brick-Deals" target="_blank">GitHub</a>
+				</div>
+				<div>
+					<a class="button filled app-buy" href="https://apps.apple.com/app/brick-deals/id1576280300" target="_blank">Get</a>
+					<p class="tag">iOS, iPadOS, macOS</p>
+				</div>
+			</section>
+        </section>
+		<section class="feature">
+			<section>
+				<div class="phone z-stack">
+					<img class="screenshot" srcset="shot1.webp 2x" alt="screenshot" loading="lazy">
+					<img class="device-frame" srcset="/phone.png 2x" alt="phone frame" loading="lazy">
+				</div>
+				<h1>Never pay full price.</h1>
+			</section>
+		</section>
+        {% include footer.html %}
+	</body>
+</html>

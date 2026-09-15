@@ -33,6 +33,14 @@ groups:
         tagline: Holiday shopping
         url: /giftlists/
         icon: /apps/icon_giftslist.png
+      - name: Countdowns
+        tagline: Days until events
+        url: /countdowns/
+        icon: /apps/icon_countdowns.png
+      - name: Brick Deals
+        tagline: LEGO set discounts
+        url: /brickdeals/
+        icon: /apps/icon_brickdeals.png
   - title: Other
     apps:
       - name: Space UI

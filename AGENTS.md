@@ -75,8 +75,8 @@ If an unreleased app already has a page, keep it out of search: set
 `<meta name="robots" content="noindex">`. See `spriteparty/index.html`.
 
 Currently unreleased: **Sprite Party** (its `/spriteparty/` page exists but is
-unlinked and noindexed), Brick Deals, Burger Tycoon, Countdowns, Game Tips,
-Incognito, Project Progress, Time of Use, TV Party.
+unlinked and noindexed), Burger Tycoon, Game Tips, Incognito, Project Progress,
+Time of Use, TV Party.
 
 ### Crawlability
 

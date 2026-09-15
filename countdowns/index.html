@@ -1,0 +1,62 @@
+---
+---
+<html lang="en">
+    <head>
+        <link rel="shortcut icon" href="/global/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="stylesheet" href="/global/style.css">
+        <link rel="stylesheet" href="page.css">
+        <title>Countdowns - 256 Arts</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="theme-color" content="#f7f7f7" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
+        <meta name="og:image" content="/global/opengraph.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="keywords" content="256 Arts, countdown, days until, events, holidays, release dates, calendar, widget, app, iphone, ipad, macOS, mac, watch, vision pro">
+        <meta name="description" content="Countdowns tracks the days until your upcoming events, holidays, and movie and TV release dates, right on your Home Screen.">
+        <meta name="apple-itunes-app" content="app-id=6476715415">
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRJ540QVW4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JRJ540QVW4');
+        </script>
+        <script defer src="/global/menu.js"></script>
+    </head>
+    <body ontouchstart>
+        {% include header.html %}
+        <section class="header-space"></section>
+        <section class="chapter-container banner">
+        	{% include chapter-nav.html %}
+        </section>
+        <section class="app-info">
+        	<section>
+        		<img src="/apps/icon_countdowns.png" srcset="icon_countdowns.png 2x" class="large-app-icon">
+				<h1 id="title">Countdowns</h1>
+				<h3>Days Until What Matters</h3>
+				<p>Count down to holidays, birthdays, calendar events, and movie and TV release dates</p>
+			</section>
+			<section>
+				<div>
+					<a class="button filled app-buy secondary" href="https://github.com/256Arts/Countdowns" target="_blank">GitHub</a>
+				</div>
+				<div>
+					<a class="button filled app-buy" href="https://apps.apple.com/app/countdowns/id6476715415" target="_blank">Get</a>
+					<p class="tag">iOS, iPadOS, watchOS, macOS, visionOS</p>
+				</div>
+			</section>
+        </section>
+		<section class="feature">
+			<section>
+				<div class="phone z-stack">
+					<img class="screenshot" srcset="shot1.webp 2x" alt="screenshot" loading="lazy">
+					<img class="device-frame" srcset="/phone.png 2x" alt="phone frame" loading="lazy">
+				</div>
+				<h1>Every date, one list.</h1>
+			</section>
+		</section>
+        {% include footer.html %}
+	</body>
+</html>
