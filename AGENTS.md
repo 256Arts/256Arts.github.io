@@ -2,8 +2,6 @@
 
 ## Project preferences
 
-- **Keep the source code simple.** We want retain the ability to hand-edit the
-  HTML/CSS files directly.
 - **Design goal:** clear and modern
 
 ## Universal links
