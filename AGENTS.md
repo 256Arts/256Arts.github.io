@@ -38,29 +38,29 @@ Do not re-add `.nojekyll` — it disables all of the above.
 
 ## Navigation
 
-[_data/apps.yml](_data/apps.yml) is the **single source of truth for the app
-list**. It drives both the header's category menus and the icon strip on app
-pages, so adding an app there updates every page at once. Each group has a
-`title` (nav label when there is room) and a `short` label (used below 860px).
+The floating nav is the **only** app switcher — there is no second row of app
+icons on app pages. [_data/apps.yml](_data/apps.yml) is the single source of
+truth for the app list. Each group has a `title` (nav label when there is room)
+and a `short` label (used below 860px).
 
 Includes:
 
 - `{% include header.html %}` — floating liquid-glass nav. On every page.
 - `{% include footer.html %}` — on every page.
-- `{% include chapter-nav.html %}` — app icon strip. App pages only.
 - `{% include apps-menu.html %}` — one `<details>` menu per category; used by
   `header.html`.
 
 **Progressive disclosure is the point:** the nav shows one pill per category and
 a visitor only sees a category's apps after opening it, so the graphics apps are
-never presented alongside the Minecraft data packs. For the same reason the icon
-strip on an app page shows **only that app's category** — set `app_group:` (a
-group's `short` name) in a page's front matter when the page isn't in
-`_data/apps.yml`, as `/spriteparty/` does.
+never presented alongside the Minecraft data packs. Every pill looks and behaves
+the same — the brand is a pill too, marked `selected` on the home page. No
+disclosure arrows.
 
-[global/menu.js](global/menu.js) is **behaviour only** (click-outside, Escape,
-and closing the other menus for browsers without exclusive `<details name>`).
-The menus are `<details>` elements, so they still open without it.
+[global/menu.js](global/menu.js) is **behaviour only**: pointer devices open a
+menu on **hover**, and it adds click-outside and Escape. Touch and keyboard use
+the native `<details>` toggle, so the menus still work without the script. An
+invisible `::after` bridge under an open pill spans the gap to its panel so the
+pointer can travel there without the menu closing.
 
 Groups are by *audience*, not by app family: **Graphics Apps**,
 **Everyday Apps**, **Fun Stuff**.
@@ -114,15 +114,16 @@ hardcoding values:
   (thin rainbow divider, used as an `<hr>`).
 - `--glass-*` — liquid glass surfaces. Apply `.glass` for the translucent
   material (blur + saturation, specular edge, sheen); `--glass-panel-tint` is the
-  more opaque variant used by the category menus.
+  more opaque variant used by the category menus. `--glass-hover` /
+  `--glass-selected` are the nav pill states.
 - `--shadow-sm/md/lg` — elevation (auto-adjusts for dark mode).
 - `--content-width`, `--section-space`, `--radius-sm/lg`, `--ease` — layout rhythm.
 - `--header-height` / `--header-clearance` — the floating nav's size and the room
   content needs to clear it.
 
 The nav **floats over the content**: page backgrounds run to the top of the
-window, and the first section (or the app page's icon strip) simply pads itself
-down by `--header-clearance`. There is no spacer element.
+window, and the first section pads itself down by `--header-clearance` unless it
+is a `.banner`, which runs full-bleed behind the nav. There is no spacer element.
 
 Type is Inter (loaded via `@import` in `global/style.css`) with the SF Pro / system
 stack as fallback. Headings use fluid `clamp()` sizing and negative letter-spacing.

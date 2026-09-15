@@ -60,9 +60,3 @@ groups:
         url: /letterbanners/
         icon: /apps/icon_letterbanners.png
 
-source:
-  name: GitHub
-  tagline: Every app, open source
-  url: https://github.com/orgs/256Arts/repositories/
-  icon: /apps/icon_git.webp
-  icon_dark: /apps/icon_git_dark.webp

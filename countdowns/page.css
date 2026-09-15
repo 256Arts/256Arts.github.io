@@ -8,7 +8,7 @@
 }
 .banner {
     background: linear-gradient(160deg, #FFB05A, #F05848 55%, #A8324F);
-    height: initial;
+    height: 280px;
 }
 @media (prefers-color-scheme: dark) {
 	.banner {

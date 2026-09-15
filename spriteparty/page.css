@@ -8,17 +8,12 @@
 }
 .banner {
     background: conic-gradient(#FF332A, #FF9400, #FFCC00, #4ED964, #007AFF, #5957D6, #FF332A, #FF9400, #FFCC00, #4ED964, #007AFF, #5957D6, #FF332A, #FF9400, #FFCC00, #4ED964, #007AFF, #5957D6, #FF332A);
-    height: initial;
+    height: 280px;
 }
 @media (prefers-color-scheme: dark) {
 	.banner {
 		background: radial-gradient(transparent, #000000bb), conic-gradient(#FF332A, #FF9400, #FFCC00, #4ED964, #007AFF, #5957D6, #FF332A, #FF9400, #FFCC00, #4ED964, #007AFF, #5957D6, #FF332A, #FF9400, #FFCC00, #4ED964, #007AFF, #5957D6, #FF332A);
 	}
-}
-.chapter-nav {
-    background-color: var(--chapter-nav-bg-color);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 .button.app-buy {
     background: linear-gradient(#fc0 0%, #fc0 49.9%, #007aff 50.1%, #007aff 100%);
