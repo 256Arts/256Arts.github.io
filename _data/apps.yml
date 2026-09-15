@@ -1,7 +1,9 @@
 # Released apps only — unreleased apps are deliberately left out (see AGENTS.md).
-# Drives both the header's Apps menu and the icon strip on app pages.
+# Drives the header's category menus and the icon strip on app pages.
+# title = nav label when there is room, short = compact label.
 groups:
-  - title: Graphics
+  - title: Graphics Apps
+    short: Graphics
     apps:
       - name: Sprite Pencil
         tagline: Pixel art editor
@@ -19,7 +21,8 @@ groups:
         tagline: Colors in 3D space
         url: /palette3d/
         icon: /apps/icon_palette3d.webp
-  - title: Everyday
+  - title: Everyday Apps
+    short: Everyday
     apps:
       - name: App Sales
         tagline: App Store analytics
@@ -41,7 +44,8 @@ groups:
         tagline: LEGO set discounts
         url: /brickdeals/
         icon: /apps/icon_brickdeals.png
-  - title: Other
+  - title: Fun Stuff
+    short: Fun
     apps:
       - name: Space UI
         tagline: Sci-fi interfaces

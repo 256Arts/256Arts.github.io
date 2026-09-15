@@ -1,12 +1,21 @@
 {%- comment -%}
-App icon strip shown in the banner of each app page, grouped like the Apps menu.
+App icon strip in the banner of each app page. Shows only the current app's
+category (set page.app_group to override, e.g. for unlisted apps) so a page
+never puts unrelated projects beside the app you came to see.
 {%- endcomment -%}
 {%- assign current = page.url | remove: "index.html" -%}
+{%- assign shown = site.data.apps.groups | first -%}
+{%- for group in site.data.apps.groups -%}
+  {%- if page.app_group and page.app_group == group.short -%}{%- assign shown = group -%}{%- endif -%}
+  {%- for app in group.apps -%}
+    {%- if app.url == current -%}{%- assign shown = group -%}{%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
 <div class="chapter-nav">
         		<section>
-        			{%- for group in site.data.apps.groups %}
-        			<div class="chapter-group" role="group" aria-label="{{ group.title }}">
-        				{%- for app in group.apps %}
+        			<p class="chapter-title">{{ shown.title }}</p>
+        			<div class="chapter-group" role="group" aria-label="{{ shown.title }}">
+        				{%- for app in shown.apps %}
 	        			<a href="{{ app.url }}"{% if app.url == current %} class="selected"{% endif %}>
 	        				<figure>
 	        					<img srcset="{{ app.icon }} 2x" src="{{ app.icon }}" alt="{{ app.name }} icon">
@@ -15,7 +24,6 @@ App icon strip shown in the banner of each app page, grouped like the Apps menu.
 	        			</a>
 	        			{%- endfor %}
         			</div>
-        			{%- endfor %}
         			<div class="chapter-group">
 	        			<a href="{{ site.data.apps.source.url }}" target="_blank" rel="noopener">
 	        				<figure>

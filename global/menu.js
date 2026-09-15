@@ -1,24 +1,29 @@
-/* Behaviour only — the Apps menu itself is rendered at build time by
-   _includes/apps-menu.html, so it works (and is crawlable) without this file.
-   This just adds click-outside and Escape to close. */
+/* Behaviour only — the category menus are rendered at build time by
+   _includes/apps-menu.html, so they work (and are crawlable) without this file.
+   This adds click-outside, Escape to close, and (for browsers without exclusive
+   <details name>) closes the other menus when one opens. */
 
-const menu = document.querySelector(".nav-menu");
+const menus = [...document.querySelectorAll(".nav-menu")];
 
-if (menu) {
-    const close = () => menu.removeAttribute("open");
+if (menus.length) {
+    const closeAll = () => menus.forEach((menu) => menu.removeAttribute("open"));
 
-    menu.addEventListener("toggle", () => {
-        if (!menu.open) {
-            document.querySelector(".nav-scrim")?.remove();
-            return;
-        }
-        const scrim = document.createElement("div");
-        scrim.className = "nav-scrim";
-        scrim.addEventListener("click", close);
-        document.body.append(scrim);
+    menus.forEach((menu) => {
+        menu.addEventListener("toggle", () => {
+            if (!menu.open) {
+                if (!menus.some((other) => other.open)) document.querySelector(".nav-scrim")?.remove();
+                return;
+            }
+            menus.forEach((other) => other !== menu && other.removeAttribute("open"));
+            if (document.querySelector(".nav-scrim")) return;
+            const scrim = document.createElement("div");
+            scrim.className = "nav-scrim";
+            scrim.addEventListener("click", closeAll);
+            document.body.append(scrim);
+        });
     });
 
     document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") close();
+        if (event.key === "Escape") closeAll();
     });
 }

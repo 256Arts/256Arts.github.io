@@ -41,22 +41,33 @@ Do not re-add `.nojekyll` — it disables all of the above.
 ## Navigation
 
 [_data/apps.yml](_data/apps.yml) is the **single source of truth for the app
-list**. It drives both the floating header's Apps menu and the icon strip on app
-pages, so adding an app there updates every page at once.
+list**. It drives both the header's category menus and the icon strip on app
+pages, so adding an app there updates every page at once. Each group has a
+`title` (nav label when there is room) and a `short` label (used below 860px).
 
 Includes:
 
 - `{% include header.html %}` — floating liquid-glass nav. On every page.
 - `{% include footer.html %}` — on every page.
 - `{% include chapter-nav.html %}` — app icon strip. App pages only.
-- `{% include apps-menu.html %}` — the Apps mega-menu; used by `header.html`.
+- `{% include apps-menu.html %}` — one `<details>` menu per category; used by
+  `header.html`.
 
-[global/menu.js](global/menu.js) is **behaviour only** (click-outside and Escape
-to close). The menu is a `<details>` element, so it still opens without it.
+**Progressive disclosure is the point:** the nav shows one pill per category and
+a visitor only sees a category's apps after opening it, so the graphics apps are
+never presented alongside the Minecraft data packs. For the same reason the icon
+strip on an app page shows **only that app's category** — set `app_group:` (a
+group's `short` name) in a page's front matter when the page isn't in
+`_data/apps.yml`, as `/spriteparty/` does.
 
-Groups are by *audience*, not by app family: **Graphics**, **Everyday**, **Other**.
+[global/menu.js](global/menu.js) is **behaviour only** (click-outside, Escape,
+and closing the other menus for browsers without exclusive `<details name>`).
+The menus are `<details>` elements, so they still open without it.
 
-**Other** also holds the non-Apple projects — the Minecraft data packs
+Groups are by *audience*, not by app family: **Graphics Apps**,
+**Everyday Apps**, **Fun Stuff**.
+
+**Fun Stuff** also holds the non-Apple projects — the Minecraft data packs
 (`/instagrow/`, `/letterbanners/`). Their pages follow the app-page template but
 link to **Modrinth** instead of the App Store, and they get **no AASA entry**
 (no universal links). Screenshots come from each repo's `Repo Assets` folder.
@@ -105,9 +116,15 @@ hardcoding values:
   (thin rainbow divider, used as an `<hr>`).
 - `--glass-*` — liquid glass surfaces. Apply `.glass` for the translucent
   material (blur + saturation, specular edge, sheen); `--glass-panel-tint` is the
-  more opaque variant used by the Apps menu.
+  more opaque variant used by the category menus.
 - `--shadow-sm/md/lg` — elevation (auto-adjusts for dark mode).
 - `--content-width`, `--section-space`, `--radius-sm/lg`, `--ease` — layout rhythm.
+- `--header-height` / `--header-clearance` — the floating nav's size and the room
+  content needs to clear it.
+
+The nav **floats over the content**: page backgrounds run to the top of the
+window, and the first section (or the app page's icon strip) simply pads itself
+down by `--header-clearance`. There is no spacer element.
 
 Type is Inter (loaded via `@import` in `global/style.css`) with the SF Pro / system
 stack as fallback. Headings use fluid `clamp()` sizing and negative letter-spacing.

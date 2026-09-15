@@ -1,33 +1,21 @@
 {%- comment -%}
-Apps mega-menu for the floating header. Rendered at build time from _data/apps.yml.
+One menu per app category, rendered at build time from _data/apps.yml. Apps stay
+hidden until a category is opened, so each page shows one focused list.
+Used by header.html.
 {%- endcomment -%}
 {%- assign current = page.url | remove: "index.html" -%}
-{%- assign on_app_page = false -%}
 {%- for group in site.data.apps.groups -%}
-  {%- for app in group.apps -%}
-    {%- if app.url == current -%}{%- assign on_app_page = true -%}{%- endif -%}
-  {%- endfor -%}
-{%- endfor -%}
-<details class="nav-menu{% if on_app_page %} selected{% endif %}">
-                    <summary>Apps</summary>
+{%- assign selected = false -%}
+{%- for app in group.apps -%}{%- if app.url == current -%}{%- assign selected = true -%}{%- endif -%}{%- endfor %}
+                <details class="nav-menu{% if selected %} selected{% endif %}" name="nav-menu">
+                    <summary><span class="nav-label-full">{{ group.title }}</span><span class="nav-label-short">{{ group.short }}</span></summary>
                     <div class="nav-panel glass">
-                        {%- for group in site.data.apps.groups %}
-                        <div class="nav-group">
-                            <p class="nav-group-title">{{ group.title }}</p>
-                            {%- for app in group.apps %}
-                            <a class="nav-app{% if app.url == current %} selected{% endif %}" href="{{ app.url }}">
-                                <img srcset="{{ app.icon }} 2x" src="{{ app.icon }}" alt="{{ app.name }} icon">
-                                <span><strong>{{ app.name }}</strong><small>{{ app.tagline }}</small></span>
-                            </a>
-                            {%- endfor %}
-                        </div>
-                        {%- endfor %}
-                        <a class="nav-app nav-panel-footer" href="{{ site.data.apps.source.url }}" target="_blank" rel="noopener">
-                            <picture>
-                                <source srcset="{{ site.data.apps.source.icon_dark }} 2x" media="(prefers-color-scheme: dark)">
-                                <img srcset="{{ site.data.apps.source.icon }} 2x" src="{{ site.data.apps.source.icon }}" alt="{{ site.data.apps.source.name }} icon">
-                            </picture>
-                            <span><strong>{{ site.data.apps.source.name }}</strong><small>{{ site.data.apps.source.tagline }}</small></span>
+                        {%- for app in group.apps %}
+                        <a class="nav-app{% if app.url == current %} selected{% endif %}" href="{{ app.url }}">
+                            <img srcset="{{ app.icon }} 2x" src="{{ app.icon }}" alt="{{ app.name }} icon">
+                            <span><strong>{{ app.name }}</strong><small>{{ app.tagline }}</small></span>
                         </a>
+                        {%- endfor %}
                     </div>
                 </details>
+{%- endfor %}
