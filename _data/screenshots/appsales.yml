@@ -1,0 +1,17 @@
+# Written by the shared `screenshots` runner (Repos/Scripts/screenshots), which rewrites
+# this file in full on every run — write the copy in the app's .screenshots.conf
+# (SHOT_PROMOS, keyed by capture name), not here.
+
+- file: 'shot1.webp'
+  title: 'Yesterday''s proceeds, without opening anything.'
+  description: 'The medium widget twice on an iOS wallpaper — app icons sized by share, then the same totals over a per-app bar chart'
+- file: 'shot2.webp'
+  title: 'Small enough to sit anywhere.'
+  description: 'The two small widgets side by side — totals alone, and totals with the leading apps'' icons'
+- file: 'shot3.webp'
+  title: 'A month of every app, in one card.'
+  description: 'The large widget alone, its per-app proceeds and downloads chart filling the card'
+- file: 'shot4.webp'
+  eyebrow: 'Home'
+  title: 'Proceeds, downloads and their trend, the moment you look.'
+  description: 'The app''s own Summary over the seeded account: 30-day proceeds and downloads, their change on the previous period, and the per-app bar chart'

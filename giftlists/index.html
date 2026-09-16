@@ -42,10 +42,7 @@
                     </div>
                     <p class="tag">iOS, iPadOS, watchOS, macOS, visionOS</p>
                 </div>
-                <div class="phone">
-                    <img class="screenshot" srcset="shot1.webp 2x" src="shot1.webp" alt="Gift Lists by recipient">
-                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
-                </div>
+                {% include app-hero-shot.html slug="giftlists" %}
             </section>
         </section>
         <section class="secondary-bg bordered-top">
@@ -54,6 +51,7 @@
                 <h2 class="section-title">Track your nice list.</h2>
             </section>
         </section>
+{% include app-screenshots.html slug="giftlists" %}
         <section class="stage dark-theme">
             <section class="centered">
                 <h2 class="section-title">Get Gift Lists.</h2>

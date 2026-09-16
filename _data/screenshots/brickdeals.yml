@@ -1,0 +1,20 @@
+# Written by the shared `screenshots` runner (Repos/Scripts/screenshots), which rewrites
+# this file in full on every run — write the copy in the app's .screenshots.conf
+# (SHOT_PROMOS, keyed by capture name), not here.
+
+- file: 'shot1.webp'
+  eyebrow: 'Deals'
+  title: 'Every LEGO discount worth knowing about, in one list.'
+  description: 'The Deals list: discounted LEGO sets, each row carrying its brickset.com thumbnail, current price, and how far it is off retail'
+- file: 'shot2.webp'
+  eyebrow: 'Product'
+  title: 'See what a set really costs, over time.'
+  description: 'Set 10497-1''s detail screen — full-size set image and its price history chart'
+- file: 'shot3.webp'
+  eyebrow: 'Favorites'
+  title: 'Watch a set, and catch the moment it drops.'
+  description: 'The Favorites tab, the sets being watched for a price drop'
+- file: 'shot4.webp'
+  eyebrow: 'Scale'
+  title: 'Work out minifig scale without doing the maths.'
+  description: 'The Scale tab: a minifig-scale calculator converting a real object''s size into studs, bricks, and metres'

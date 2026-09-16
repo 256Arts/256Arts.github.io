@@ -42,10 +42,7 @@
                     </div>
                     <p class="tag">iOS, iPadOS, macOS</p>
                 </div>
-                <div class="phone">
-                    <img class="screenshot" srcset="shot1.webp 2x" src="shot1.webp" alt="Brick Deals set discounts">
-                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
-                </div>
+                {% include app-hero-shot.html slug="brickdeals" %}
             </section>
         </section>
         <section class="secondary-bg bordered-top">
@@ -54,6 +51,7 @@
                 <h2 class="section-title">Never pay full price.</h2>
             </section>
         </section>
+{% include app-screenshots.html slug="brickdeals" %}
         <section class="stage dark-theme">
             <section class="centered">
                 <h2 class="section-title">Get Brick Deals.</h2>

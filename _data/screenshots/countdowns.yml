@@ -1,0 +1,23 @@
+# Written by the shared `screenshots` runner (Repos/Scripts/screenshots), which rewrites
+# this file in full on every run — write the copy in the app's .screenshots.conf
+# (SHOT_PROMOS, keyed by capture name), not here.
+
+- file: 'shot1.webp'
+  title: 'Your next date, right on the Home Screen.'
+  description: 'The home screen widget and the list widget, on a wallpaper'
+- file: 'shot2.webp'
+  eyebrow: 'Movie'
+  title: 'Films and shows, counted down from the poster.'
+  description: 'A movie release countdown, poster and all, on its detail screen'
+- file: 'shot3.webp'
+  eyebrow: 'Upcoming'
+  title: 'The whole year ahead, counting down.'
+  description: 'The Upcoming list, each countdown showing the days remaining'
+- file: 'shot4.webp'
+  eyebrow: 'Edit'
+  title: 'Give every countdown its own colour, symbol and rhythm.'
+  description: 'A countdown being edited, with its date, colour, symbol and yearly repeat'
+- file: 'shot5.webp'
+  eyebrow: 'Import Calendar'
+  title: 'Bring a calendar in, and it counts itself down.'
+  description: 'Importing a system calendar, with a calendar picked and a colour and symbol to file its events under'

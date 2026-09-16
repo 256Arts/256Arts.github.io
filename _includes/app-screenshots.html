@@ -1,0 +1,31 @@
+{%- comment -%}
+Every shot after the hero, one feature section each, from _data/screenshots/<slug>.yml.
+
+That file is written by the shared screenshot runner (Repos/Scripts/screenshots) straight from the
+app's App Store listing, so the page shows the same screens the store does, in the same order. The
+copy comes with it: the headline is the app's SHOT_PROMOS line for that shot. Its SHOT_DESCRIPTIONS
+line becomes the alt text and nothing else — those sentences are written for the listing document
+and say things like "over the seeded account", which describe a picture well and sell it not at all.
+
+Adding a screen to the app's UI test adds a section here; there is nothing to write in the page.
+
+  {% include app-screenshots.html slug="countdowns" %}
+{%- endcomment -%}
+{%- assign shots = site.data.screenshots[include.slug] -%}
+{%- for shot in shots offset:1 -%}
+{%- assign alternate = forloop.index | modulo: 2 -%}
+        <section{% if alternate == 0 %} class="secondary-bg bordered"{% endif %}>
+            <section class="split{% if alternate == 0 %} reverse{% endif %}">
+                <div class="copy">
+                    {%- if shot.eyebrow %}
+                    <p class="eyebrow">{{ shot.eyebrow }}</p>
+                    {%- endif %}
+                    <h2 class="section-title">{{ shot.title }}</h2>
+                </div>
+                <div class="phone">
+                    <img class="screenshot" srcset="{{ shot.file }} 2x" src="{{ shot.file }}" alt="{{ shot.description | default: shot.title | escape }}" loading="lazy">
+                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="" loading="lazy">
+                </div>
+            </section>
+        </section>
+{% endfor -%}

@@ -119,6 +119,32 @@ Time of Use, TV Party.
 no plugin, nothing to maintain — and is advertised in `robots.txt`. Every page
 carries the shared header and footer so nothing is orphaned.
 
+## App screenshots
+
+An app page's screenshots **and the copy beside them** are generated. Running
+`Scripts/screenshots.sh --upload` in the app's own repo sends its shots to App
+Store Connect and, in the same pass, resizes every iPhone shot into this repo as
+`shotN.webp` and writes `_data/screenshots/<slug>.yml`. The page shows what the
+store shows, in the same order — there is no pairing to maintain.
+
+Two includes render it, so a page never lists its own shots:
+
+- `{% include app-hero-shot.html slug="countdowns" %}` — the phone in the hero.
+- `{% include app-screenshots.html slug="countdowns" %}` — a feature section per
+  shot after it, alternating `.split` / `.split.reverse`.
+
+The headline in each section is the app's `SHOT_PROMOS` line for that shot; the
+`alt` text is its `SHOT_DESCRIPTIONS` line. Both are keyed by capture name in the
+app's `.screenshots.conf`, so they follow a shot when the listing reorders. **Fix
+copy there, not here** — a run rewrites the data file in full. The descriptions
+are deliberately alt-text only: they are written for the listing document and say
+things like "over the seeded account".
+
+Shots are **WebP** at the `.phone` cutout's own 2x size, 584x1260. Pages the
+runner cannot feed yet keep hand-written sections: `/myassets/`, `/spritepencil/`
+and `/palette3d/` (those apps have never been captured), `/spriteparty/`
+(unreleased, still JPEG) and `/spaceui/` (wide marketing renders, no `shotN`).
+
 ## Brand
 
 - **Logo:** a glossy droplet/blob filled with the full color wheel — the whole

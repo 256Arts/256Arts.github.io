@@ -42,10 +42,7 @@
                     </div>
                     <p class="tag">iOS, iPadOS, macOS, visionOS</p>
                 </div>
-                <div class="phone">
-                    <img class="screenshot" srcset="shot1.jpg 2x" src="shot1.jpg" alt="Sprite Cutter slicing a spritesheet">
-                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
-                </div>
+                {% include app-hero-shot.html slug="spritecutter" %}
             </section>
         </section>
         <section class="secondary-bg bordered-top">
@@ -54,6 +51,7 @@
                 <h2 class="section-title">One sheet in, every sprite out.</h2>
             </section>
         </section>
+{% include app-screenshots.html slug="spritecutter" %}
         <section class="stage dark-theme">
             <section class="centered">
                 <h2 class="section-title">Get Sprite Cutter.</h2>

@@ -42,10 +42,7 @@
                     </div>
                     <p class="tag">iOS, iPadOS, watchOS, macOS, visionOS</p>
                 </div>
-                <div class="phone">
-                    <img class="screenshot" srcset="shot1.webp 2x" src="shot1.webp" alt="Countdowns list">
-                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
-                </div>
+                {% include app-hero-shot.html slug="countdowns" %}
             </section>
         </section>
         <section class="secondary-bg bordered-top">
@@ -54,6 +51,7 @@
                 <h2 class="section-title">Every date that matters, one list.</h2>
             </section>
         </section>
+{% include app-screenshots.html slug="countdowns" %}
         <section class="stage dark-theme">
             <section class="centered">
                 <h2 class="section-title">Get Countdowns.</h2>

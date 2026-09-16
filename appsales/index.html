@@ -42,10 +42,7 @@
                     </div>
                     <p class="tag">iOS, iPadOS, macOS, visionOS</p>
                 </div>
-                <div class="phone">
-                    <img class="screenshot" srcset="shot1.webp 2x" src="shot1.webp" alt="App Sales widgets">
-                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
-                </div>
+                {% include app-hero-shot.html slug="appsales" %}
             </section>
         </section>
         <section class="secondary-bg bordered-top">
@@ -54,6 +51,7 @@
                 <h2 class="section-title">Your numbers, on the home screen.</h2>
             </section>
         </section>
+{% include app-screenshots.html slug="appsales" %}
         <section class="stage dark-theme">
             <section class="centered">
                 <h2 class="section-title">Get App Sales.</h2>
