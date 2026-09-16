@@ -11,13 +11,29 @@ if (tabs.length) {
     const rows = [...document.querySelectorAll(".nav-row")];
     // The page's own category is the resting state, not "everything closed".
     const current = rows.find((row) => row.classList.contains("current"));
+    // A row only reads as "already under the nav" when it sits at the top of the
+    // window: a pinned row always does, the page's own row only before you scroll.
+    const underNav = (row, pinned) => !!row && (pinned || scrollY < 1);
     // A row you open from the nav is pinned to the window; the page's own row is
     // part of the page, so it scrolls away. A closing row keeps whichever it was,
     // so it slides out from where it sits — off screen either way once closed.
-    const show = (row, pinned) => rows.forEach((other) => {
-        other.classList.toggle("open", other === row);
-        if (other === row) other.classList.toggle("pinned", pinned);
-    });
+    // The slide is for a band arriving at (or leaving) the top edge; going from
+    // one category to another swaps the contents of the band already there.
+    const show = (row, pinned) => {
+        const showing = rows.find((other) => other.classList.contains("open"));
+        const swap = showing && showing !== row &&
+            underNav(showing, showing.classList.contains("pinned")) && underNav(row, pinned);
+        if (swap) [showing, row].forEach((other) => other.classList.add("no-slide"));
+        rows.forEach((other) => {
+            other.classList.toggle("open", other === row);
+            if (other === row) other.classList.toggle("pinned", pinned);
+        });
+        if (!swap) return;
+        // Flush the swapped-in styles before transitions come back, so re-enabling
+        // them does not animate the change that just happened.
+        void document.body.offsetWidth;
+        [showing, row].forEach((other) => other.classList.remove("no-slide"));
+    };
     let restTimer;
 
     const hold = (row) => {

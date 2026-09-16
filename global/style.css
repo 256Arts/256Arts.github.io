@@ -280,6 +280,11 @@ body header.site-header nav {
     transform: translateY(0);
     transition: transform 0.4s var(--ease), visibility 0s;
 }
+/* Swapping between categories is a content change, not a new band arriving:
+   the row that leaves and the row that takes its place skip the slide. */
+.nav-row.no-slide {
+    transition: none;
+}
 .nav-row-apps {
     width: var(--content-width);
     margin: auto;
