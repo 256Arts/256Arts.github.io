@@ -27,35 +27,44 @@
     </head>
     <body ontouchstart>
         {% include header.html %}
-        <section class="banner"></section>
-        <section class="app-info">
-        	<section>
-        		<img src="/apps/icon_countdowns.png" srcset="icon_countdowns.png 2x" class="large-app-icon">
-				<h1 id="title">Countdowns</h1>
-				<h3>Days Until What Matters</h3>
-				<p>Count down to holidays, birthdays, calendar events, and movie and TV release dates</p>
-			</section>
-			<section class="actions">
-				<div>
-					<a class="button filled app-buy secondary" href="https://github.com/256Arts/Countdowns" target="_blank">GitHub</a>
-				</div>
-				<div>
-					<a class="store-badge" href="https://apps.apple.com/app/countdowns/id6476715415" target="_blank">
-						<img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
-					</a>
-					<p class="tag">iOS, iPadOS, watchOS, macOS, visionOS</p>
-				</div>
-			</section>
+        <section class="stage art dark-theme app-hero">
+            <section class="split">
+                <div class="copy">
+                    <img src="/apps/icon_countdowns.png" srcset="icon_countdowns.png 2x" class="large-app-icon" alt="Countdowns icon">
+                    <h1>Countdowns</h1>
+                    <p class="tagline">Days Until What Matters</p>
+                    <p class="summary">Count down to holidays, birthdays, calendar events, and movie and TV release dates.</p>
+                    <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/countdowns/id6476715415" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                        <a class="button large ghost" href="https://github.com/256Arts/Countdowns" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <p class="tag">iOS, iPadOS, watchOS, macOS, visionOS</p>
+                </div>
+                <div class="phone">
+                    <img class="screenshot" srcset="shot1.webp 2x" src="shot1.webp" alt="Countdowns list">
+                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
+                </div>
+            </section>
         </section>
-		<section class="feature">
-			<section>
-				<div class="phone z-stack">
-					<img class="screenshot" srcset="shot1.webp 2x" alt="screenshot" loading="lazy">
-					<img class="device-frame" srcset="/phone.png 2x" alt="phone frame" loading="lazy">
-				</div>
-				<h1>Every date, one list.</h1>
-			</section>
-		</section>
+        <section class="secondary-bg bordered-top">
+            <section class="centered">
+                <p class="eyebrow">The list</p>
+                <h2 class="section-title">Every date that matters, one list.</h2>
+            </section>
+        </section>
+        <section class="stage dark-theme">
+            <section class="centered">
+                <h2 class="section-title">Get Countdowns.</h2>
+                <p class="lead">Holidays, birthdays, releases — counted down on every device.</p>
+                <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/countdowns/id6476715415" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                </div>
+            </section>
+        </section>
         {% include footer.html %}
 	</body>
 </html>

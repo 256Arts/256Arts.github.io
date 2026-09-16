@@ -1,6 +1,7 @@
 # Released apps only — unreleased apps are deliberately left out (see AGENTS.md).
 # Drives the header's category tabs and their apps rows.
 # title = nav label when there is room, short = compact label.
+# home: false keeps a group out of the home page's lineup (nav still shows it).
 groups:
   - title: Graphics Apps
     short: Graphics
@@ -46,6 +47,7 @@ groups:
         icon: /apps/icon_brickdeals.png
   - title: Fun Stuff
     short: Fun
+    home: false
     apps:
       - name: Space UI
         tagline: Sci-fi interfaces

@@ -27,35 +27,44 @@
     </head>
     <body ontouchstart>
         {% include header.html %}
-        <section class="banner"></section>
-        <section class="app-info">
-        	<section>
-        		<img src="/apps/icon_palette3d.webp" srcset="icon_palette3d.webp 2x" class="large-app-icon">
-				<h1 id="title">Palette Studio</h1>
-				<h3>Explore Colors in 3D</h3>
-				<p>Palette Studio lets you explore and generate color palettes in a 3D space using advanced color models like OKLab and OKLCH.</p>
-			</section>
-			<section class="actions">
-				<div>
-					<a class="button filled app-buy secondary" href="https://github.com/256Arts/Palette-3D" target="_blank">GitHub</a>
-				</div>
-				<div>
-					<a class="store-badge" href="https://apps.apple.com/app/palette-3d/id6670776239" target="_blank">
-						<img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
-					</a>
-					<p class="tag">iOS, iPadOS, visionOS</p>
-				</div>
-			</section>
+        <section class="stage art dark-theme app-hero">
+            <section class="split">
+                <div class="copy">
+                    <img src="/apps/icon_palette3d.webp" srcset="icon_palette3d.webp 2x" class="large-app-icon" alt="Palette Studio icon">
+                    <h1>Palette Studio</h1>
+                    <p class="tagline">Explore Colors in 3D</p>
+                    <p class="summary">Palette Studio lets you explore and generate color palettes in a 3D space using advanced color models like OKLab and OKLCH.</p>
+                    <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/palette-3d/id6670776239" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                        <a class="button large ghost" href="https://github.com/256Arts/Palette-3D" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <p class="tag">iOS, iPadOS, visionOS</p>
+                </div>
+                <div class="phone">
+                    <img class="screenshot" srcset="shot1.webp 2x" src="shot1.webp" alt="Palette Studio color space">
+                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
+                </div>
+            </section>
         </section>
-		<section class="feature">
-			<section>
-				<div class="phone z-stack">
-					<img class="screenshot" srcset="shot1.webp 2x" alt="screenshot" loading="lazy">
-					<img class="device-frame" srcset="/phone.png 2x" alt="phone frame" loading="lazy">
-				</div>
-				<h1>Explore in 3D.</h1>
-			</section>
-		</section>
+        <section class="secondary-bg bordered-top">
+            <section class="centered">
+                <p class="eyebrow">Color space</p>
+                <h2 class="section-title">Colors you can walk around in.</h2>
+            </section>
+        </section>
+        <section class="stage dark-theme">
+            <section class="centered">
+                <h2 class="section-title">Get Palette Studio.</h2>
+                <p class="lead">Build palettes in OKLab and OKLCH, not in guesswork.</p>
+                <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/palette-3d/id6670776239" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                </div>
+            </section>
+        </section>
         {% include footer.html %}
 	</body>
 </html>

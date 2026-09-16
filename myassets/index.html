@@ -27,35 +27,44 @@
     </head>
     <body ontouchstart>
         {% include header.html %}
-        <section class="banner"></section>
-        <section class="app-info">
-        	<section>
-        		<img src="/apps/icon_myassets.png" srcset="icon_myassets.png 2x" class="large-app-icon">
-				<h1 id="title">My Assets</h1>
-				<h3>Income & Expenses</h3>
-				<p>Track your money going in and out, with this simple birds-eye-view of your finances.</p>
-			</section>
-			<section class="actions">
-				<div>
-					<a class="button filled app-buy secondary" href="https://github.com/256Arts/My-Assets" target="_blank">GitHub</a>
-				</div>
-				<div>
-					<a class="store-badge" href="https://apps.apple.com/app/my-assets/id1592367070" target="_blank">
-						<img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
-					</a>
-					<p class="tag">iOS, iPadOS, macOS, visionOS</p>
-				</div>
-			</section>
+        <section class="stage art dark-theme app-hero">
+            <section class="split">
+                <div class="copy">
+                    <img src="/apps/icon_myassets.png" srcset="icon_myassets.png 2x" class="large-app-icon" alt="My Assets icon">
+                    <h1>My Assets</h1>
+                    <p class="tagline">Income &amp; Expenses</p>
+                    <p class="summary">Track your money going in and out, with this simple birds-eye-view of your finances.</p>
+                    <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/my-assets/id1592367070" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                        <a class="button large ghost" href="https://github.com/256Arts/My-Assets" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <p class="tag">iOS, iPadOS, macOS, visionOS</p>
+                </div>
+                <div class="phone">
+                    <img class="screenshot" srcset="shot1.jpg 2x" src="shot1.jpg" alt="My Assets overview">
+                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
+                </div>
+            </section>
         </section>
-		<section class="feature">
-			<section>
-				<div class="phone z-stack">
-					<img class="screenshot" srcset="shot1.jpg 2x" alt="screenshot" loading="lazy">
-					<img class="device-frame" srcset="/phone.png 2x" alt="phone frame" loading="lazy">
-				</div>
-				<h1>Keep assets, debts, income, and expenses organized.</h1>
-			</section>
-		</section>
+        <section class="secondary-bg bordered-top">
+            <section class="centered">
+                <p class="eyebrow">Overview</p>
+                <h2 class="section-title">Keep assets, debts, income and expenses organized.</h2>
+            </section>
+        </section>
+        <section class="stage dark-theme">
+            <section class="centered">
+                <h2 class="section-title">Get My Assets.</h2>
+                <p class="lead">One clear picture of where your money stands.</p>
+                <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/my-assets/id1592367070" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                </div>
+            </section>
+        </section>
         {% include footer.html %}
 	</body>
 </html>

@@ -26,36 +26,100 @@
     </head>
     <body ontouchstart>
         {% include header.html %}
-		<section class="banner dark-theme">
-			<section class="intro">
-				<img srcset="profile.png 2x" alt="256 Arts logo">
-				<h1>Welcome to <span class="spectrum-text">256&nbsp;Arts</span></h1>
-				<p>Open source apps &amp; art for Apple platforms.</p>
-				<a class="button filled" href="/spritepencil/">Explore Apps</a>
-		    </section>
-		</section>
+        <section class="stage dark-theme hero">
+            <section class="centered">
+                <p class="eyebrow">Independent studio &middot; Apple platforms</p>
+                <h1 class="title">Open software meets art on <span class="spectrum-text">Apple&nbsp;platforms</span>.</h1>
+                <p class="lead">Beautiful native apps for drawing, color and everyday life &mdash; built with the same care as the artwork they help you make.</p>
+                <div class="button-row">
+                    <a class="button filled large" href="#lineup">Explore the Apps</a>
+                    <a class="button large ghost" href="https://github.com/256Arts" target="_blank" rel="noopener">View on GitHub</a>
+                </div>
+                <div class="hero-devices">
+                    <div class="phone">
+                        <img class="screenshot" srcset="/appsales/shot1.webp 2x" src="/appsales/shot1.webp" alt="App Sales">
+                        <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
+                    </div>
+                    <div class="phone">
+                        <img class="screenshot" srcset="/spritepencil/shot1.jpg 2x" src="/spritepencil/shot1.jpg" alt="Sprite Pencil">
+                        <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
+                    </div>
+                    <div class="phone">
+                        <img class="screenshot" srcset="/palette3d/shot1.webp 2x" src="/palette3d/shot1.webp" alt="Palette Studio">
+                        <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
+                    </div>
+                </div>
+            </section>
+        </section>
         <hr class="spectrum-bar">
-        <section class="secondary-bg">
-            <section class="mission">
-                <h1>Mission</h1>
-                <p>Creating apps &amp; art. Clear UI. No tracking.</p>
+        <section id="craft">
+            <section class="split">
+                <div class="copy">
+                    <p class="eyebrow">Craft</p>
+                    <h2 class="section-title">Made like art, shipped like software.</h2>
+                    <p>Every pixel, cursor and animation is placed on purpose. The drawing engine behind Sprite Pencil was written from scratch so the brush feels right in the hand &mdash; and it is all out in the open, so you can read it, file an issue, or send a pull request.</p>
+                    <p><a href="https://github.com/256Arts" target="_blank" rel="noopener">Browse the code &rarr;</a></p>
+                </div>
+                <div class="craft-card">
+                    <div class="phone bleed">
+                        <img class="screenshot" srcset="/spritepencil/shot2.jpg 2x" src="/spritepencil/shot2.jpg" alt="Sprite Pencil drawing tools" loading="lazy">
+                        <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="" loading="lazy">
+                    </div>
+                </div>
             </section>
         </section>
-        <section>
-            <section>
-                <form class="contact-form">
-                    <h1>Get in Touch</h1>
-                    <input id="name" type="text" placeholder="Name" onchange="updateBody()">
-                    <textarea id="message" class="message" placeholder="What can I help you with?" rows="6" onchange="updateBody()"></textarea>
-                    <div class="g-recaptcha" data-sitekey="6LcQcSYUAAAAALtjWvhPbze67F7y-HcDY5XD6F6R" data-callback="gRecaptchaTrue" data-expired-callback="gRecaptchaFalse"></div>
-                    <a class="button disabled" id="review-message">Review Message</a>
-                </form>
+        <section class="secondary-bg bordered">
+            <section class="split reverse">
+                <div class="copy">
+                    <p class="eyebrow">Everyday</p>
+                    <h2 class="section-title">The same care, for the rest of your day.</h2>
+                    <p>Watch your net worth, follow your App Store sales, count down to what matters. Small, sharp apps that stay out of the way.</p>
+                </div>
+                <div class="phone">
+                    <img class="screenshot" srcset="/myassets/shot1.jpg 2x" src="/myassets/shot1.jpg" alt="My Assets" loading="lazy">
+                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="" loading="lazy">
+                </div>
             </section>
         </section>
-        <script async src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script async src="/contact/contact.js"></script>
-        <script async src="script.js"></script>
-        <script async src='https://www.google.com/recaptcha/api.js'></script>
+        <section class="clipped">
+            <section class="centered">
+                <p class="eyebrow">Design</p>
+                <h2 class="section-title">Clear UI, built from the platform up.</h2>
+                <p class="lead">Native controls, real keyboard shortcuts, Apple Pencil and trackpad support &mdash; so the apps feel like they came with the system.</p>
+                <div class="phone bleed">
+                    <img class="screenshot" srcset="/palette3d/shot1.webp 2x" src="/palette3d/shot1.webp" alt="Palette Studio colors in 3D space" loading="lazy">
+                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="" loading="lazy">
+                </div>
+            </section>
+        </section>
+        <section id="lineup" class="secondary-bg">
+            <section class="lineup">
+                <p class="eyebrow">The lineup</p>
+                <h2 class="section-title">The apps.</h2>
+                {%- for group in site.data.apps.groups %}
+                {%- if group.home == false %}{% continue %}{% endif %}
+                <h3 class="group-title">{{ group.title }}</h3>
+                <div class="card-grid">
+                    {%- for app in group.apps %}
+                    <a class="card" href="{{ app.url }}">
+                        <img srcset="{{ app.icon }} 2x" src="{{ app.icon }}" alt="" loading="lazy">
+                        <span><strong>{{ app.name }}</strong><small>{{ app.tagline }}</small></span>
+                    </a>
+                    {%- endfor %}
+                </div>
+                {%- endfor %}
+            </section>
+        </section>
+        <section class="stage dark-theme">
+            <section class="centered">
+                <h2 class="section-title">Start with Sprite Pencil.</h2>
+                <p class="lead">The easiest way to create and edit pixel art on the go. iPhone, iPad and Mac.</p>
+                <div class="button-row">
+                    <a class="button filled large" href="/spritepencil/">See Sprite Pencil</a>
+                    <a class="button large ghost" href="https://discord.gg/WZrTPqP" target="_blank" rel="noopener">Join the Community</a>
+                </div>
+            </section>
+        </section>
         {% include footer.html %}
     </body>
 </html>

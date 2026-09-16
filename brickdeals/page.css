@@ -1,17 +1,4 @@
-@supports (-webkit-background-clip: text) {
-    #title {
-        background: linear-gradient(#C42E24 0%, #C42E24 49.9%, var(--heading-text-color) 50.1%, var(--heading-text-color) 100%);
-        background-attachment: fixed;
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-    }
-}
-.banner {
-    background: linear-gradient(160deg, #F2B300, #C42E24 55%, #8C1A14);
-    height: 280px;
-}
-@media (prefers-color-scheme: dark) {
-	.banner {
-		background: linear-gradient(160deg, #9E7400, #7E1E17 55%, #4D0E0B);
-	}
+.app-hero {
+    --app-color: #C42E24;
+    --stage-art: linear-gradient(160deg, #F2B300, #C42E24 55%, #8C1A14);
 }

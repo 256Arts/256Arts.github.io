@@ -73,11 +73,15 @@ row it opens from the nav, so a hovered or focused row is an overlay that stays
 at the top of the window; resting back on the page's own row drops the class.
 A closing row keeps whichever it had — it is off screen once closed either way.
 
+An app page opens its own row on load, so its hero clears it by
+`--row-clearance` instead of `--header-clearance`. Every other page's first
+section uses `--header-clearance`.
+
 The row for the category the current page belongs to carries `current open` in
 the HTML, so an app page shows its own apps row on load and leaving the nav
 returns to that row rather than closing everything. Visitors still see one
 category at a time, so the graphics apps are never presented alongside the
-Minecraft data packs. App pages start with a `.banner`, which the row floats
+Minecraft data packs. App pages start with an `.app-hero`, which the row floats
 over.
 
 [global/menu.js](global/menu.js) is **behaviour only**: pointer devices drop a
@@ -142,12 +146,42 @@ hardcoding values:
 - `--content-width`, `--section-space`, `--radius-sm/lg`, `--ease` — layout rhythm.
 - `--header-height` / `--header-clearance` — the floating nav's size and the room
   content needs to clear it.
-- `--badge-height` — store badge size (48px, 44px compact). The `.app-buy` pills
-  match it so the actions row lines up.
+- `--badge-height` — store badge size (48px, 44px compact).
+- `--app-color` — the app's own accent, used by its hero `.tagline`.
+- `--stage-art` — the artwork or gradient lighting a `.stage.art` (absolute URLs
+  only).
 
 The nav **floats over the content**: page backgrounds run to the top of the
-window, and the first section pads itself down by `--header-clearance` unless it
-is a `.banner`, which runs full-bleed behind the nav. There is no spacer element.
+window, and the first section pads itself down by `--header-clearance` (or
+`--row-clearance` for an `.app-hero`). There is no spacer element.
+
+## Page structure
+
+Pages are built from a small set of shared components in `global/style.css` —
+reach for these before writing anything page-specific:
+
+- `.stage` — a dark section lit from behind by the colour wheel. Pair it with
+  `.dark-theme` so headings and links take their dark values. Used for the home
+  hero, every app hero and the closing call to action.
+- `.stage.art` — same section, lit by the page's own artwork instead. The page
+  sets `--stage-art`, which may be a `url()` **or** a gradient. The URL must be
+  **absolute** (`url("/spritepencil/banner.png")`): a custom property's relative
+  URL resolves against `global/style.css`, not the page's own `page.css`.
+- `.split` / `.split.reverse` — the alternating two-column feature block
+  (`.copy` on one side, a device on the other), collapsing to one column.
+- `.phone` — a screenshot sitting in `/phone.png`'s cutout; `.phone.landscape`
+  uses `/phone_landscape.png`. `.bleed` runs it off the bottom of a `.clipped`
+  section.
+- `.card` / `.card-grid` — the app lineup and an app's supported features
+  (`.card.compact`).
+- `.eyebrow`, `.section-title`, `.group-title`, `.lead` — the type rhythm.
+- `.app-hero` — an app page's opening section: icon, name, `.tagline` (coloured
+  by the page's `--app-color`), `.summary`, `.button-row` and `.tag`.
+
+The home page's lineup is generated from `_data/apps.yml`, so a new app appears
+in the nav and in the lineup from the same entry. A group marked `home: false`
+is kept out of the lineup but still shown in the nav — **Fun Stuff** is, so the
+home page stays about the Apple apps.
 
 Type is Inter (loaded via `@import` in `global/style.css`) with the SF Pro / system
 stack as fallback. Headings use fluid `clamp()` sizing and negative letter-spacing.
@@ -160,6 +194,13 @@ pill: `global/app-store-badge.svg` for the App Store,
 wrapping the `<img>` — badge artwork is never recoloured or restyled, only scaled
 to `--badge-height`. Sources live in `Raw Assets/` (excluded from the build).
 
-Secondary links (GitHub, web app) stay `.button filled app-buy secondary` pills.
-They sit beside the badge in `<section class="actions">`, one `<div>` per link so
-its `.tag` (platform list) sits underneath.
+Secondary links (GitHub, web app) are `.button large ghost` pills. Every button
+is a **capsule** (`border-radius: 999px`) so the pills match the store badge
+beside them. Badge and pills share the hero's `.button-row`, with the platform
+list in a `.tag` paragraph underneath. The closing `.stage` repeats the badge on
+its own.
+
+A page whose art is a wide marketing render rather than a device screenshot
+skips the hero's `.split` and uses `.centered` instead — the render runs
+**full-bleed** in its own section below, never boxed in a card. See
+`spaceui/`.

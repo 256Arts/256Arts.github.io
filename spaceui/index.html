@@ -27,32 +27,42 @@
     </head>
     <body class="dark-theme" ontouchstart>
         {% include header.html %}
-        <section class="banner"></section>
-        <section class="app-info">
-        	<section>
-        		<img src="/apps/icon_spaceui.png" srcset="icon_spaceui.png 2x" class="large-app-icon">
-				<h1 id="title">Space UI</h1>
-				<h3>Procedural Sci-Fi Interfaces</h3>
-				<p>Generate and access great, realistic looking sci-fi user interfaces for use in TV and film production.</p>
-			</section>
-			<section class="actions">
-				<div>
-					<a class="button filled app-buy secondary" href="https://github.com/256Arts/Space-UI" target="_blank">GitHub</a>
-				</div>
-				<div>
-					<a class="store-badge" href="https://apps.apple.com/app/space-ui/id1494402514" target="_blank">
-						<img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
-					</a>
-					<p class="tag">iOS, iPadOS, macOS, tvOS</p>
-				</div>
-			</section>
+        <section class="stage art dark-theme app-hero">
+            <section class="centered">
+                <img src="/apps/icon_spaceui.png" srcset="icon_spaceui.png 2x" class="large-app-icon" alt="Space UI icon">
+                <h1>Space UI</h1>
+                <p class="tagline">Procedural Sci-Fi Interfaces</p>
+                <p class="summary">Generate and access great, realistic looking sci-fi user interfaces for use in TV and film production.</p>
+                <div class="button-row">
+                    <a class="store-badge" href="https://apps.apple.com/app/space-ui/id1494402514" target="_blank" rel="noopener">
+                        <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                    </a>
+                    <a class="button large ghost" href="https://github.com/256Arts/Space-UI" target="_blank" rel="noopener">GitHub</a>
+                </div>
+                <p class="tag">iOS, iPadOS, macOS, tvOS</p>
+            </section>
         </section>
-		<section class="full-promo">
-			<picture>
-				<source srcset="promo_small_2x.jpg" media="(max-width: 490px)">
-				<img src="promo_large.jpg" srcset="promo_large_2x.jpg 2x" alt="space ui on a mac and ipad">
-			</picture>
-		</section>
+        <section class="clipped promo">
+            <section class="centered">
+                <p class="eyebrow">On set</p>
+                <h2 class="section-title">A bridge full of screens, generated on demand.</h2>
+            </section>
+            <picture>
+                <source srcset="promo_small_2x.jpg" media="(max-width: 490px)">
+                <img src="promo_large.jpg" srcset="promo_large_2x.jpg 2x" alt="Space UI running on a Mac and iPad" loading="lazy">
+            </picture>
+        </section>
+        <section class="stage dark-theme">
+            <section class="centered">
+                <h2 class="section-title">Get Space UI.</h2>
+                <p class="lead">Endless sci-fi interfaces, on every screen in the shot.</p>
+                <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/space-ui/id1494402514" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                </div>
+            </section>
+        </section>
         {% include footer.html %}
 	</body>
 </html>

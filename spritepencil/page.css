@@ -1,54 +1,35 @@
-@supports (-webkit-background-clip: text) {
-    #title {
-        background: linear-gradient(#F0CA00 0%, #F0CA00 49.9%, var(--heading-text-color) 50.1%, var(--heading-text-color) 100%);
-        background-attachment: fixed;
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-    }
+.app-hero {
+    --app-color: #F0CA00;
+    --stage-art: url("/spritepencil/banner.png");
 }
-.banner {
-    background: url("banner.png") no-repeat center center;
-    background-size: cover;
+/* The banner is pixel art — keep the pixels crisp. */
+.app-hero::before {
     image-rendering: crisp-edges;
 }
 @supports (image-rendering: pixelated) {
-    .banner {
+    .app-hero::before {
         image-rendering: pixelated;
     }
 }
-.banner .credit-link {
+.credit-link {
+    position: relative;
+    z-index: 1;
+    display: block;
     padding: 8px 16px;
+    text-align: right;
     opacity: 0;
     color: #fffb;
-    float: right;
     text-shadow: 0 0 8px #000;
     font-size: 11px;
-    transition: 0.2s;
 }
-.banner:hover .credit-link {
+.app-hero:hover .credit-link,
+.credit-link:focus-visible {
     opacity: 1;
 }
-.supported-features {
-    background-color: var(--secondary-bg-color);
+.clipped .phone {
+    width: 360px;
+    margin-top: 48px;
 }
-.supported-features h3 {
-    text-align: left;
-}
-.supported-features section {
-    width: 256px;
-}
-.supported-features ul {
-    padding: 0;
-}
-.supported-features li {
-    list-style: none;
-    text-align: left;
-}
-.supported-features img {
-    border-radius: 7px;
-    vertical-align: middle;
-}
-.supported-features h4 {
-    display: inline-block;
-    font-weight: 500;
+.supports {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }

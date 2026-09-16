@@ -27,35 +27,44 @@
     </head>
     <body ontouchstart>
         {% include header.html %}
-        <section class="banner"></section>
-        <section class="app-info">
-        	<section>
-        		<img src="/apps/icon_giftslist.png" srcset="icon_giftslist.png 2x" class="large-app-icon">
-				<h1 id="title">Gift Lists</h1>
-				<h3>Organize Your Holiday Shopping</h3>
-				<p>Organize your holiday shopping list and categorize it by your gift recipients to make sure you don't leave anyone out!</p>
-			</section>
-			<section class="actions">
-				<div>
-					<a class="button filled app-buy secondary" href="https://github.com/256Arts/Holiday-Gifts-List" target="_blank">GitHub</a>
-				</div>
-				<div>
-					<a class="store-badge" href="https://apps.apple.com/app/holiday-gifts-list/id6444738623" target="_blank">
-						<img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
-					</a>
-					<p class="tag">iOS, iPadOS, watchOS, macOS, visionOS</p>
-				</div>
-			</section>
+        <section class="stage art dark-theme app-hero">
+            <section class="split">
+                <div class="copy">
+                    <img src="/apps/icon_giftslist.png" srcset="icon_giftslist.png 2x" class="large-app-icon" alt="Gift Lists icon">
+                    <h1>Gift Lists</h1>
+                    <p class="tagline">Organize Your Holiday Shopping</p>
+                    <p class="summary">Organize your holiday shopping list and categorize it by your gift recipients to make sure you don&rsquo;t leave anyone out!</p>
+                    <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/holiday-gifts-list/id6444738623" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                        <a class="button large ghost" href="https://github.com/256Arts/Holiday-Gifts-List" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <p class="tag">iOS, iPadOS, watchOS, macOS, visionOS</p>
+                </div>
+                <div class="phone">
+                    <img class="screenshot" srcset="shot1.webp 2x" src="shot1.webp" alt="Gift Lists by recipient">
+                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
+                </div>
+            </section>
         </section>
-		<section class="feature">
-			<section>
-				<div class="phone z-stack">
-					<img class="screenshot" srcset="shot1.webp 2x" alt="screenshot" loading="lazy">
-					<img class="device-frame" srcset="/phone.png 2x" alt="phone frame" loading="lazy">
-				</div>
-				<h1>Track your nice list.</h1>
-			</section>
-		</section>
+        <section class="secondary-bg bordered-top">
+            <section class="centered">
+                <p class="eyebrow">Recipients</p>
+                <h2 class="section-title">Track your nice list.</h2>
+            </section>
+        </section>
+        <section class="stage dark-theme">
+            <section class="centered">
+                <h2 class="section-title">Get Gift Lists.</h2>
+                <p class="lead">Everyone on the list, nobody left out.</p>
+                <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/holiday-gifts-list/id6444738623" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                </div>
+            </section>
+        </section>
         {% include footer.html %}
 	</body>
 </html>

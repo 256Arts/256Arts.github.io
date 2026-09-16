@@ -1,12 +1,4 @@
-@supports (-webkit-background-clip: text) {
-    #title {
-        background: linear-gradient(#48BA43 0%, #48BA43 49.9%, var(--heading-text-color) 50.1%, var(--heading-text-color) 100%);
-        background-attachment: fixed;
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-    }
-}
-.banner {
-    background: url("banner.jpg") no-repeat center center;
-    background-size: cover;
+.app-hero {
+    --app-color: #48BA43;
+    --stage-art: url("/myassets/banner.jpg");
 }

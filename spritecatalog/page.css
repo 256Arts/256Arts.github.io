@@ -1,18 +1,13 @@
-@supports (-webkit-background-clip: text) {
-    #title {
-        background: linear-gradient(#5EB5FA 0%, #5EB5FA 49.9%, var(--heading-text-color) 50.1%, var(--heading-text-color) 100%);
-        background-attachment: fixed;
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-    }
+.app-hero {
+    --app-color: #5EB5FA;
+    --stage-art: url("/spritecatalog/banner.jpg");
 }
-.banner {
-    background: url("banner.jpg") no-repeat center center;
-    background-size: cover;
+/* The banner is pixel art — keep the pixels crisp. */
+.app-hero::before {
     image-rendering: crisp-edges;
 }
 @supports (image-rendering: pixelated) {
-    .banner {
+    .app-hero::before {
         image-rendering: pixelated;
     }
 }

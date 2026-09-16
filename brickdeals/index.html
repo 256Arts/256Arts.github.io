@@ -27,35 +27,44 @@
     </head>
     <body ontouchstart>
         {% include header.html %}
-        <section class="banner"></section>
-        <section class="app-info">
-        	<section>
-        		<img src="/apps/icon_brickdeals.png" srcset="icon_brickdeals.png 2x" class="large-app-icon">
-				<h1 id="title">Brick Deals</h1>
-				<h3>Your Brick Building Companion</h3>
-				<p>Find the best discounts on LEGO sets, filter them by theme, and see what each set is really worth</p>
-			</section>
-			<section class="actions">
-				<div>
-					<a class="button filled app-buy secondary" href="https://github.com/256Arts/Brick-Deals" target="_blank">GitHub</a>
-				</div>
-				<div>
-					<a class="store-badge" href="https://apps.apple.com/app/brick-deals/id1576280300" target="_blank">
-						<img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
-					</a>
-					<p class="tag">iOS, iPadOS, macOS</p>
-				</div>
-			</section>
+        <section class="stage art dark-theme app-hero">
+            <section class="split">
+                <div class="copy">
+                    <img src="/apps/icon_brickdeals.png" srcset="icon_brickdeals.png 2x" class="large-app-icon" alt="Brick Deals icon">
+                    <h1>Brick Deals</h1>
+                    <p class="tagline">Your Brick Building Companion</p>
+                    <p class="summary">Find the best discounts on LEGO sets, filter them by theme, and see what each set is really worth.</p>
+                    <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/brick-deals/id1576280300" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                        <a class="button large ghost" href="https://github.com/256Arts/Brick-Deals" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <p class="tag">iOS, iPadOS, macOS</p>
+                </div>
+                <div class="phone">
+                    <img class="screenshot" srcset="shot1.webp 2x" src="shot1.webp" alt="Brick Deals set discounts">
+                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
+                </div>
+            </section>
         </section>
-		<section class="feature">
-			<section>
-				<div class="phone z-stack">
-					<img class="screenshot" srcset="shot1.webp 2x" alt="screenshot" loading="lazy">
-					<img class="device-frame" srcset="/phone.png 2x" alt="phone frame" loading="lazy">
-				</div>
-				<h1>Never pay full price.</h1>
-			</section>
-		</section>
+        <section class="secondary-bg bordered-top">
+            <section class="centered">
+                <p class="eyebrow">Deals</p>
+                <h2 class="section-title">Never pay full price.</h2>
+            </section>
+        </section>
+        <section class="stage dark-theme">
+            <section class="centered">
+                <h2 class="section-title">Get Brick Deals.</h2>
+                <p class="lead">Every discount worth knowing about, sorted by what a set is really worth.</p>
+                <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/brick-deals/id1576280300" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                </div>
+            </section>
+        </section>
         {% include footer.html %}
 	</body>
 </html>

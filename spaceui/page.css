@@ -1,26 +1,14 @@
-@supports (-webkit-background-clip: text) {
-    #title {
-        background: linear-gradient(#00B9EE 0%, #00B9EE 49.9%, var(--heading-text-color) 50.1%, var(--heading-text-color) 100%);
-        background-attachment: fixed;
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-    }
+.app-hero {
+    --app-color: #00B9EE;
+    --stage-art: url("/spaceui/banner.png");
 }
-.banner {
-    background: url("banner.png") no-repeat center center;
-    background-size: cover;
-    height: 340px;
+/* The promo render is the page's hero image: always full-bleed, never boxed. */
+.promo {
+    padding-bottom: 0;
 }
-.full-promo {
-    padding: 0;
-}
-.full-promo img {
-    width: 100vw;
+.promo picture img {
+    display: block;
+    width: 100%;
     height: auto;
-    margin: 0;
-}
-@media (max-width: 490px) {
-    .links {
-        display: none;
-    }
+    margin: 48px 0 0;
 }

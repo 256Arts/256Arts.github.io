@@ -27,23 +27,18 @@
     </head>
     <body ontouchstart>
         {% include header.html %}
-        <section class="app-info">
-            <section></section>
-            <section></section>
-        	<section>
-        		<img src="/apps/icon_spencil.png" srcset="/spritepencil/icon_spencil.png 2x" class="large-app-icon">
-				<h1 id="title">Sprite Pencil</h1>
-				<h3>Create Pixel Art</h3>
-				<p>Download Sprite Pencil to continue.</p>
-			</section>
-			<section class="actions">
-				<div>
-					<a class="store-badge" href="https://apps.apple.com/app/sprite-pencil/id1437835952" target="_blank">
-						<img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
-					</a>
-					<p class="tag">iOS, iPadOS, macOS</p>
-				</div>
-			</section>
+        <section class="stage dark-theme">
+            <section class="centered">
+                <img src="/apps/icon_spencil.png" srcset="/spritepencil/icon_spencil.png 2x" class="large-app-icon" alt="Sprite Pencil icon">
+                <h1 class="section-title">Sprite Pencil</h1>
+                <p class="lead">Download Sprite Pencil to continue.</p>
+                <div class="button-row">
+                    <a class="store-badge" href="https://apps.apple.com/app/sprite-pencil/id1437835952" target="_blank" rel="noopener">
+                        <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                    </a>
+                </div>
+                <p class="tag">iOS, iPadOS, macOS</p>
+            </section>
         </section>
         {% include footer.html %}
 	</body>

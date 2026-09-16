@@ -17,6 +17,8 @@
     --content-width: 1080px;
     --header-height: 46px;
     --header-clearance: calc(var(--header-height) + max(10px, env(safe-area-inset-top)) + 20px);
+    /* An app page opens its own apps row on load; its hero starts below it. */
+    --row-clearance: calc(var(--header-clearance) + 156px);
     --section-space: clamp(48px, 8vw, 96px);
     --badge-height: 48px;
     --radius-sm: 10px;
@@ -127,7 +129,7 @@ body section {
     padding: var(--section-space) 0;
 }
 /* Content runs to the top of the page; the nav floats on top of it. */
-body > section:first-of-type:not(.banner) {
+body > section:first-of-type:not(.app-hero) {
     padding-top: calc(var(--header-clearance) + 16px);
 }
 body section.secondary-bg {
@@ -406,11 +408,6 @@ footer section a:hover {
 }
 
 /* General */
-.banner {
-    height: 540px;
-    padding: 0;
-    background-color: #888;
-}
 .button, img, figcaption, input, textarea {
     margin: 4px;
 }
@@ -476,7 +473,7 @@ button, .button {
     line-height: 36px;
     padding: 0 18px;
     display: inline-block;
-    border-radius: var(--border-radius);
+    border-radius: 999px;
     border: none;
 }
 .button:hover {
@@ -498,6 +495,27 @@ button, .button {
 .button.filled:hover {
     background-image: none;
     background-color: color-mix(in srgb, var(--accent-color) 90%, #fff);
+}
+.button.large {
+    font-size: 17px;
+    line-height: 50px;
+    padding: 0 28px;
+}
+.button.filled.large {
+    line-height: 50px;
+    box-shadow: 0 8px 24px rgba(255, 45, 70, 0.4);
+}
+/* Translucent button, for use on a .stage */
+.button.ghost {
+    color: #fff;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.button.ghost:hover {
+    color: #fff;
+    background-image: none;
+    background-color: rgba(255, 255, 255, 0.16);
 }
 .button.disabled {
     color: #aaa;
@@ -563,66 +581,14 @@ pre code {
     justify-content: center;
     align-content: center;
 }
-.z-stack {
-    display: inline-grid;
-    align-items: center;
-    justify-items: center;
-}
-.z-stack > * {
-    grid-area: 1/1/1/1;
-}
 .invert-text {
     color: var(--inverted-text-color);
 }
 
-/* Page-Specific */
-.app-info section:first-child {
-    margin-top: calc(-96px - var(--section-space));
-}
-.app-info section div {
-    display: inline-block;
-    vertical-align: top;
-}
-.app-info h1 {
-    font-size: 40px;
-}
-.app-info h3 {
-    font-size: 22px;
-    margin-top: -8px;
-    margin-bottom: 12px;
-}
-.app-info .actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 4px 12px;
-}
-.app-info .actions > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.button.app-buy {
-    display: inline-block;
-    background-color: #08f;
-    color: #fff;
-    min-width: 120px;
-    line-height: var(--badge-height);
-    border-radius: calc(var(--badge-height) / 2);
-    font-size: 20px;
-    font-weight: 600;
-}
-.button.app-buy:hover {
-    text-decoration: none;
-    color: #fff;
-}
-.button.app-buy.secondary {
-    color: var(--accent-color);
-    background: var(--control-color);
-}
-.button.app-buy.secondary:hover {
-    color: var(--accent-color);
+.tag {
+    color: var(--secondary-text-color);
+    font-size: 0.9em;
+    padding-top: 8px;
 }
 /* Official store badges (App Store, Modrinth) — artwork is never restyled,
    only scaled to --badge-height. */
@@ -647,78 +613,9 @@ pre code {
 .store-badge:active {
     transform: translateY(0) scale(0.98);
 }
-.app-info .tag {
-    color: var(--secondary-text-color);
-    font-size: 0.9em;
-    padding-top: 8px;
-}
-.full {
-    width: 100vw;
-}
-.feature {
-    background: linear-gradient(var(--secondary-bg-color), var(--bg-color));
-}
-.feature section {
-    display: flex;
-    align-items: center;
-}
-.feature.feature-pad section {
-    flex-direction: column;
-}
-.feature section .caption {
-    margin: 0 auto;
-    text-align: left;
-}
-.feature section h1 {
-    font-size: 44px;
-    text-align: left;
-    width: 400px;
-}
-.feature section a {
-	padding: 4px;
-}
-.feature.feature-pad section h1 {
-    width: initial;
-}
-@media (max-width: 490px) /* Compact Width */ {
-    :root {
-        --badge-height: 44px;
-    }
-    .app-info h1 {
-        font-size: 34px;
-    }
-    .app-info h3 {
-        font-size: 20px;
-        margin-top: -6px;
-        margin-bottom: 10px;
-    }
-    .feature section {
-        flex-direction: column;
-    }
-    .feature section .caption {
-	    text-align: center;
-	}
-    .feature section h1 {
-        font-size: 40px;
-        text-align: center;
-        width: initial;
-    }
-}
 .screenshot {
     border-radius: 32px;
     max-width: 96%;
-}
-.features {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.links a {
-    margin: 8px 16px;
-    display: inline-block;
-}
-.links .badges a {
-    margin: initial;
 }
 .large-app-icon {
     border-radius: 28px;
@@ -752,6 +649,294 @@ form.contact-form {
     color: var(--inverted-text-color);
     border: none;
     border-radius: 14px 14px 0 14px;
+}
+
+/* Stages, splits and cards — the shared page building blocks */
+
+/* A dark section lit from behind by the color wheel. Pair with .dark-theme so
+   headings, links and eyebrows pick up their dark-mode values. */
+.stage {
+    position: relative;
+    overflow: hidden;
+    background-color: #0b0b0d;
+}
+.stage::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    transform: translateX(-50%);
+    background: var(--spectrum-conic);
+    filter: blur(100px) saturate(130%);
+    opacity: 0.45;
+}
+.stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 30%, transparent 20%, #0b0b0d 78%);
+}
+.stage > section {
+    position: relative;
+    z-index: 1;
+}
+/* Art-directed variant: the app's own banner art lights the stage instead of
+   the spectrum. Pages set the image with `--stage-art: url("banner.jpg")`. */
+.stage.art::before {
+    inset: 0;
+    width: auto;
+    height: auto;
+    transform: none;
+    background: var(--stage-art) no-repeat center center;
+    background-size: cover;
+    filter: none;
+    opacity: 0.55;
+}
+.stage.art::after {
+    background: linear-gradient(rgba(11, 11, 13, 0.55), rgba(11, 11, 13, 0.92));
+}
+
+/* Section edges and the clipping a .bleed device needs. */
+.bordered {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+.bordered-top {
+    border-top: 1px solid var(--border-color);
+}
+.clipped {
+    overflow: hidden;
+    padding-bottom: 0;
+}
+
+.eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-text-color);
+    margin: 0 0 18px;
+}
+.lead {
+    font-size: clamp(17px, 2vw, 21px);
+    line-height: 1.55;
+    max-width: 620px;
+    text-wrap: pretty;
+}
+.title {
+    font-size: clamp(38px, 6.4vw, 78px);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    text-wrap: balance;
+}
+h2.section-title {
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    margin: 0;
+    text-wrap: balance;
+}
+h3.group-title {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: left;
+    margin: 0 0 16px;
+}
+
+/* Two columns that collapse to one, used for every alternating feature. */
+.split {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+    text-align: left;
+}
+.split .copy p {
+    max-width: 520px;
+    margin: 22px 0 0;
+}
+.split .copy .eyebrow {
+    margin: 0 0 18px;
+}
+/* Picture first, words second. */
+.split.reverse .copy {
+    order: 2;
+}
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin: 32px 0 0;
+}
+.centered .button-row {
+    justify-content: center;
+}
+
+/* Device mockup: the screenshot sits in the frame's cutout. */
+.phone {
+    position: relative;
+    display: block;
+    width: 320px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.phone img {
+    margin: 0;
+}
+.phone .device-frame {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.35));
+}
+.phone .screenshot {
+    position: absolute;
+    top: 2%;
+    left: 4.4%;
+    width: 91.2%;
+    height: 96%;
+    max-width: none;
+    border-radius: 7%;
+    object-fit: cover;
+}
+/* Same frame, turned on its side. */
+.phone.landscape {
+    width: 560px;
+}
+.phone.landscape .screenshot {
+    top: 4.4%;
+    left: 2%;
+    width: 96%;
+    height: 91.2%;
+    border-radius: 3.5%;
+}
+
+/* Devices that run off the bottom edge of their (clipping) section. */
+.bleed {
+    margin-bottom: calc(-1 * clamp(40px, 8vw, 90px));
+}
+.hero-devices {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: clamp(0px, 1vw, 24px);
+    max-width: 900px;
+    margin: 56px auto 0;
+}
+.hero-devices .phone {
+    width: 25%;
+    transform: rotate(-6deg) translateY(26px);
+}
+.hero-devices .phone:nth-child(2) {
+    width: 32%;
+    z-index: 3;
+    transform: none;
+}
+.hero-devices .phone:nth-child(3) {
+    transform: rotate(6deg) translateY(26px);
+}
+
+/* Cards: the app lineup, and an app's supported features. */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    text-align: left;
+}
+.card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 18px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+a.card:hover {
+    text-decoration: none;
+    border-color: var(--accent-color);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+.card img {
+    width: 46px;
+    height: 46px;
+    flex: none;
+    margin: 0;
+    border-radius: 11px;
+    box-shadow: var(--shadow-sm);
+}
+.card strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--heading-text-color);
+}
+.card small {
+    display: block;
+    font-size: 14px;
+    color: var(--secondary-text-color);
+}
+.card.compact {
+    gap: 12px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--heading-text-color);
+}
+.card.compact img {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    box-shadow: none;
+}
+
+/* App page hero: icon, name, tagline and the ways to get it. */
+.app-hero {
+    padding-top: var(--row-clearance);
+}
+.app-hero .large-app-icon {
+    width: 96px;
+    height: 96px;
+    margin: 0 0 24px;
+    border-radius: 22px;
+}
+.app-hero h1 {
+    font-size: clamp(38px, 5.4vw, 64px);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    margin: 0;
+}
+.app-hero .tagline {
+    font-size: clamp(19px, 2.2vw, 26px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--app-color, var(--heading-text-color));
+    margin: 10px 0 0;
+}
+.app-hero .summary {
+    margin: 18px 0 0;
+    max-width: 460px;
+}
+/* A hero with no device shot beside it: keep the copy on the centre line. */
+.app-hero .centered .summary {
+    margin-inline: auto;
+}
+.app-hero .tag {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    margin: 14px 0 0;
 }
 
 /* Brand spectrum utilities */

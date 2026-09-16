@@ -1,52 +1,60 @@
-.banner {
+/* The hero's phones are cropped by the section's bottom edge. */
+.hero {
+    padding-top: calc(var(--header-clearance) + 56px);
+    padding-bottom: 0;
+}
+.hero .lead {
+    color: #c7c7cc;
+    margin: 22px auto 0;
+}
+.hero-devices {
+    margin-bottom: -80px;
+}
+
+/* Same trick, one section further down. */
+.clipped .lead {
+    margin: 22px auto 0;
+}
+.clipped .phone {
+    width: 340px;
+    margin-top: 56px;
+}
+
+/* Tinted panel the Craft screenshot leans out of. */
+.craft-card {
     position: relative;
     overflow: hidden;
-    background-color: #0b0b0d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 36px 36px 0;
+    border-radius: 28px;
+    background-color: var(--secondary-bg-color);
+    border: 1px solid var(--border-color);
 }
-.banner::before {
-    content: "";
-    position: absolute;
-    top: -30%;
-    left: 50%;
-    width: 140vw;
-    height: 140%;
-    transform: translateX(-50%);
-    background: var(--spectrum-conic);
-    filter: blur(90px) saturate(130%);
-    opacity: 0.5;
-}
-.banner::after {
+.craft-card::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, transparent 30%, #0b0b0d 80%);
+    background: linear-gradient(120deg, color-mix(in srgb, var(--accent-color) 8%, transparent), transparent 60%);
 }
-.intro {
+.craft-card .phone {
     position: relative;
-    z-index: 1;
-}
-.intro img {
-    width: 96px;
-    height: auto;
-    filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.5));
-}
-.intro h1 {
-    font-size: clamp(40px, 7vw, 68px);
-    color: #fff;
-    letter-spacing: -0.03em;
-    margin-top: 8px;
-}
-.intro p {
-    color: #c7c7cc;
-    font-size: 1.25em;
-    max-width: 520px;
-    margin: 8px auto 20px;
+    width: 62%;
+    margin-bottom: -120px;
 }
 
-.mission p {
-    max-width: 640px;
-    font-size: 1.35em;
+.lineup > p {
+    text-align: left;
+    margin: 0 0 48px;
+}
+.lineup .card-grid {
+    margin: 0 0 44px;
+}
+.lineup .card-grid:last-child {
+    margin-bottom: 0;
+}
+.lineup .section-title {
+    text-align: left;
+    margin-bottom: 12px;
+}
+.lineup .eyebrow {
+    text-align: left;
 }

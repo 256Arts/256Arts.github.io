@@ -27,35 +27,44 @@
     </head>
     <body ontouchstart>
         {% include header.html %}
-        <section class="banner"></section>
-        <section class="app-info">
-        	<section>
-        		<img src="/apps/icon_scutter.png" srcset="icon_scutter.png 2x" class="large-app-icon">
-				<h1 id="title">Sprite Cutter</h1>
-				<h3>Extract Spritesheet Images</h3>
-				<p>Sprite Cutter allows you to quickly cut spritesheets into separate sprite PNG images. It is simple and even works with spritesheets that have spacing between sprites.</p>
-			</section>
-			<section class="actions">
-				<div>
-					<a class="button filled app-buy secondary" href="https://github.com/256Arts/Sprite-Cutter" target="_blank">GitHub</a>
-				</div>
-				<div>
-					<a class="store-badge" href="https://apps.apple.com/app/sprite-cutter/id1562779425" target="_blank">
-						<img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
-					</a>
-					<p class="tag">iOS, iPadOS, macOS, visionOS</p>
-				</div>
-			</section>
+        <section class="stage art dark-theme app-hero">
+            <section class="split">
+                <div class="copy">
+                    <img src="/apps/icon_scutter.png" srcset="icon_scutter.png 2x" class="large-app-icon" alt="Sprite Cutter icon">
+                    <h1>Sprite Cutter</h1>
+                    <p class="tagline">Extract Spritesheet Images</p>
+                    <p class="summary">Sprite Cutter allows you to quickly cut spritesheets into separate sprite PNG images. It is simple and even works with spritesheets that have spacing between sprites.</p>
+                    <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/sprite-cutter/id1562779425" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                        <a class="button large ghost" href="https://github.com/256Arts/Sprite-Cutter" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <p class="tag">iOS, iPadOS, macOS, visionOS</p>
+                </div>
+                <div class="phone">
+                    <img class="screenshot" srcset="shot1.jpg 2x" src="shot1.jpg" alt="Sprite Cutter slicing a spritesheet">
+                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
+                </div>
+            </section>
         </section>
-		<section class="feature">
-			<section>
-				<div class="phone z-stack">
-					<img class="screenshot" srcset="shot1.jpg 2x" alt="screenshot" loading="lazy">
-					<img class="device-frame" srcset="/phone.png 2x" alt="phone frame" loading="lazy">
-				</div>
-				<h1>Extract spritesheet images.</h1>
-			</section>
-		</section>
+        <section class="secondary-bg bordered-top">
+            <section class="centered">
+                <p class="eyebrow">Slicing</p>
+                <h2 class="section-title">One sheet in, every sprite out.</h2>
+            </section>
+        </section>
+        <section class="stage dark-theme">
+            <section class="centered">
+                <h2 class="section-title">Get Sprite Cutter.</h2>
+                <p class="lead">Spritesheets into PNGs, spacing and all.</p>
+                <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/sprite-cutter/id1562779425" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                </div>
+            </section>
+        </section>
         {% include footer.html %}
 	</body>
 </html>

@@ -26,28 +26,33 @@
     </head>
     <body ontouchstart>
         {% include header.html %}
-		<section class="banner"></section>
-		<section>
-			<section class="faq">
-				<h1>FAQ</h1>
-				<h4>I have a bug/suggestion for one of your apps.</h4>
-				<p>Please contact us for support.</p>
-				<h4>I can help translate one of your apps to a new language.</h4>
-				<p>Contact us and we can set you up with a list of strings.</p>
-			</section>
-			<section>
-				<form class="contact-form">
-					<h2>Contact</h2>
-					<input id="name" type="text" placeholder="Name" onchange="updateBody()">
-					<textarea id="message" class="message" placeholder="Message" rows="6" onchange="updateBody()"></textarea>
-					<div class="g-recaptcha" data-sitekey="6LcQcSYUAAAAALtjWvhPbze67F7y-HcDY5XD6F6R" data-callback="gRecaptchaTrue" data-expired-callback="gRecaptchaFalse"></div>
-					<a class="button disabled" id="review-message">Review Message</a>
-				</form>
-			</section>
-		</section>
-		<script async src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script async src="contact.js"></script>
-		<script async src='https://www.google.com/recaptcha/api.js'></script>
+        <section class="stage art dark-theme contact-hero">
+            <section class="centered">
+                <h1 class="title">Get in touch.</h1>
+                <p class="lead">Questions, bugs, ideas, translations &mdash; it all lands in the same inbox.</p>
+            </section>
+        </section>
+        <section>
+            <section class="faq">
+                <h2 class="section-title">FAQ</h2>
+                <h4>I have a bug/suggestion for one of your apps.</h4>
+                <p>Please contact us for support.</p>
+                <h4>I can help translate one of your apps to a new language.</h4>
+                <p>Contact us and we can set you up with a list of strings.</p>
+            </section>
+            <section>
+                <form class="contact-form">
+                    <h2>Contact</h2>
+                    <input id="name" type="text" placeholder="Name" onchange="updateBody()">
+                    <textarea id="message" class="message" placeholder="Message" rows="6" onchange="updateBody()"></textarea>
+                    <div class="g-recaptcha" data-sitekey="6LcQcSYUAAAAALtjWvhPbze67F7y-HcDY5XD6F6R" data-callback="gRecaptchaTrue" data-expired-callback="gRecaptchaFalse"></div>
+                    <a class="button disabled" id="review-message">Review Message</a>
+                </form>
+            </section>
+        </section>
+        <script async src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script async src="contact.js"></script>
+        <script async src='https://www.google.com/recaptcha/api.js'></script>
         {% include footer.html %}
 	</body>
 </html>

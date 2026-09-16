@@ -26,32 +26,35 @@
     </head>
     <body ontouchstart>
         {% include header.html %}
-        <section class="banner"></section>
-        <section class="app-info">
-        	<section>
-        		<img src="/apps/icon_instagrow.png" srcset="icon_instagrow.png 2x" class="large-app-icon">
-				<h1 id="title">Insta Grow</h1>
-				<h3>Instant Trees for Minecraft</h3>
-				<p>Bone meal a sapling once, or sneak as you place it, and the full tree arrives right then. Even where vanilla says there is no room &mdash; your build always wins the overlap.</p>
-			</section>
-			<section class="actions">
-				<div>
-					<a class="button filled app-buy secondary" href="https://github.com/256Arts/Minecraft-Insta-Grow" target="_blank" rel="noopener">GitHub</a>
-				</div>
-				<div>
-					<a class="store-badge" href="https://modrinth.com/project/insta-grow" target="_blank" rel="noopener">
-						<img src="/global/modrinth-badge.webp" width="188" height="48" alt="Get the mod on Modrinth">
-					</a>
-					<p class="tag">Data Pack, Fabric, NeoForge</p>
-				</div>
-			</section>
+        <section class="stage art dark-theme app-hero">
+            <section class="split">
+                <div class="copy">
+                    <img src="/apps/icon_instagrow.png" srcset="icon_instagrow.png 2x" class="large-app-icon" alt="Insta Grow icon">
+                    <h1>Insta Grow</h1>
+                    <p class="tagline">Instant Trees for Minecraft</p>
+                    <p class="summary">Bone meal a sapling once, or sneak as you place it, and the full tree arrives right then. Even where vanilla says there is no room &mdash; your build always wins the overlap.</p>
+                    <div class="button-row">
+                        <a class="store-badge" href="https://modrinth.com/project/insta-grow" target="_blank" rel="noopener">
+                            <img src="/global/modrinth-badge.webp" width="188" height="48" alt="Get the mod on Modrinth">
+                        </a>
+                        <a class="button large ghost" href="https://github.com/256Arts/Minecraft-Insta-Grow" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <p class="tag">Data Pack, Fabric, NeoForge</p>
+                </div>
+                <img class="screenshot" srcset="shot1.webp 2x" src="shot1.webp" alt="A player bone mealing a sapling into a full tree">
+            </section>
         </section>
-		<section class="feature feature-pad">
-			<section>
-				<h1>One bone meal. Every time.</h1>
-				<img class="screenshot" srcset="shot1.webp 2x" src="shot1.webp" alt="A player bone mealing a sapling into a full tree" loading="lazy">
-			</section>
-		</section>
+        <section class="stage dark-theme">
+            <section class="centered">
+                <h2 class="section-title">Get Insta Grow.</h2>
+                <p class="lead">One bone meal. Every time.</p>
+                <div class="button-row">
+                        <a class="store-badge" href="https://modrinth.com/project/insta-grow" target="_blank" rel="noopener">
+                            <img src="/global/modrinth-badge.webp" width="188" height="48" alt="Get the mod on Modrinth">
+                        </a>
+                </div>
+            </section>
+        </section>
         {% include footer.html %}
 	</body>
 </html>

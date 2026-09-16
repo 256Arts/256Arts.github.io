@@ -27,35 +27,44 @@
     </head>
     <body ontouchstart>
         {% include header.html %}
-        <section class="banner"></section>
-        <section class="app-info">
-        	<section>
-        		<img src="/apps/icon_appsales.webp" srcset="icon_appsales.webp 2x" class="large-app-icon">
-				<h1 id="title">App Sales</h1>
-				<h3>App Analytics Widgets</h3>
-				<p>View your app's sales analytics from App Store Connect through a variety of widgets</p>
-			</section>
-			<section class="actions">
-				<div>
-					<a class="button filled app-buy secondary" href="https://github.com/256Arts/App-Sales" target="_blank">GitHub</a>
-				</div>
-				<div>
-					<a class="store-badge" href="https://apps.apple.com/app/app-sales/id6471903677" target="_blank">
-						<img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
-					</a>
-					<p class="tag">iOS, iPadOS, macOS, visionOS</p>
-				</div>
-			</section>
+        <section class="stage art dark-theme app-hero">
+            <section class="split">
+                <div class="copy">
+                    <img src="/apps/icon_appsales.webp" srcset="icon_appsales.webp 2x" class="large-app-icon" alt="App Sales icon">
+                    <h1>App Sales</h1>
+                    <p class="tagline">App Analytics Widgets</p>
+                    <p class="summary">View your app&rsquo;s sales analytics from App Store Connect through a variety of widgets.</p>
+                    <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/app-sales/id6471903677" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                        <a class="button large ghost" href="https://github.com/256Arts/App-Sales" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <p class="tag">iOS, iPadOS, macOS, visionOS</p>
+                </div>
+                <div class="phone">
+                    <img class="screenshot" srcset="shot1.webp 2x" src="shot1.webp" alt="App Sales widgets">
+                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
+                </div>
+            </section>
         </section>
-		<section class="feature">
-			<section>
-				<div class="phone z-stack">
-					<img class="screenshot" srcset="shot1.webp 2x" alt="screenshot" loading="lazy">
-					<img class="device-frame" srcset="/phone.png 2x" alt="phone frame" loading="lazy">
-				</div>
-				<h1>Widgets included.</h1>
-			</section>
-		</section>
+        <section class="secondary-bg bordered-top">
+            <section class="centered">
+                <p class="eyebrow">Widgets</p>
+                <h2 class="section-title">Your numbers, on the home screen.</h2>
+            </section>
+        </section>
+        <section class="stage dark-theme">
+            <section class="centered">
+                <h2 class="section-title">Get App Sales.</h2>
+                <p class="lead">Downloads, proceeds and trends, everywhere you keep an eye on them.</p>
+                <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/app-sales/id6471903677" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                </div>
+            </section>
+        </section>
         {% include footer.html %}
 	</body>
 </html>
