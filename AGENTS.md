@@ -63,8 +63,12 @@ strip running edge to edge, with the apps centred inside it in columns of two
 (`grid-auto-flow: column`, two rows) using the same app buttons as before. The
 nav pill floats *over* the band, so the apps clear it by `--header-clearance`.
 Rows slide in and out from the top edge (`transform: translateY(-100%)` → `0`);
-a closed row sits above the band's top edge, so nothing needs clipping. Narrow
-windows scroll the row horizontally rather than reflowing it.
+a closed row sits above the band's top edge, so nothing needs clipping. **A row
+never scrolls:** columns are `minmax(0, 220px)`, so they shrink to fit the
+window. Below 860px the taglines go; below 600px each app becomes an
+icon-over-name tile, so the largest category (five apps) still fits three
+columns on the narrowest phone. Every row is exactly two apps tall —
+`--nav-app-height` drives both the app's size and `--row-clearance`.
 
 **Only a row you opened is sticky.** Rows live *outside* the fixed header and are
 `position: absolute` at the top of the document, so the page's own row scrolls

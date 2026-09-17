@@ -17,8 +17,10 @@
     --content-width: 1080px;
     --header-height: 46px;
     --header-clearance: calc(var(--header-height) + max(10px, env(safe-area-inset-top)) + 20px);
-    /* An app page opens its own apps row on load; its hero starts below it. */
-    --row-clearance: calc(var(--header-clearance) + 156px);
+    /* An app page opens its own apps row on load; its hero starts below it.
+       Every row is two apps tall, so the clearance follows the app's height. */
+    --nav-app-height: 54px;
+    --row-clearance: calc(var(--header-clearance) + var(--nav-app-height) * 2 + 46px);
     --section-space: clamp(48px, 8vw, 96px);
     --badge-height: 48px;
     --radius-sm: 10px;
@@ -285,28 +287,27 @@ body header.site-header nav {
 .nav-row.no-slide {
     transition: none;
 }
+/* Two rows, columns of at most 220px — the tracks shrink to whatever the
+   window allows, so the row never scrolls sideways. */
 .nav-row-apps {
-    width: var(--content-width);
+    width: 100%;
+    max-width: var(--content-width);
     margin: auto;
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: repeat(2, auto);
-    grid-auto-columns: 220px;
-    justify-content: safe center;
+    grid-auto-columns: minmax(0, 220px);
+    justify-content: center;
     gap: 2px 6px;
     text-align: left;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scrollbar-width: none;
-}
-.nav-row-apps::-webkit-scrollbar {
-    display: none;
 }
 a.nav-app {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 8px 10px;
+    min-width: 0;
+    height: var(--nav-app-height);
+    padding: 0 10px;
     margin: 0;
     line-height: 1.3;
     border-radius: 16px;
@@ -358,6 +359,10 @@ a.nav-app.selected {
     .nav-label-short {
         display: inline;
     }
+    /* Columns are narrow enough here that a tagline would only ellipsise. */
+    .nav-app small {
+        display: none;
+    }
 }
 @media (max-width: 600px) {
     /* Not enough room for every pill — Contact still lives in the footer. */
@@ -367,6 +372,33 @@ a.nav-app.selected {
     .site-header nav > a {
         padding: 0 11px;
         font-size: 0.94em;
+    }
+    /* Three narrow columns of icon-over-name tiles: the widest category (five
+       apps) still fits two rows on the smallest phone, with nothing to scroll. */
+    :root {
+        --nav-app-height: 67px;
+    }
+    .nav-row-apps {
+        gap: 2px 4px;
+    }
+    a.nav-app {
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        padding: 0 4px;
+        text-align: center;
+        border-radius: 14px;
+    }
+    .nav-app img {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+    }
+    .nav-app > span {
+        max-width: 100%;
+    }
+    .nav-app strong {
+        font-size: 0.75em;
     }
 }
 @media (max-width: 490px) /* Compact Width */ {
