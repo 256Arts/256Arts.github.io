@@ -325,7 +325,8 @@ a.nav-app.selected {
     height: 38px;
     margin: 0;
     flex: none;
-    border-radius: 9px;
+    /* App icons carry their own squircle, so the clip is a share of the size. */
+    border-radius: 25%;
     box-shadow: var(--shadow-sm);
 }
 .nav-app > span {
@@ -392,7 +393,6 @@ a.nav-app.selected {
     .nav-app img {
         width: 36px;
         height: 36px;
-        border-radius: 8px;
     }
     .nav-app > span {
         max-width: 100%;
@@ -655,7 +655,7 @@ pre code {
     max-width: 96%;
 }
 .large-app-icon {
-    border-radius: 28px;
+    border-radius: 25%;
     border: 1px solid #0002;
     box-shadow: var(--shadow-lg);
     transition: transform 0.3s var(--ease);
@@ -910,7 +910,7 @@ a.card:hover {
     height: 46px;
     flex: none;
     margin: 0;
-    border-radius: 11px;
+    border-radius: 25%;
     box-shadow: var(--shadow-sm);
 }
 .card strong {
@@ -946,7 +946,6 @@ a.card:hover {
     width: 96px;
     height: 96px;
     margin: 0 0 24px;
-    border-radius: 22px;
 }
 .app-hero h1 {
     font-size: clamp(38px, 5.4vw, 64px);
