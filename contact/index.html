@@ -12,8 +12,8 @@
         <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
         <meta name="og:image" content="/global/opengraph.png">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="keywords" content="256 Arts, LEGO, star wars, contract, developer, web, ontario, iOS, swift">
-        <meta name="description" content="iOS developer and student based in Ontario.">
+        <meta name="keywords" content="256 Arts, contact, support, apps, iOS, swift">
+        <meta name="description" content="Contact 256 Arts for app support, feedback and translations.">
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRJ540QVW4"></script>
         <script>
@@ -41,18 +41,19 @@
                 <p>Contact us and we can set you up with a list of strings.</p>
             </section>
             <section>
-                <form class="contact-form">
+                <form class="contact-form" action="https://api.256arts.com/contact" method="post">
                     <h2>Contact</h2>
-                    <input id="name" type="text" placeholder="Name" onchange="updateBody()">
-                    <textarea id="message" class="message" placeholder="Message" rows="6" onchange="updateBody()"></textarea>
-                    <div class="g-recaptcha" data-sitekey="6LcQcSYUAAAAALtjWvhPbze67F7y-HcDY5XD6F6R" data-callback="gRecaptchaTrue" data-expired-callback="gRecaptchaFalse"></div>
-                    <a class="button disabled" id="review-message">Review Message</a>
+                    <input name="name" type="text" placeholder="Name" autocomplete="name" maxlength="100">
+                    <input name="email" type="email" placeholder="Email" autocomplete="email" maxlength="254" required>
+                    <textarea name="message" class="message" placeholder="Message" rows="6" maxlength="5000" required></textarea>
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAFAy6wS2B4D5Fu5m" data-appearance="interaction-only" data-callback="turnstileReady" data-expired-callback="turnstileExpired" data-error-callback="turnstileExpired"></div>
+                    <p class="form-status" role="status"></p>
+                    <button class="button filled large" type="submit" disabled>Send</button>
                 </form>
             </section>
         </section>
-        <script async src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script async src="contact.js"></script>
-        <script async src='https://www.google.com/recaptcha/api.js'></script>
+        <script src="contact.js"></script>
+        <script async defer src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
         {% include footer.html %}
 	</body>
 </html>

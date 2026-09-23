@@ -1,33 +1,34 @@
-var mailto = "";
-var body = "";
+const form = document.querySelector(".contact-form");
+const submit = form.querySelector("button[type=submit]");
+const status = form.querySelector(".form-status");
 
-function updateBody() {
-	let name = encodeURI($("#name").val());
-	let message = encodeURI($("#message").val());
-	body = "?body=" + message + "%0D%0A %0D%0A" + name;
-	updateLink();
+function turnstileReady() {
+	submit.disabled = false;
 }
 
-function gRecaptchaTrue() {
-	let to = "cots.smith0a";
-	mailto = "mailto:" + to + "@";
-	updateLink();
+function turnstileExpired() {
+	submit.disabled = true;
 }
 
-function gRecaptchaFalse() {
-	mailto = "";
-	updateLink();
-}
+form.addEventListener("submit", async (event) => {
+	event.preventDefault();
+	submit.disabled = true;
+	status.textContent = "Sending…";
 
-function updateLink() {
-	let domain = "icloud.com";
-	if (mailto != "") {
-		$("#review-message").attr("href", mailto + domain + body).attr("onclick", "send()").removeClass("disabled");
-	} else {
-		$("#review-message").attr("href", "").attr("onclick", "").addClass("disabled");
+	try {
+		const response = await fetch(form.action, { method: "POST", body: new FormData(form) });
+		const result = await response.json();
+		if (!response.ok) throw new Error(result.error);
+
+		const bubble = document.createElement("div");
+		bubble.className = "message-bubble";
+		bubble.textContent = form.message.value;
+		const note = document.createElement("p");
+		note.className = "secondary";
+		note.textContent = `Sent. We'll reply to ${form.email.value}.`;
+		form.replaceWith(bubble, note);
+	} catch (error) {
+		status.textContent = error.message || "Couldn't send right now. Please try again later.";
+		turnstile.reset();
 	}
-}
-
-function send() {
-	$(".contact-form").after('<div class="message-bubble">' + $("#message").val() + '</div>').hide();
-}
+});

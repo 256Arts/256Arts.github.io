@@ -554,9 +554,12 @@ button, .button {
     background-image: none;
     background-color: rgba(255, 255, 255, 0.16);
 }
-.button.disabled {
+.button.disabled, .button:disabled, .button.filled:disabled {
     color: #aaa;
+    background-color: var(--control-color);
     background-image: none;
+    box-shadow: none;
+    transform: none;
     cursor: not-allowed;
 }
 figure {
@@ -673,8 +676,15 @@ form.contact-form {
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-md);
 }
-.contact-form div.g-recaptcha {
+.contact-form .cf-turnstile {
     margin: 4px;
+}
+.contact-form .form-status {
+    font-size: 1em;
+    color: var(--secondary-text-color);
+}
+.contact-form .form-status:empty {
+    display: none;
 }
 .message-bubble {
     display: inline-block;

@@ -234,3 +234,10 @@ A page whose art is a wide marketing render rather than a device screenshot
 skips the hero's `.split` and uses `.centered` instead — the render runs
 **full-bleed** in its own section below, never boxed in a card. See
 `spaceui/`.
+
+## Contact form
+
+`/contact/` posts to `api.256arts.com/contact`, served by the private
+`ContactWorker` repo, which verifies the **Turnstile** token (invisible on Apple
+devices via Private Access Tokens) and emails the message through Resend. The
+site key in `contact/index.html` is this site's own Turnstile widget.
