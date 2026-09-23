@@ -2,10 +2,58 @@
     --stage-art: linear-gradient(120deg, #11C8FB, #1B70F2);
 }
 .faq {
-    width: 800px;
+    width: 100%;
+    max-width: 720px;
     text-align: left;
+    interpolate-size: allow-keywords;
 }
-.faq h4 {
-    padding-top: 8px;
-    padding-bottom: 0;
+.faq h2 {
+    margin-bottom: 16px;
+}
+.faq details {
+    border-bottom: 1px solid var(--border-color);
+}
+.faq details:first-of-type {
+    border-top: 1px solid var(--border-color);
+}
+.faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 4px;
+    list-style: none;
+    font-size: 1.18em;
+    font-weight: 600;
+    color: var(--heading-text-color);
+}
+.faq summary:hover {
+    color: var(--accent-text-color);
+}
+.faq summary:focus-visible {
+    outline: 2px solid var(--accent-color);
+}
+/* A plus that turns into a cross when open. */
+.faq summary::after {
+    content: "+";
+    flex: none;
+    font-size: 1.4em;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--secondary-text-color);
+    transition: transform 0.3s var(--ease);
+}
+.faq details[open] summary::after {
+    transform: rotate(45deg);
+}
+.faq details p {
+    padding: 0 4px 18px;
+}
+.faq details::details-content {
+    height: 0;
+    overflow: clip;
+    transition: height 0.3s var(--ease), content-visibility 0.3s allow-discrete;
+}
+.faq details[open]::details-content {
+    height: auto;
 }
