@@ -34,6 +34,8 @@ Two rules:
 2. Shared chrome comes from `_includes/`; the app list comes from `_data/`.
 
 Preview locally with `jekyll build` / `jekyll serve` (`_site/` is gitignored).
+Jekyll is a Homebrew Ruby gem; if `jekyll` isn't found, run it as
+`/opt/homebrew/lib/ruby/gems/*/bin/jekyll` — it is installed, only off PATH.
 Do not re-add `.nojekyll` — it disables all of the above.
 
 ## Navigation
