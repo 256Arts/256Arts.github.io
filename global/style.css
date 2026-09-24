@@ -772,6 +772,24 @@ form.contact-form {
     max-width: 620px;
     text-wrap: pretty;
 }
+/* Long-form text such as the legal pages: a readable measure, headings that
+   clear the floating nav when linked to directly. */
+section.prose {
+    max-width: 720px;
+    text-align: left;
+}
+.prose h3 {
+    margin: 32px 0 4px;
+    scroll-margin-top: var(--header-clearance);
+}
+.prose p, .prose ul {
+    margin: 0 0 12px;
+}
+.prose li {
+    font-size: 1.18em;
+    line-height: 1.55;
+    margin-bottom: 6px;
+}
 .title {
     font-size: clamp(38px, 6.4vw, 78px);
     line-height: 1.04;
