@@ -1,0 +1,7 @@
+.app-hero {
+    --app-color: #fc0;
+    --stage-art: conic-gradient(#FF332A, #FF9400, #FFCC00, #4ED964, #007AFF, #5957D6, #FF332A, #FF9400, #FFCC00, #4ED964, #007AFF, #5957D6, #FF332A);
+}
+.screenshot.tv {
+    margin: 0 auto;
+}

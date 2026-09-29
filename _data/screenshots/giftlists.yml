@@ -1,0 +1,20 @@
+# Written by the shared `screenshots` runner (Repos/Scripts/screenshots), which rewrites
+# this file in full on every run — write the copy in the app's .screenshots.conf
+# (SHOT_PROMOS, keyed by capture name), not here.
+
+- file: 'shot1.webp'
+  eyebrow: 'Holidays'
+  title: 'Every gift filed under the occasion it is for.'
+  description: 'The gift list filtered to the Holidays event: recipients expanded under the event wallpaper, with its countdown'
+- file: 'shot2.webp'
+  eyebrow: 'Birthday'
+  title: 'Birthdays kept just as carefully.'
+  description: 'The gift list filtered to a Birthday event, its recipients expanded — with the gift details alongside on the layouts where they do not cover the list'
+- file: 'shot3.webp'
+  eyebrow: 'Gift Details'
+  title: 'What it is, who it is for, and where you found it.'
+  description: 'One gift''s details: what it is, who it is for, and where it was bought'
+- file: 'shot4.webp'
+  eyebrow: 'Shopping'
+  title: 'One shopping list across every event at once.'
+  description: 'The Shopping List tab, every gift still to buy across the events'

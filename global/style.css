@@ -1,0 +1,1029 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* Variables */
+:root {
+	color-scheme: light dark;
+
+    /* Brand spectrum (color wheel, red-biased) */
+    --spectrum: linear-gradient(100deg, #ff2d46, #ff8a00, #ffd60a, #34c759, #00c7be, #2d8cff, #8a5cff, #ff45a0, #ff2d46);
+    --spectrum-conic: conic-gradient(from 210deg, #ff2d46, #ff8a00, #ffd60a, #34c759, #00c7be, #2d8cff, #8a5cff, #ff45a0, #ff2d46);
+
+    /* Elevation */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.14);
+
+    /* Layout rhythm */
+    --content-width: 1080px;
+    --header-height: 46px;
+    --header-clearance: calc(var(--header-height) + max(10px, env(safe-area-inset-top)) + 20px);
+    /* An app page opens its own apps row on load; its hero starts below it.
+       Every row is two apps tall, so the clearance follows the app's height. */
+    --nav-app-height: 54px;
+    --row-clearance: calc(var(--header-clearance) + var(--nav-app-height) * 2 + 46px);
+    --section-space: clamp(48px, 8vw, 96px);
+    --badge-height: 48px;
+    --radius-sm: 10px;
+    --radius-lg: 22px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+:root, .light-theme {
+    --bg-color: #fff;
+    --secondary-bg-color: #f7f7f7;
+    --trans-secondary-bg-color: #f7f7f7cc;
+    --grouped-bg-color: #f7f7f7;
+    --grouped-secondary-bg-color: #fff;
+    --heading-text-color: #111;
+    --text-color: #333;
+    --secondary-text-color: #888;
+    --inverted-text-color: #fff;
+    --transparent-header-color: #f7f7f7;
+    --border-color: #e2e2e6;
+    --accent-color: #ff2d46;
+    --accent-text-color: #ff2d46;
+    --control-color: #f0f0f2;
+    --control-text-color: #000;
+    --border-radius: 16px;
+
+    /* Liquid glass */
+    --glass-tint: rgba(255, 255, 255, 0.62);
+    --glass-panel-tint: rgba(255, 255, 255, 0.84);
+    --glass-edge: rgba(255, 255, 255, 0.75);
+    --glass-shine: rgba(255, 255, 255, 0.85);
+    --glass-underglow: rgba(255, 255, 255, 0.4);
+    --glass-hover: rgba(0, 0, 0, 0.055);
+    --glass-selected: rgba(0, 0, 0, 0.085);
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+	    --bg-color: #111113;
+	    --secondary-bg-color: #1c1c1e;
+        --trans-secondary-bg-color: #1c1c1eaa;
+        --grouped-bg-color: #111113;
+    	--grouped-secondary-bg-color: #1c1c1e;
+	    --heading-text-color: #fff;
+	    --text-color: #ddd;
+        --secondary-text-color: #888;
+	    --inverted-text-color: #000;
+	    --transparent-header-color: #1c1c1e;
+        --control-color: #ffffff14;
+        --control-text-color: #fff;
+	    --border-color: #2c2c2e;
+        --accent-color: #ff2d46;
+        --accent-text-color: #ff6b7d;
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.45);
+        --shadow-lg: 0 20px 52px rgba(0, 0, 0, 0.6);
+        --glass-tint: rgba(38, 38, 42, 0.58);
+        --glass-panel-tint: rgba(34, 34, 38, 0.86);
+        --glass-edge: rgba(255, 255, 255, 0.14);
+        --glass-shine: rgba(255, 255, 255, 0.18);
+        --glass-underglow: rgba(255, 255, 255, 0.05);
+        --glass-hover: rgba(255, 255, 255, 0.09);
+        --glass-selected: rgba(255, 255, 255, 0.15);
+	}
+}
+:root[data-theme="dark"], .dark-theme {
+    --bg-color: #111113;
+    --secondary-bg-color: #1c1c1e;
+    --trans-secondary-bg-color: #1c1c1eaa;
+    --grouped-bg-color: #111113;
+	--grouped-secondary-bg-color: #1c1c1e;
+    --heading-text-color: #fff;
+    --text-color: #ddd;
+    --secondary-text-color: #888;
+    --inverted-text-color: #000;
+    --transparent-header-color: #1c1c1e;
+    --control-color: #ffffff14;
+    --control-text-color: #fff;
+    --border-color: #2c2c2e;
+    --accent-color: #ff2d46;
+    --accent-text-color: #ff6b7d;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 20px 52px rgba(0, 0, 0, 0.6);
+    --glass-tint: rgba(38, 38, 42, 0.58);
+    --glass-panel-tint: rgba(34, 34, 38, 0.86);
+    --glass-edge: rgba(255, 255, 255, 0.14);
+    --glass-shine: rgba(255, 255, 255, 0.18);
+    --glass-underglow: rgba(255, 255, 255, 0.05);
+    --glass-hover: rgba(255, 255, 255, 0.09);
+    --glass-selected: rgba(255, 255, 255, 0.15);
+}
+
+/* General */
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: "Inter", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+}
+body section {
+    background-color: var(--bg-color);
+    width: 100%;
+    padding: var(--section-space) 0;
+}
+/* Content runs to the top of the page; the nav floats on top of it. */
+main > section:first-of-type:not(.app-hero) {
+    padding-top: calc(var(--header-clearance) + 16px);
+}
+body section.secondary-bg {
+    background-color: var(--secondary-bg-color);
+}
+body section.grouped-secondary-bg {
+    background-color: var(--grouped-secondary-bg-color);
+}
+body section section, body footer section {
+	width: var(--content-width);
+    background-color: initial;
+    padding: 28px 12px;
+	margin: auto;
+    text-align: center;
+}
+@media (max-width: 490px) /* Compact Width */ {
+    body * section {
+        text-align: left;
+    }
+}
+
+/* Header + Footer */
+
+/* Liquid glass surface (floating nav + its menu) */
+.glass {
+    position: relative;
+    isolation: isolate;
+    background-color: var(--glass-tint);
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
+    border: 1px solid var(--glass-edge);
+    box-shadow: var(--shadow-lg),
+                inset 0 1px 0 var(--glass-shine),
+                inset 0 -1px 1px var(--glass-underglow);
+}
+.glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(150deg, var(--glass-shine), transparent 42%, transparent 62%, var(--glass-underglow));
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass {
+        background-color: var(--bg-color);
+    }
+}
+
+/* Floating header */
+body header.site-header {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    padding: max(10px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-left)) 0 max(12px, env(safe-area-inset-right));
+    background-color: transparent;
+    border: none;
+    pointer-events: none;
+}
+body header.site-header nav {
+    position: relative;
+    z-index: 1;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 5px 6px;
+    border-radius: 999px;
+}
+/* The brand is just another pill: same padding, same hover, same selected state. */
+.site-header nav > a.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 6px;
+    font-weight: 700;
+    font-size: 1.02em;
+    letter-spacing: -0.01em;
+    color: var(--heading-text-color);
+}
+.nav-brand img {
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+}
+.site-header nav > a {
+    line-height: 34px;
+    margin: 0;
+    padding: 0 14px;
+    border-radius: 999px;
+    white-space: nowrap;
+    font-weight: 500;
+    color: var(--text-color);
+    list-style: none;
+}
+.site-header nav > a:hover {
+    text-decoration: none;
+    color: var(--heading-text-color);
+    background-color: var(--glass-hover);
+}
+.site-header nav > a.selected {
+    color: var(--heading-text-color) !important;
+    background-color: var(--glass-selected);
+    box-shadow: inset 0 1px 0 var(--glass-shine);
+}
+
+/* Category tabs, and the apps row each one opens */
+.nav-label-short {
+    display: none;
+}
+/* Full-bleed band at the top edge — the nav pill floats over it, so the apps
+   clear it by --header-clearance. Closed rows sit above the band's top edge.
+   The page's own row belongs to the page: it is anchored to the top of the
+   document and scrolls away with the banner behind it. A row opened from the
+   nav is an overlay instead, so it pins to the top of the window. */
+.nav-row {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 98;
+    padding: calc(var(--header-clearance) + 4px) max(12px, env(safe-area-inset-left)) 16px max(12px, env(safe-area-inset-right));
+    background-color: var(--glass-panel-tint);
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
+    border-bottom: 1px solid var(--glass-edge);
+    box-shadow: var(--shadow-md);
+    pointer-events: auto;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: transform 0.4s var(--ease), visibility 0s linear 0.4s;
+}
+.nav-row.pinned {
+    position: fixed;
+}
+.nav-row.open {
+    visibility: visible;
+    transform: translateY(0);
+    transition: transform 0.4s var(--ease), visibility 0s;
+}
+/* Swapping between categories is a content change, not a new band arriving:
+   the row that leaves and the row that takes its place skip the slide. */
+.nav-row.no-slide {
+    transition: none;
+}
+/* Two rows, columns of at most 220px — the tracks shrink to whatever the
+   window allows, so the row never scrolls sideways. */
+.nav-row-apps {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: auto;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-columns: minmax(0, 220px);
+    justify-content: center;
+    gap: 2px 6px;
+    text-align: left;
+}
+a.nav-app {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    height: var(--nav-app-height);
+    padding: 0 10px;
+    margin: 0;
+    line-height: 1.3;
+    border-radius: 16px;
+    color: var(--text-color);
+}
+a.nav-app:hover {
+    text-decoration: none;
+    background-color: var(--glass-hover);
+}
+a.nav-app.selected {
+    background-color: var(--glass-selected);
+}
+.nav-app img {
+    width: 38px;
+    height: 38px;
+    margin: 0;
+    flex: none;
+    /* App icons carry their own squircle, so the clip is a share of the size. */
+    border-radius: 25%;
+    box-shadow: var(--shadow-sm);
+}
+.nav-app > span {
+    min-width: 0;
+}
+.nav-app strong,
+.nav-app small {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.nav-app strong {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--heading-text-color);
+}
+.nav-app small {
+    font-size: 0.8em;
+    color: var(--secondary-text-color);
+}
+@media (prefers-reduced-motion: reduce) {
+    .nav-row {
+        transition: none;
+    }
+}
+@media (max-width: 860px) {
+    .nav-label-full {
+        display: none;
+    }
+    .nav-label-short {
+        display: inline;
+    }
+    /* Columns are narrow enough here that a tagline would only ellipsise. */
+    .nav-app small {
+        display: none;
+    }
+}
+@media (max-width: 600px) {
+    /* Not enough room for every pill — Contact still lives in the footer. */
+    .site-header nav > a:not(.nav-brand):not(.nav-tab) {
+        display: none;
+    }
+    .site-header nav > a {
+        padding: 0 11px;
+        font-size: 0.94em;
+    }
+    /* Three narrow columns of icon-over-name tiles: the widest category (five
+       apps) still fits two rows on the smallest phone, with nothing to scroll. */
+    :root {
+        --nav-app-height: 67px;
+    }
+    .nav-row-apps {
+        gap: 2px 4px;
+    }
+    a.nav-app {
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        padding: 0 4px;
+        text-align: center;
+        border-radius: 14px;
+    }
+    .nav-app img {
+        width: 36px;
+        height: 36px;
+    }
+    .nav-app > span {
+        max-width: 100%;
+    }
+    .nav-app strong {
+        font-size: 0.75em;
+    }
+}
+@media (max-width: 490px) /* Compact Width */ {
+    .nav-brand span {
+        display: none;
+    }
+}
+@supports(padding: max(0px)) {
+    body section section {
+        padding-left: max(12px, env(safe-area-inset-left));
+        padding-right: max(12px, env(safe-area-inset-right));
+    }
+}
+footer section a {
+    line-height: 36px;
+    margin: 4px;
+    white-space: nowrap;
+}
+footer {
+    font-size: 0.85em;
+    background-color: var(--secondary-bg-color);
+    border-top: 1px solid var(--border-color);
+}
+footer section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 16px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+footer .secondary {
+    margin-right: auto;
+}
+footer section a {
+    color: var(--text-color);
+    padding: 4px 10px;
+    border-radius: 10px;
+}
+footer section a:hover {
+    text-decoration: none;
+    color: var(--accent-text-color);
+    background-color: var(--control-color);
+}
+
+/* General */
+.button, img, figcaption, input, textarea {
+    margin: 4px;
+}
+h1, h2, h3, h4, h5, h6, p {
+    color: var(--heading-text-color);
+    padding: 4px;
+    margin: auto;
+}
+h1, h2, h3 {
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+}
+h1 {
+    font-size: clamp(2em, 4vw, 2.6em);
+    margin: 12px auto;
+}
+h2 {
+    font-size: clamp(1.6em, 3vw, 1.9em);
+    margin: 8px auto;
+}
+h3 {
+    font-size: 1.33em;
+    margin: 4px auto;
+    letter-spacing: -0.01em;
+}
+p {
+    font-size: 1.18em;
+    line-height: 1.55;
+    color: var(--text-color);
+}
+p.secondary {
+    color: var(--secondary-text-color);
+    font-size: 1em;
+    padding: 0 4px;
+}
+a, button, summary {
+    color: var(--accent-text-color);
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.2s var(--ease), background-color 0.2s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+a:hover {
+    text-decoration: underline;
+}
+a:hover, a:hover h1, a:hover h2, a:hover h3 {
+    color: var(--accent-text-color);
+}
+:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+a.selected {
+    color: var(--text-color) !important;
+}
+button, .button {
+    color: var(--accent-text-color);
+    background-color: var(--control-color);
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 36px;
+    padding: 0 18px;
+    display: inline-block;
+    border-radius: 999px;
+    border: none;
+}
+.button:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+    background-image: linear-gradient(rgba(0,0,0,0.06), rgba(0,0,0,0.06));
+}
+.button:active {
+    transform: translateY(0) scale(0.98);
+}
+.button.filled {
+    color: #fff;
+    background-color: var(--accent-color);
+    font-weight: bold;
+    line-height: 28px;
+    min-width: 64px;
+    text-align: center;
+}
+.button.filled:hover {
+    background-image: none;
+    background-color: color-mix(in srgb, var(--accent-color) 90%, #fff);
+}
+.button.large {
+    font-size: 17px;
+    line-height: 50px;
+    padding: 0 28px;
+}
+.button.filled.large {
+    line-height: 50px;
+    box-shadow: 0 8px 24px rgba(255, 45, 70, 0.4);
+}
+/* Translucent button, for use on a .stage */
+.button.ghost {
+    color: #fff;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.button.ghost:hover {
+    color: #fff;
+    background-image: none;
+    background-color: rgba(255, 255, 255, 0.16);
+}
+.button.disabled, .button:disabled, .button.filled:disabled {
+    color: #aaa;
+    background-color: var(--control-color);
+    background-image: none;
+    box-shadow: none;
+    transform: none;
+    cursor: not-allowed;
+}
+figure {
+    display: inline-table;
+	margin: 0;
+}
+figcaption {
+    display: table-caption;
+    caption-side: bottom;
+}
+input, textarea {
+    font-size: 16px;
+    padding: 12px;
+    width: calc(100% - 8px);
+    border-radius: var(--radius-sm);
+    background-color: var(--control-color);
+    color: var(--control-text-color);
+    border: 1px solid var(--border-color);
+    outline: none;
+    -webkit-appearance: none;
+    transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+input:focus, textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 22%, transparent);
+}
+textarea {
+    resize: none;
+    vertical-align: top;
+}
+summary:focus {
+    outline: none;
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+pre {
+    background-color: var(--secondary-bg-color);
+    padding: 2rem;
+    overflow-x: scroll;
+    margin: 16px 4px;
+    text-align: left;
+    border-radius: var(--border-radius);
+}
+code {
+    font-family: "Melno";
+    background-color: var(--secondary-bg-color);
+    padding: 4px 8px;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+pre code {
+    background-color: initial;
+    padding: initial;
+    font-size: initial;
+}
+.flex {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.invert-text {
+    color: var(--inverted-text-color);
+}
+
+.tag {
+    color: var(--secondary-text-color);
+    font-size: 0.9em;
+    padding-top: 8px;
+}
+/* Official store badges (App Store, Modrinth) — artwork is never restyled,
+   only scaled to --badge-height. */
+.store-badge {
+    display: inline-block;
+    margin: 4px;
+    line-height: 0;
+    border-radius: calc(var(--badge-height) / 2);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.store-badge img {
+    display: block;
+    height: var(--badge-height);
+    width: auto;
+    margin: 0;
+}
+.store-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+.store-badge:active {
+    transform: translateY(0) scale(0.98);
+}
+.screenshot {
+    border-radius: 32px;
+    max-width: 96%;
+}
+.large-app-icon {
+    border-radius: 25%;
+    vertical-align: top;
+    border: 1px solid #0002;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s var(--ease);
+}
+.large-app-icon:hover {
+    transform: scale(1.03);
+}
+form.contact-form {
+    width: 512px;
+    padding: 28px;
+    margin: auto;
+    border-radius: var(--radius-lg);
+    text-align: left;
+    background-color: var(--grouped-secondary-bg-color);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+.contact-form .cf-turnstile {
+    margin: 4px;
+}
+.contact-form .form-status {
+    font-size: 1em;
+    color: var(--secondary-text-color);
+}
+.contact-form .form-status:empty {
+    display: none;
+}
+.message-bubble {
+    display: inline-block;
+    max-width: 85%;
+    margin: auto;
+    padding: 8px;
+    text-align: right;
+    background-color: var(--accent-color);
+    color: var(--inverted-text-color);
+    border: none;
+    border-radius: 14px 14px 0 14px;
+}
+
+/* Stages, splits and cards — the shared page building blocks */
+
+/* A dark section lit from behind by the color wheel. Pair with .dark-theme so
+   headings, links and eyebrows pick up their dark-mode values. */
+.stage {
+    position: relative;
+    overflow: hidden;
+    background-color: #0b0b0d;
+}
+.stage::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    transform: translateX(-50%);
+    background: var(--spectrum-conic);
+    filter: blur(100px) saturate(130%);
+    opacity: 0.45;
+}
+.stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 30%, transparent 20%, #0b0b0d 78%);
+}
+.stage > section {
+    position: relative;
+    z-index: 1;
+}
+/* Art-directed variant: the app's own banner art lights the stage instead of
+   the spectrum. Pages set the image with `--stage-art: url("banner.jpg")`. */
+.stage.art::before {
+    inset: 0;
+    width: auto;
+    height: auto;
+    transform: none;
+    background: var(--stage-art) no-repeat center center;
+    background-size: cover;
+    filter: none;
+    opacity: 0.55;
+}
+.stage.art::after {
+    background: linear-gradient(rgba(11, 11, 13, 0.55), rgba(11, 11, 13, 0.92));
+}
+
+/* Section edges and the clipping a .bleed device needs. */
+.bordered {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+.bordered-top {
+    border-top: 1px solid var(--border-color);
+}
+.clipped {
+    overflow: hidden;
+    padding-bottom: 0;
+}
+
+.eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-text-color);
+    margin: 0 0 18px;
+}
+.lead {
+    font-size: clamp(17px, 2vw, 21px);
+    line-height: 1.55;
+    max-width: 620px;
+    text-wrap: pretty;
+}
+/* Long-form text such as the legal pages: a readable measure, headings that
+   clear the floating nav when linked to directly. */
+section.prose {
+    max-width: 720px;
+    text-align: left;
+}
+.prose h3 {
+    margin: 32px 0 4px;
+    scroll-margin-top: var(--header-clearance);
+}
+.prose p, .prose ul {
+    margin: 0 0 12px;
+}
+.prose li {
+    font-size: 1.18em;
+    line-height: 1.55;
+    margin-bottom: 6px;
+}
+.title {
+    font-size: clamp(38px, 6.4vw, 78px);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    text-wrap: balance;
+}
+h2.section-title {
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    margin: 0;
+    text-wrap: balance;
+}
+h3.group-title {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: left;
+    margin: 0 0 16px;
+}
+
+/* Two columns that collapse to one, used for every alternating feature. */
+.split {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+    text-align: left;
+}
+.split .copy p {
+    max-width: 520px;
+    margin: 22px 0 0;
+}
+.split .copy .eyebrow {
+    margin: 0 0 18px;
+}
+/* Picture first, words second. */
+.split.reverse .copy {
+    order: 2;
+}
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin: 32px 0 0;
+}
+.centered .button-row {
+    justify-content: center;
+}
+
+/* Device mockup: the screenshot sits in the frame's cutout. */
+.phone {
+    position: relative;
+    display: block;
+    width: 320px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.phone img {
+    margin: 0;
+}
+.phone .device-frame {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.35));
+}
+.phone .screenshot {
+    position: absolute;
+    top: 2%;
+    left: 4.4%;
+    width: 91.2%;
+    height: 96%;
+    max-width: none;
+    border-radius: 7%;
+    object-fit: cover;
+}
+/* Same frame, turned on its side. */
+.phone.landscape {
+    width: 560px;
+}
+.phone.landscape .screenshot {
+    top: 4.4%;
+    left: 2%;
+    width: 96%;
+    height: 91.2%;
+    border-radius: 3.5%;
+}
+
+/* Devices that run off the bottom edge of their (clipping) section. */
+.bleed {
+    margin-bottom: calc(-1 * clamp(40px, 8vw, 90px));
+}
+.hero-devices {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: clamp(0px, 1vw, 24px);
+    max-width: 900px;
+    margin: 56px auto 0;
+}
+.hero-devices .phone {
+    width: 25%;
+    transform: rotate(-6deg) translateY(26px);
+}
+.hero-devices .phone:nth-child(2) {
+    width: 32%;
+    z-index: 3;
+    transform: none;
+}
+.hero-devices .phone:nth-child(3) {
+    transform: rotate(6deg) translateY(26px);
+}
+
+/* Cards: the app lineup, and an app's supported features. */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    text-align: left;
+}
+.card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 18px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+a.card:hover {
+    text-decoration: none;
+    border-color: var(--accent-color);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+.card img {
+    width: 46px;
+    height: 46px;
+    flex: none;
+    margin: 0;
+    border-radius: 25%;
+    box-shadow: var(--shadow-sm);
+}
+.card strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--heading-text-color);
+}
+.card small {
+    display: block;
+    font-size: 14px;
+    color: var(--secondary-text-color);
+}
+.card.compact {
+    gap: 12px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--heading-text-color);
+}
+.card.compact img {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    box-shadow: none;
+}
+
+/* App page hero: icon, name, tagline and the ways to get it. */
+.app-hero {
+    padding-top: var(--row-clearance);
+}
+.app-hero .large-app-icon {
+    width: 96px;
+    height: 96px;
+    margin: 0 0 24px;
+}
+.app-hero h1 {
+    font-size: clamp(38px, 5.4vw, 64px);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    margin: 0;
+}
+.app-hero .tagline {
+    font-size: clamp(19px, 2.2vw, 26px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--app-color, var(--heading-text-color));
+    margin: 10px 0 0;
+}
+.app-hero .summary {
+    margin: 18px 0 0;
+    max-width: 460px;
+}
+/* A hero with no device shot beside it: keep the copy on the centre line. */
+.app-hero .centered .summary {
+    margin-inline: auto;
+}
+.app-hero .tag {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    margin: 14px 0 0;
+}
+
+/* Brand spectrum utilities */
+.spectrum-text {
+    background: var(--spectrum);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+.spectrum-bar {
+    height: 4px;
+    padding: 0;
+    border: none;
+    background: var(--spectrum);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

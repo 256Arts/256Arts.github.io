@@ -1,0 +1,18 @@
+# GitHub Pages builds this site with Jekyll so the nav is rendered server-side
+# (crawlable, no JavaScript). Only _includes + _data are used — no layouts, no
+# plugins, no Markdown. Every page stays a hand-editable HTML document.
+
+title: 256 Arts
+description: Open source apps & art for Apple platforms.
+url: https://www.256arts.com
+
+# Dot-directories are skipped by default; universal links must still ship.
+include:
+  - .well-known
+
+exclude:
+  - AGENTS.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - Raw Assets

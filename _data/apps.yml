@@ -1,0 +1,64 @@
+# Released apps only — unreleased apps are deliberately left out (see AGENTS.md).
+# Drives the header's category tabs and their apps rows.
+# title = nav label when there is room, short = compact label.
+# home: false keeps a group out of the home page's lineup (nav still shows it).
+groups:
+  - title: Graphics Apps
+    short: Graphics
+    apps:
+      - name: Sprite Pencil
+        tagline: Pixel art editor
+        url: /spritepencil/
+        icon: /apps/icon_spencil.png
+      - name: Sprite Cutter
+        tagline: Split spritesheets
+        url: /spritecutter/
+        icon: /apps/icon_scutter.png
+      - name: Sprite Catalog
+        tagline: Ready-made sprites
+        url: /spritecatalog/
+        icon: /apps/icon_scatalog.png
+      - name: Palette Studio
+        tagline: Colors in 3D space
+        url: /palette3d/
+        icon: /apps/icon_palette3d.webp
+  - title: Everyday Apps
+    short: Everyday
+    apps:
+      - name: App Sales
+        tagline: App Store analytics
+        url: /appsales/
+        icon: /apps/icon_appsales.webp
+      - name: My Assets
+        tagline: Income & expenses
+        url: /myassets/
+        icon: /apps/icon_myassets.png
+      - name: Gift Lists
+        tagline: Holiday shopping
+        url: /giftlists/
+        icon: /apps/icon_giftslist.png
+      - name: Countdowns
+        tagline: Days until events
+        url: /countdowns/
+        icon: /apps/icon_countdowns.png
+      - name: Brick Deals
+        tagline: LEGO set discounts
+        url: /brickdeals/
+        icon: /apps/icon_brickdeals.png
+  - title: Fun Stuff
+    short: Fun
+    home: false
+    apps:
+      - name: Space UI
+        tagline: Sci-fi interfaces
+        url: /spaceui/
+        icon: /apps/icon_spaceui.png
+      - name: Insta Grow
+        tagline: Minecraft data pack
+        url: /instagrow/
+        icon: /apps/icon_instagrow.png
+      - name: Letter Banners
+        tagline: Minecraft data pack
+        url: /letterbanners/
+        icon: /apps/icon_letterbanners.png
+

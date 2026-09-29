@@ -1,0 +1,8 @@
+.app-hero {
+    --app-color: #57AD3F;
+    --stage-art: url("/instagrow/banner.webp");
+}
+.screenshot {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}

@@ -1,0 +1,8 @@
+.app-hero {
+    --app-color: #B02E26;
+    --stage-art: url("/letterbanners/banner.webp");
+}
+.screenshot {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}

@@ -1,0 +1,87 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="/global/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="stylesheet" href="/global/style.css">
+        <link rel="stylesheet" href="page.css">
+        <title>Contact - 256 Arts</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="theme-color" content="#f7f7f7" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
+        <meta property="og:image" content="https://www.256arts.com/global/opengraph.png">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="keywords" content="256 Arts, contact, support, apps, iOS, swift">
+        <meta name="description" content="Contact 256 Arts for app support, feedback and translations.">
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRJ540QVW4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JRJ540QVW4');
+        </script>
+        <script defer src="/global/menu.js"></script>
+    </head>
+    <body ontouchstart>
+        {% include header.html %}
+        <main id="main">
+            <section class="stage art dark-theme contact-hero">
+                <section class="centered">
+                    <h1 class="title">Get in touch.</h1>
+                    <p class="lead">Questions, bugs, ideas, translations &mdash; it all lands in the same inbox.</p>
+                </section>
+            </section>
+            <section>
+                <section class="faq">
+                    <h2 class="section-title">Frequently asked questions</h2>
+                    <details name="faq">
+                        <summary>Something isn&rsquo;t working in one of your apps.</summary>
+                        <p>Send a message below with the app, your device and its OS version, and what you were doing when it happened. We&rsquo;ll reply by email, and a screenshot or screen recording sent back helps a lot.</p>
+                    </details>
+                    <details name="faq">
+                        <summary>I have an idea for a feature.</summary>
+                        <p>We&rsquo;d love to hear it. Tell us what you&rsquo;re trying to do, not just the feature you want &mdash; it helps us find the best way to build it.</p>
+                    </details>
+                    <details name="faq">
+                        <summary>How do I get a refund?</summary>
+                        <p>Purchases go through Apple, so refunds do too. Request one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+                    </details>
+                    <details name="faq">
+                        <summary>What do your apps do with my data?</summary>
+                        <p>Your data stays on your device, or in your own iCloud where an app syncs. Some apps use third-party services such as crash reporting. The <a href="/legal/privacy/">privacy policy</a> has the details.</p>
+                    </details>
+                    <details name="faq">
+                        <summary>Are your apps open source?</summary>
+                        <p>Yes. Every app and data pack has its source on <a href="https://github.com/256Arts">GitHub</a>, linked from its page. Issues and pull requests are welcome.</p>
+                    </details>
+                    <details name="faq">
+                        <summary>Can I help translate an app?</summary>
+                        <p>Yes, please! Tell us the app and the language, and we&rsquo;ll send you the strings to translate.</p>
+                    </details>
+                    <details name="faq">
+                        <summary>Where can I talk with other users?</summary>
+                        <p>Join the 256 Arts community on <a href="https://discord.gg/WZrTPqP">Discord</a>.</p>
+                    </details>
+                </section>
+                <section>
+                    <form class="contact-form" action="https://api.256arts.com/contact" method="post">
+                        <h2>Contact</h2>
+                        <input name="name" type="text" placeholder="Name" aria-label="Name" autocomplete="name" maxlength="100">
+                        <input name="email" type="email" placeholder="Email" aria-label="Email" autocomplete="email" maxlength="254" required>
+                        <textarea name="message" class="message" placeholder="Message" aria-label="Message" rows="6" maxlength="5000" required></textarea>
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAAFAy6wS2B4D5Fu5m" data-appearance="interaction-only" data-callback="turnstileReady" data-expired-callback="turnstileExpired" data-error-callback="turnstileExpired"></div>
+                        <p class="form-status" role="status"></p>
+                        <button class="button filled large" type="submit" disabled>Send</button>
+                    </form>
+                </section>
+            </section>
+            <script src="contact.js"></script>
+            <script async defer src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+        </main>
+        {% include footer.html %}
+	</body>
+</html>

@@ -1,0 +1,24 @@
+# Written by the shared `screenshots` runner (Repos/Scripts/screenshots), which rewrites
+# this file in full on every run — write the copy in the app's .screenshots.conf
+# (SHOT_PROMOS, keyed by capture name), not here.
+
+- file: 'shot1.webp'
+  eyebrow: 'Library'
+  title: 'Every palette you''ve made, a glance away.'
+  description: 'The Palettes library, the seeded palettes each showing their colors'
+- file: 'shot2.webp'
+  eyebrow: 'Editor Sphere'
+  title: 'Every color placed on a solid you can spin.'
+  description: 'The Sunset Study palette open in the editor, its colors placed on the 3D color solid'
+- file: 'shot3.webp'
+  eyebrow: 'Editor Grid'
+  title: 'Flatten it into swatches to compare side by side.'
+  description: 'The same palette in the editor''s Grid display mode, colors laid out as swatches'
+- file: 'shot4.webp'
+  eyebrow: 'Pairs'
+  title: 'Blend two colors through every CSS color space.'
+  description: 'The Pairs tab: two colors mixed with color-mix(), their gradient through every CSS interpolation space, and the perceptual difference between them'
+- file: 'shot5.webp'
+  eyebrow: 'Color'
+  title: 'One color, in every format you''ll paste it into.'
+  description: 'The Color tab, one scratch color broken down into its components and conversions'

@@ -1,0 +1,35 @@
+.app-hero {
+    --app-color: #F0CA00;
+    --stage-art: url("/spritepencil/banner.png");
+}
+/* The banner is pixel art — keep the pixels crisp. */
+.app-hero::before {
+    image-rendering: crisp-edges;
+}
+@supports (image-rendering: pixelated) {
+    .app-hero::before {
+        image-rendering: pixelated;
+    }
+}
+.credit-link {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 8px 16px;
+    text-align: right;
+    opacity: 0;
+    color: #fffb;
+    text-shadow: 0 0 8px #000;
+    font-size: 11px;
+}
+.app-hero:hover .credit-link,
+.credit-link:focus-visible {
+    opacity: 1;
+}
+.clipped .phone {
+    width: 360px;
+    margin-top: 48px;
+}
+.supports {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}

@@ -1,0 +1,129 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="/global/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="stylesheet" href="/global/style.css">
+        <link rel="stylesheet" href="page.css">
+        <title>256 Arts</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="theme-color" content="#f7f7f7" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
+        <meta property="og:image" content="https://www.256arts.com/global/opengraph.png">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="keywords" content="256 Arts, open source, free, developer, iOS, swift, macOS, sprite, pixel, art, pencil, app">
+        <meta name="description" content="Swift/iOS developers making open source apps.">
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRJ540QVW4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JRJ540QVW4');
+        </script>
+        <script defer src="/global/menu.js"></script>
+    </head>
+    <body ontouchstart>
+        {% include header.html %}
+        <main id="main">
+            <section class="stage dark-theme hero">
+                <section class="centered">
+                    <p class="eyebrow">Independent studio &middot; Apple platforms</p>
+                    <h1 class="title">Open software meets art on <span class="spectrum-text">Apple&nbsp;platforms</span>.</h1>
+                    <p class="lead">Beautiful native apps for drawing, color and everyday life &mdash; built with the same care as the artwork they help you make.</p>
+                    <div class="button-row">
+                        <a class="button filled large" href="#lineup">Explore the Apps</a>
+                        <a class="button large ghost" href="https://github.com/256Arts" target="_blank" rel="noopener">View on GitHub</a>
+                    </div>
+                    <div class="hero-devices">
+                        <div class="phone">
+                            <img class="screenshot" srcset="/appsales/shot1.webp 2x" src="/appsales/shot1.webp" alt="App Sales">
+                            <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
+                        </div>
+                        <div class="phone">
+                            <img class="screenshot" srcset="/spritepencil/shot1.webp 2x" src="/spritepencil/shot1.webp" alt="Sprite Pencil">
+                            <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
+                        </div>
+                        <div class="phone">
+                            <img class="screenshot" srcset="/palette3d/shot1.webp 2x" src="/palette3d/shot1.webp" alt="Palette Studio">
+                            <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <hr class="spectrum-bar">
+            <section id="craft">
+                <section class="split">
+                    <div class="copy">
+                        <p class="eyebrow">Craft</p>
+                        <h2 class="section-title">Made like art, shipped like software.</h2>
+                        <p>Every pixel, cursor and animation is placed on purpose. The drawing engine behind Sprite Pencil was written from scratch so the brush feels right in the hand &mdash; and it is all out in the open, so you can read it, file an issue, or send a pull request.</p>
+                        <p><a href="https://github.com/256Arts" target="_blank" rel="noopener">Browse the code &rarr;</a></p>
+                    </div>
+                    <div class="craft-card">
+                        <div class="phone bleed">
+                            <img class="screenshot" srcset="/spritepencil/shot2.webp 2x" src="/spritepencil/shot2.webp" alt="Sprite Pencil drawing tools" loading="lazy">
+                            <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="" loading="lazy">
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section class="secondary-bg bordered">
+                <section class="split reverse">
+                    <div class="copy">
+                        <p class="eyebrow">Everyday</p>
+                        <h2 class="section-title">The same care, for the rest of your day.</h2>
+                        <p>Watch your net worth, follow your App Store sales, count down to what matters. Small, sharp apps that stay out of the way.</p>
+                    </div>
+                    <div class="phone">
+                        <img class="screenshot" srcset="/myassets/shot1.webp 2x" src="/myassets/shot1.webp" alt="My Assets" loading="lazy">
+                        <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="" loading="lazy">
+                    </div>
+                </section>
+            </section>
+            <section class="clipped">
+                <section class="centered">
+                    <p class="eyebrow">Design</p>
+                    <h2 class="section-title">Clear UI, built from the platform up.</h2>
+                    <p class="lead">Native controls, real keyboard shortcuts, Apple Pencil and trackpad support &mdash; so the apps feel like they came with the system.</p>
+                    <div class="phone bleed">
+                        <img class="screenshot" srcset="/palette3d/shot1.webp 2x" src="/palette3d/shot1.webp" alt="Palette Studio colors in 3D space" loading="lazy">
+                        <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="" loading="lazy">
+                    </div>
+                </section>
+            </section>
+            <section id="lineup" class="secondary-bg">
+                <section class="lineup">
+                    <p class="eyebrow">The lineup</p>
+                    <h2 class="section-title">The apps.</h2>
+                    {%- for group in site.data.apps.groups %}
+                    {%- if group.home == false %}{% continue %}{% endif %}
+                    <h3 class="group-title">{{ group.title }}</h3>
+                    <div class="card-grid">
+                        {%- for app in group.apps %}
+                        <a class="card" href="{{ app.url }}">
+                            <img srcset="{{ app.icon }} 2x" src="{{ app.icon }}" alt="" loading="lazy">
+                            <span><strong>{{ app.name }}</strong><small>{{ app.tagline }}</small></span>
+                        </a>
+                        {%- endfor %}
+                    </div>
+                    {%- endfor %}
+                </section>
+            </section>
+            <section class="stage dark-theme">
+                <section class="centered">
+                    <h2 class="section-title">Start with Sprite Pencil.</h2>
+                    <p class="lead">The easiest way to create and edit pixel art on the go. iPhone, iPad and Mac.</p>
+                    <div class="button-row">
+                        <a class="button filled large" href="/spritepencil/">See Sprite Pencil</a>
+                        <a class="button large ghost" href="https://discord.gg/WZrTPqP" target="_blank" rel="noopener">Join the Community</a>
+                    </div>
+                </section>
+            </section>
+        </main>
+        {% include footer.html %}
+    </body>
+</html>

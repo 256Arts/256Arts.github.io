@@ -1,0 +1,112 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="/global/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="stylesheet" href="/global/style.css">
+        <link rel="stylesheet" href="page.css">
+        <title>Sprite Pencil - 256 Arts</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="theme-color" content="#f7f7f7" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
+        <meta property="og:image" content="https://www.256arts.com/global/opengraph.png">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="keywords" content="256 Arts, iOS, iPadOS, macOS, sprite, pencil, pixel, 8bit, pixelart, art, app, iphone, ipad, mac">
+        <meta name="description" content="A simple, precise pixel-art editor for sprites, icons, and game assets.">
+        <meta name="apple-itunes-app" content="app-id=1437835952">
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRJ540QVW4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JRJ540QVW4');
+        </script>
+        <script defer src="/global/menu.js"></script>
+    </head>
+    <body ontouchstart>
+        {% include header.html %}
+        <main id="main">
+            <section class="stage art dark-theme app-hero">
+                <section class="split">
+                    <div class="copy">
+                        <img src="/apps/icon_spencil.png" srcset="icon_spencil.png 2x" class="large-app-icon" alt="Sprite Pencil icon">
+                        <h1>Sprite Pencil</h1>
+                        <p class="tagline">Create pixel art</p>
+                        <p class="summary">A simple, precise pixel-art editor for sprites, icons, and game assets.</p>
+                        <div class="button-row">
+                            <a class="store-badge" href="https://apps.apple.com/app/sprite-pencil/id1437835952" target="_blank" rel="noopener">
+                                <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                            </a>
+                            <a class="button large ghost" href="https://github.com/256Arts/Sprite-Pencil" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                        <p class="tag">iPhone &middot; iPad &middot; Mac</p>
+                    </div>
+                    {% include app-hero-shot.html slug="spritepencil" %}
+                </section>
+                <a class="credit-link" href="https://nicolaspoumaredes.com" target="_blank" rel="noopener">Banner sprite by Nicolas Poumaredes</a>
+            </section>
+{% include app-screenshots.html slug="spritepencil" %}
+            <section class="secondary-bg bordered">
+                <section class="centered">
+                    <p class="eyebrow">Engine</p>
+                    <h2 class="section-title">A drawing engine built only for Apple platforms.</h2>
+                    <p class="lead">SpritePencilKit does the pixel pushing &mdash; Metal-backed, pressure aware, and open source on its own.</p>
+                    <p><a href="https://github.com/256Arts/SpritePencilKit" target="_blank" rel="noopener">Learn more &rarr;</a></p>
+                </section>
+            </section>
+            <section class="clipped">
+                <section class="centered">
+                    <p class="eyebrow">iMessage</p>
+                    <h2 class="section-title">Draw pixel art stickers right in Messages.</h2>
+                    <div class="phone bleed">
+                        <img class="screenshot" srcset="imessage.webp 2x" src="imessage.webp" alt="Sprite Pencil iMessage app" loading="lazy">
+                        <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="" loading="lazy">
+                    </div>
+                </section>
+            </section>
+            <section class="secondary-bg bordered-top">
+                <section>
+                    <h3 class="group-title">Supports</h3>
+                    <div class="card-grid supports">
+                        <div class="card compact">
+                            <img srcset="feature_icloud.png 2x" src="feature_icloud.png" alt="" loading="lazy">
+                            <span>iCloud Drive</span>
+                        </div>
+                        <div class="card compact">
+                            <img srcset="feature_pencil.png 2x" src="feature_pencil.png" alt="" loading="lazy">
+                            <span>Apple Pencil</span>
+                        </div>
+                        <div class="card compact">
+                            <img srcset="feature_trackpad.png 2x" src="feature_trackpad.png" alt="" loading="lazy">
+                            <span>Mouse &amp; Trackpad</span>
+                        </div>
+                        <div class="card compact">
+                            <img srcset="feature_imessage.png 2x" src="feature_imessage.png" alt="" loading="lazy">
+                            <span>iMessage App</span>
+                        </div>
+                        <div class="card compact">
+                            <img srcset="feature_widget.png 2x" src="feature_widget.png" alt="" loading="lazy">
+                            <span>Widget</span>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section class="stage dark-theme">
+                <section class="centered">
+                    <h2 class="section-title">Get Sprite Pencil.</h2>
+                    <p class="lead">Pixel art that travels with you, on every Apple device you own.</p>
+                    <div class="button-row">
+                        <a class="store-badge" href="https://apps.apple.com/app/sprite-pencil/id1437835952" target="_blank" rel="noopener">
+                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                        </a>
+                    </div>
+                </section>
+            </section>
+        </main>
+        {% include footer.html %}
+	</body>
+</html>

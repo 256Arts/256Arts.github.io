@@ -1,0 +1,12 @@
+{%- comment -%}
+The phone in an app page's hero, from the first shot the screenshot runner published for it.
+Here rather than in the page so the alt text tracks the picture: both come from the same entry in
+_data/screenshots/<slug>.yml, which is rewritten whenever the shots are.
+
+  {% include app-hero-shot.html slug="countdowns" %}
+{%- endcomment -%}
+{%- assign shot = site.data.screenshots[include.slug] | first -%}
+<div class="phone">
+    <img class="screenshot" srcset="{{ shot.file }} 2x" src="{{ shot.file }}" alt="{{ shot.description | default: shot.title | escape }}">
+    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="">
+</div>

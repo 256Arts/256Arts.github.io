@@ -1,0 +1,14 @@
+.app-hero {
+    --app-color: #00B9EE;
+    --stage-art: url("/spaceui/banner.png");
+}
+/* The promo render is the page's hero image: always full-bleed, never boxed. */
+.promo {
+    padding-bottom: 0;
+}
+.promo picture img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 48px 0 0;
+}

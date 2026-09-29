@@ -1,0 +1,8 @@
+# Written by the shared `screenshots` runner (Repos/Scripts/screenshots), which rewrites
+# this file in full on every run — write the copy in the app's .screenshots.conf
+# (SHOT_PROMOS, keyed by capture name), not here.
+
+- file: 'shot1.webp'
+  eyebrow: 'Spritesheet'
+  title: 'Drop in a sheet, get every sprite back.'
+  description: 'The app''s only screen, with the demo sheet loaded: 112x80 of 16x16 sprites divided into 7 columns, ready to export as individual PNGs'

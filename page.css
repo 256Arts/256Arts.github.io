@@ -1,0 +1,60 @@
+/* The hero's phones are cropped by the section's bottom edge. */
+.hero {
+    padding-top: calc(var(--header-clearance) + 56px);
+    padding-bottom: 0;
+}
+.hero .lead {
+    color: #c7c7cc;
+    margin: 22px auto 0;
+}
+.hero-devices {
+    margin-bottom: -80px;
+}
+
+/* Same trick, one section further down. */
+.clipped .lead {
+    margin: 22px auto 0;
+}
+.clipped .phone {
+    width: 340px;
+    margin-top: 56px;
+}
+
+/* Tinted panel the Craft screenshot leans out of. */
+.craft-card {
+    position: relative;
+    overflow: hidden;
+    padding: 36px 36px 0;
+    border-radius: 28px;
+    background-color: var(--secondary-bg-color);
+    border: 1px solid var(--border-color);
+}
+.craft-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, color-mix(in srgb, var(--accent-color) 8%, transparent), transparent 60%);
+}
+.craft-card .phone {
+    position: relative;
+    width: 62%;
+    margin-bottom: -120px;
+}
+
+.lineup > p {
+    text-align: left;
+    margin: 0 0 48px;
+}
+.lineup .card-grid {
+    margin: 0 0 44px;
+}
+.lineup .card-grid:last-child {
+    margin-bottom: 0;
+}
+.lineup .section-title {
+    text-align: left;
+    margin-bottom: 12px;
+}
+.lineup .eyebrow {
+    text-align: left;
+}

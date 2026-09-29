@@ -1,0 +1,20 @@
+# Written by the shared `screenshots` runner (Repos/Scripts/screenshots), which rewrites
+# this file in full on every run — write the copy in the app's .screenshots.conf
+# (SHOT_PROMOS, keyed by capture name), not here.
+
+- file: 'shot1.webp'
+  eyebrow: 'Editor'
+  title: 'Pixel-perfect drawing, your palette always in reach.'
+  description: 'The seeded sprite open on the canvas, the palette inspector beside it showing the Recent colors pulled from the sprite''s own pixels'
+- file: 'shot2.webp'
+  eyebrow: 'Palettes'
+  title: 'Start from a handpicked palette, or drop in your own.'
+  description: 'The palette chooser, picking which palette the editor draws from'
+- file: 'shot3.webp'
+  eyebrow: 'Settings'
+  title: 'Tuned to the way you draw.'
+  description: 'The Settings sheet'
+- file: 'shot4.webp'
+  eyebrow: 'Canvas'
+  title: 'Grids, symmetry and reference images, one tap away.'
+  description: 'The Canvas menu open: trim, the pixel and tile grids, tiled preview, the symmetry guides, and importing a reference image'

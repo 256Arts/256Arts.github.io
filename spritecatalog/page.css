@@ -1,0 +1,13 @@
+.app-hero {
+    --app-color: #5EB5FA;
+    --stage-art: url("/spritecatalog/banner.jpg");
+}
+/* The banner is pixel art — keep the pixels crisp. */
+.app-hero::before {
+    image-rendering: crisp-edges;
+}
+@supports (image-rendering: pixelated) {
+    .app-hero::before {
+        image-rendering: pixelated;
+    }
+}

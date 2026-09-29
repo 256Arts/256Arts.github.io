@@ -1,0 +1,72 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="/global/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="stylesheet" href="/global/style.css">
+        <link rel="stylesheet" href="page.css">
+        <title>Brick Deals - 256 Arts</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="theme-color" content="#f7f7f7" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
+        <meta property="og:image" content="https://www.256arts.com/global/opengraph.png">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="keywords" content="256 Arts, LEGO, brick, deals, discount, sale, sets, bricklink, safari extension, app, iphone, ipad, macOS, mac">
+        <meta name="description" content="Find discounted LEGO sets and know which deals are really worth buying.">
+        <meta name="apple-itunes-app" content="app-id=1576280300">
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRJ540QVW4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JRJ540QVW4');
+        </script>
+        <script defer src="/global/menu.js"></script>
+    </head>
+    <body ontouchstart>
+        {% include header.html %}
+        <main id="main">
+            <section class="stage art dark-theme app-hero">
+                <section class="split">
+                    <div class="copy">
+                        <img src="/apps/icon_brickdeals.png" srcset="icon_brickdeals.png 2x" class="large-app-icon" alt="Brick Deals icon">
+                        <h1>Brick Deals</h1>
+                        <p class="tagline">Your Brick Building Companion</p>
+                        <p class="summary">Find discounted LEGO sets and know which deals are really worth buying.</p>
+                        <div class="button-row">
+                            <a class="store-badge" href="https://apps.apple.com/app/brick-deals/id1576280300" target="_blank" rel="noopener">
+                                <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                            </a>
+                            <a class="button large ghost" href="https://github.com/256Arts/Brick-Deals" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                        <p class="tag">iOS, iPadOS, macOS</p>
+                    </div>
+                    {% include app-hero-shot.html slug="brickdeals" %}
+                </section>
+            </section>
+            <section class="secondary-bg bordered-top">
+                <section class="centered">
+                    <p class="eyebrow">Deals</p>
+                    <h2 class="section-title">Never pay full price.</h2>
+                </section>
+            </section>
+{% include app-screenshots.html slug="brickdeals" %}
+            <section class="stage dark-theme">
+                <section class="centered">
+                    <h2 class="section-title">Get Brick Deals.</h2>
+                    <p class="lead">Every discount worth knowing about, sorted by what a set is really worth.</p>
+                    <div class="button-row">
+                            <a class="store-badge" href="https://apps.apple.com/app/brick-deals/id1576280300" target="_blank" rel="noopener">
+                                <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                            </a>
+                    </div>
+                </section>
+            </section>
+        </main>
+        {% include footer.html %}
+	</body>
+</html>
