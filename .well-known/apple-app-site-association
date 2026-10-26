@@ -22,15 +22,6 @@
         ]
       },
       {
-        "appIDs": [ "VA3SY54YU8.com.jaydenirwin.burgertycoon" ],
-        "components": [
-          {
-            "/": "/burgerfactory/appstoreevent",
-            "comment": "Burger Factory kept its original burgertycoon bundle ID"
-          }
-        ]
-      },
-      {
         "appIDs": [ "VA3SY54YU8.com.256arts.countdowns" ],
         "components": [
           {
@@ -67,6 +58,15 @@
         "components": [
           {
             "/": "/myassets/appstoreevent"
+          }
+        ]
+      },
+      {
+        "appIDs": [ "VA3SY54YU8.com.jaydenirwin.burgertycoon" ],
+        "components": [
+          {
+            "/": "/overtimeburger/appstoreevent",
+            "comment": "Overtime Burger kept its original burgertycoon bundle ID"
           }
         ]
       },
