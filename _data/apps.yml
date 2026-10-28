@@ -20,8 +20,8 @@ groups:
         icon: /apps/icon_scatalog.png
       - name: Palette Studio
         tagline: Colors in 3D space
-        url: /palette3d/
-        icon: /apps/icon_palette3d.webp
+        url: /palettestudio/
+        icon: /apps/icon_palettestudio.webp
   - title: Everyday Apps
     short: Everyday
     apps:

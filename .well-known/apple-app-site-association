@@ -74,7 +74,11 @@
         "appIDs": [ "VA3SY54YU8.com.jaydenirwin.palette3d" ],
         "components": [
           {
-            "/": "/palette3d/appstoreevent"
+            "/": "/palettestudio/appstoreevent"
+          },
+          {
+            "/": "/palette3d/appstoreevent",
+            "comment": "The slug before the rename to Palette Studio; links already published still use it"
           }
         ]
       },

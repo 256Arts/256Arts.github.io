@@ -15,9 +15,10 @@ App Store in-app event links follow `/<slug>/appstoreevent`. The slug matches th
 app's *current* App Store name (not always its bundle ID), and no page is served
 at that path — it exists only to route into the app.
 
-Renamed apps keep their original URL slug so existing links and AASA entries stay
-valid. **Palette Studio** is served from `/palette3d/` (bundle ID
-`com.jaydenirwin.palette3d`); only the display name changed.
+A renamed app moves to its new slug but leaves the old one working: a redirect page
+at the old folder, and the old `/<slug>/appstoreevent` path kept in the AASA beside
+the new one. **Palette Studio** (`/palettestudio/`) was **Palette 3D** — `/palette3d/`
+redirects, and its bundle ID stays `com.jaydenirwin.palette3d`.
 
 ## Build
 
