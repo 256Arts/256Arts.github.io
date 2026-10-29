@@ -22,10 +22,7 @@ Adding a screen to the app's UI test adds a section here; there is nothing to wr
                     {%- endif %}
                     <h2 class="section-title">{{ shot.title }}</h2>
                 </div>
-                <div class="phone">
-                    <img class="screenshot" srcset="{{ shot.file }} 2x" src="{{ shot.file }}" alt="{{ shot.description | default: shot.title | escape }}" loading="lazy">
-                    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt="" loading="lazy">
-                </div>
+                {% include shot-device.html shot=shot lazy=true %}
             </section>
         </section>
 {% endfor -%}

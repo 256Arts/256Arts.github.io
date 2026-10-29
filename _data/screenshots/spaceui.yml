@@ -1,0 +1,28 @@
+# Written by the shared `screenshots` runner (Repos/Scripts/screenshots), which rewrites
+# this file in full on every run — write the copy in the app's .screenshots.conf
+# (SHOT_PROMOS, keyed by capture name), not here.
+
+- file: 'shot1.webp'
+  device: 'pad'
+  eyebrow: 'Galaxy'
+  title: 'A star map for every bridge, charted fresh from a seed.'
+  description: 'The Galaxy page, the star map (seed 31)'
+- file: 'shot2.webp'
+  device: 'pad'
+  eyebrow: 'Lock Screen'
+  title: 'Lock screens and security panels that look the part.'
+  description: 'The Lock Screen page (seed 21)'
+- file: 'shot3.webp'
+  device: 'pad'
+  eyebrow: 'Planet'
+  title: 'Planetary scans, orbits and readouts, ready for a close-up.'
+  description: 'The Planet page, a planetary scan readout (seed 38)'
+- file: 'shot4.webp'
+  device: 'pad'
+  eyebrow: 'Nearby'
+  title: 'Track the ships around you on a live sensor sweep.'
+  description: 'The Nearby page, the ships and objects around the vessel (seed 1)'
+- file: 'shot5.webp'
+  device: 'pad'
+  title: 'Your room''s HomeKit lights glow in the console''s colours.'
+  description: 'The console driving the room''s HomeKit lights'

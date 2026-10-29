@@ -31,30 +31,24 @@
         {% include header.html %}
         <main id="main">
             <section class="stage art dark-theme app-hero">
-                <section class="centered">
-                    <img src="/apps/icon_spaceui.png" srcset="icon_spaceui.png 2x" class="large-app-icon" alt="Space UI icon">
-                    <h1>Space UI</h1>
-                    <p class="tagline">Procedural Sci-Fi Interfaces</p>
-                    <p class="summary">Turn your screens into a glowing, procedurally generated sci-fi control panel.</p>
-                    <div class="button-row">
-                        <a class="store-badge" href="https://apps.apple.com/app/space-ui/id1494402514" target="_blank" rel="noopener">
-                            <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
-                        </a>
-                        <a class="button large ghost" href="https://github.com/256Arts/Space-UI" target="_blank" rel="noopener">GitHub</a>
+                <section class="split">
+                    <div class="copy">
+                        <img src="/apps/icon_spaceui.png" srcset="icon_spaceui.png 2x" class="large-app-icon" alt="Space UI icon">
+                        <h1>Space UI</h1>
+                        <p class="tagline">Procedural Sci-Fi Interfaces</p>
+                        <p class="summary">Turn your screens into a glowing, procedurally generated sci-fi control panel.</p>
+                        <div class="button-row">
+                            <a class="store-badge" href="https://apps.apple.com/app/space-ui/id1494402514" target="_blank" rel="noopener">
+                                <img src="/global/app-store-badge.svg" width="124" height="40" alt="Download on the App Store">
+                            </a>
+                            <a class="button large ghost" href="https://github.com/256Arts/Space-UI" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                        <p class="tag">iOS, iPadOS, macOS, tvOS</p>
                     </div>
-                    <p class="tag">iOS, iPadOS, macOS, tvOS</p>
+                    {% include app-hero-shot.html slug="spaceui" %}
                 </section>
             </section>
-            <section class="clipped promo">
-                <section class="centered">
-                    <p class="eyebrow">On set</p>
-                    <h2 class="section-title">A bridge full of screens, generated on demand.</h2>
-                </section>
-                <picture>
-                    <source srcset="promo_small_2x.jpg" media="(max-width: 490px)">
-                    <img src="promo_large.jpg" srcset="promo_large_2x.jpg 2x" alt="Space UI running on a Mac and iPad" loading="lazy">
-                </picture>
-            </section>
+{% include app-screenshots.html slug="spaceui" %}
             <section class="stage dark-theme">
                 <section class="centered">
                     <h2 class="section-title">Get Space UI.</h2>

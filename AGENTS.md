@@ -151,9 +151,11 @@ copy there, not here** — a run rewrites the data file in full. The description
 are deliberately alt-text only: they are written for the listing document and say
 things like "over the seeded account".
 
-Shots are **WebP** at the `.phone` cutout's own 2x size, 584x1260. Pages the
-runner cannot feed keep hand-written sections: `/spriteparty/` (unreleased, still
-JPEG) and `/spaceui/` (wide marketing renders, no `shotN`). A hand-made image on a
+Shots are **WebP** at the `.phone` cutout's own 2x size, 584x1260. An app whose
+config sets `WEBSITE_DEVICE="ipad"` publishes its iPad shots instead, marked
+`device: pad` and drawn in the landscape `.pad` frame (`/pad.png`, cutout
+1044x783) — `/spaceui/` does. `/spriteparty/` (unreleased, still JPEG) keeps
+hand-written sections. A hand-made image on a
 generated page must not be named `shotN` — the run deletes any it did not write
 (see `/spritepencil/imessage.webp`).
 
@@ -208,7 +210,7 @@ reach for these before writing anything page-specific:
 - `.split` / `.split.reverse` — the alternating two-column feature block
   (`.copy` on one side, a device on the other), collapsing to one column.
 - `.phone` — a screenshot sitting in `/phone.png`'s cutout; `.phone.landscape`
-  uses `/phone_landscape.png`. `.bleed` runs it off the bottom of a `.clipped`
+  uses `/phone_landscape.png`; `.pad` uses the landscape iPad `/pad.png`. `.bleed` runs it off the bottom of a `.clipped`
   section.
 - `.card` / `.card-grid` — the app lineup and an app's supported features
   (`.card.compact`).
@@ -237,11 +239,6 @@ is a **capsule** (`border-radius: 999px`) so the pills match the store badge
 beside them. Badge and pills share the hero's `.button-row`, with the platform
 list in a `.tag` paragraph underneath. The closing `.stage` repeats the badge on
 its own.
-
-A page whose art is a wide marketing render rather than a device screenshot
-skips the hero's `.split` and uses `.centered` instead — the render runs
-**full-bleed** in its own section below, never boxed in a card. See
-`spaceui/`.
 
 ## Contact form
 

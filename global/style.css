@@ -850,17 +850,20 @@ h3.group-title {
 }
 
 /* Device mockup: the screenshot sits in the frame's cutout. */
-.phone {
+.phone,
+.pad {
     position: relative;
     display: block;
     width: 320px;
     max-width: 100%;
     margin: 0 auto;
 }
-.phone img {
+.phone img,
+.pad img {
     margin: 0;
 }
-.phone .device-frame {
+.phone .device-frame,
+.pad .device-frame {
     position: relative;
     z-index: 2;
     display: block;
@@ -876,6 +879,20 @@ h3.group-title {
     height: 96%;
     max-width: none;
     border-radius: 7%;
+    object-fit: cover;
+}
+/* The landscape iPad (/pad.png), for an app shown on the big screen. */
+.pad {
+    width: 560px;
+}
+.pad .screenshot {
+    position: absolute;
+    top: 4.53%;
+    left: 3.42%;
+    width: 93.32%;
+    height: 91.21%;
+    max-width: none;
+    border-radius: 1.4% / 1.9%;
     object-fit: cover;
 }
 /* Same frame, turned on its side. */

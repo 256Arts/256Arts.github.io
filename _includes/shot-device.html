@@ -1,0 +1,19 @@
+{%- comment -%}
+One screenshot in its device frame — the phone, or the landscape iPad for an app whose runner sets
+WEBSITE_DEVICE="ipad" (the data file marks those shots `device: pad`). Shared by app-hero-shot.html
+and app-screenshots.html so the two never draw a frame differently.
+
+  {% include shot-device.html shot=shot lazy=true %}
+{%- endcomment -%}
+{%- assign shot = include.shot -%}
+{%- if shot.device == "pad" -%}
+<div class="pad">
+    <img class="screenshot" srcset="{{ shot.file }} 2x" src="{{ shot.file }}" alt="{{ shot.description | default: shot.title | escape }}"{% if include.lazy %} loading="lazy"{% endif %}>
+    <img class="device-frame" srcset="/pad_2x.png 2x" src="/pad.png" alt=""{% if include.lazy %} loading="lazy"{% endif %}>
+</div>
+{%- else -%}
+<div class="phone">
+    <img class="screenshot" srcset="{{ shot.file }} 2x" src="{{ shot.file }}" alt="{{ shot.description | default: shot.title | escape }}"{% if include.lazy %} loading="lazy"{% endif %}>
+    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt=""{% if include.lazy %} loading="lazy"{% endif %}>
+</div>
+{%- endif -%}
