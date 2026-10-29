@@ -889,6 +889,10 @@ h3.group-title {
 .centered > .pad {
     width: 820px;
 }
+.centered > .shot-caption {
+    max-width: 720px;
+    margin: 48px auto 0;
+}
 .pad .screenshot {
     position: absolute;
     top: 4.53%;

@@ -10,7 +10,8 @@ and say things like "over the seeded account", which describe a picture well and
 
 Adding a screen to the app's UI test adds a section here; there is nothing to write in the page.
 
-A shot with no title (an empty SHOT_PROMOS line) is shown on its own, centred, with no copy.
+An iPad shot, or one with no title (an empty SHOT_PROMOS line), is centred at full width instead,
+with any copy underneath, so every iPad is the same size.
 
   {% include app-screenshots.html slug="countdowns" %}
 {%- endcomment -%}
@@ -20,7 +21,7 @@ A shot with no title (an empty SHOT_PROMOS line) is shown on its own, centred, w
 {%- for shot in shots offset:first -%}
 {%- assign alternate = forloop.index | modulo: 2 -%}
         <section{% if alternate == 0 %} class="secondary-bg bordered"{% endif %}>
-            {%- if shot.title %}
+            {%- if shot.title and shot.device != "pad" %}
             <section class="split{% if alternate == 1 %} reverse{% endif %}">
                 <div class="copy">
                     {%- if shot.eyebrow %}
@@ -33,6 +34,9 @@ A shot with no title (an empty SHOT_PROMOS line) is shown on its own, centred, w
             {%- else %}
             <section class="centered">
                 {% include shot-device.html shot=shot lazy=true %}
+                {%- if shot.title %}
+                <h2 class="section-title shot-caption">{{ shot.title }}</h2>
+                {%- endif %}
             </section>
             {%- endif %}
         </section>
