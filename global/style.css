@@ -227,7 +227,10 @@ body header.site-header nav {
     margin: 0;
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
 }
+/* A fixed height, not just line-height: the brand pill is only its icon at
+   compact width, and an image takes no height from line-height. */
 .site-header nav > a {
+    height: 34px;
     line-height: 34px;
     margin: 0;
     padding: 0 14px;
