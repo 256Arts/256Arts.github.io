@@ -1,5 +1,6 @@
 {%- comment -%}
-Every shot after the hero, one feature section each, from _data/screenshots/<slug>.yml.
+Every shot after the hero, one feature section each — or every shot, with all=true, for a page
+whose hero has no device in it, from _data/screenshots/<slug>.yml.
 
 That file is written by the shared screenshot runner (Repos/Scripts/screenshots) straight from the
 app's App Store listing, so the page shows the same screens the store does, in the same order. The
@@ -9,12 +10,17 @@ and say things like "over the seeded account", which describe a picture well and
 
 Adding a screen to the app's UI test adds a section here; there is nothing to write in the page.
 
+A shot with no title (an empty SHOT_PROMOS line) is shown on its own, centred, with no copy.
+
   {% include app-screenshots.html slug="countdowns" %}
 {%- endcomment -%}
 {%- assign shots = site.data.screenshots[include.slug] -%}
-{%- for shot in shots offset:1 -%}
+{%- assign first = 1 -%}
+{%- if include.all %}{% assign first = 0 %}{% endif -%}
+{%- for shot in shots offset:first -%}
 {%- assign alternate = forloop.index | modulo: 2 -%}
         <section{% if alternate == 0 %} class="secondary-bg bordered"{% endif %}>
+            {%- if shot.title %}
             <section class="split{% if alternate == 1 %} reverse{% endif %}">
                 <div class="copy">
                     {%- if shot.eyebrow %}
@@ -24,5 +30,10 @@ Adding a screen to the app's UI test adds a section here; there is nothing to wr
                 </div>
                 {% include shot-device.html shot=shot lazy=true %}
             </section>
+            {%- else %}
+            <section class="centered">
+                {% include shot-device.html shot=shot lazy=true %}
+            </section>
+            {%- endif %}
         </section>
 {% endfor -%}

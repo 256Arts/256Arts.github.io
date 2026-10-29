@@ -154,7 +154,9 @@ things like "over the seeded account".
 Shots are **WebP** at the `.phone` cutout's own 2x size, 584x1260. An app whose
 config sets `WEBSITE_DEVICE="ipad"` publishes its iPad shots instead, marked
 `device: pad` and drawn in the landscape `.pad` frame (`/pad.png`, cutout
-1044x783) — `/spaceui/` does. `/spriteparty/` (unreleased, still JPEG) keeps
+1532x1149) — `/spaceui/` does, with a device-free hero (`all=true` puts
+shot1 in the sections too). An empty `SHOT_PROMOS` line makes a shot
+picture-only: centred, no copy. `/spriteparty/` (unreleased, still JPEG) keeps
 hand-written sections. A hand-made image on a
 generated page must not be named `shotN` — the run deletes any it did not write
 (see `/spritepencil/imessage.webp`).

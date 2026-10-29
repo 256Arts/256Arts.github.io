@@ -885,6 +885,10 @@ h3.group-title {
 .pad {
     width: 560px;
 }
+/* A picture-only section gives the iPad the whole width. */
+.centered > .pad {
+    width: 820px;
+}
 .pad .screenshot {
     position: absolute;
     top: 4.53%;
