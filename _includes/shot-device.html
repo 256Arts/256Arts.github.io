@@ -9,11 +9,11 @@ and app-screenshots.html so the two never draw a frame differently.
 {%- if shot.device == "pad" -%}
 <div class="pad">
     <img class="screenshot" srcset="{{ shot.file }} 2x" src="{{ shot.file }}" alt="{{ shot.description | default: shot.title | escape }}"{% if include.lazy %} loading="lazy"{% endif %}>
-    <img class="device-frame" srcset="/pad_2x.png 2x" src="/pad.png" alt=""{% if include.lazy %} loading="lazy"{% endif %}>
+    <img class="device-frame" srcset="/pad_2x.jxl 2x" src="/pad.jxl" alt=""{% if include.lazy %} loading="lazy"{% endif %}>
 </div>
 {%- else -%}
 <div class="phone">
     <img class="screenshot" srcset="{{ shot.file }} 2x" src="{{ shot.file }}" alt="{{ shot.description | default: shot.title | escape }}"{% if include.lazy %} loading="lazy"{% endif %}>
-    <img class="device-frame" srcset="/phone.png 2x" src="/phone.png" alt=""{% if include.lazy %} loading="lazy"{% endif %}>
+    <img class="device-frame" srcset="/phone.jxl 2x" src="/phone.jxl" alt=""{% if include.lazy %} loading="lazy"{% endif %}>
 </div>
 {%- endif -%}

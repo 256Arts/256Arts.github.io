@@ -1,6 +1,6 @@
 .app-hero {
     --app-color: #B02E26;
-    --stage-art: url("/letterbanners/banner.webp");
+    --stage-art: url("/letterbanners/banner.jxl");
 }
 .screenshot {
     border-radius: var(--radius-lg);

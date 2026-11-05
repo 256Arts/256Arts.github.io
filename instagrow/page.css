@@ -1,6 +1,6 @@
 .app-hero {
     --app-color: #57AD3F;
-    --stage-art: url("/instagrow/banner.webp");
+    --stage-art: url("/instagrow/banner.jxl");
 }
 .screenshot {
     border-radius: var(--radius-lg);

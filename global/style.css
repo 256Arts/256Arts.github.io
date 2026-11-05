@@ -735,7 +735,7 @@ form.contact-form {
     z-index: 1;
 }
 /* Art-directed variant: the app's own banner art lights the stage instead of
-   the spectrum. Pages set the image with `--stage-art: url("banner.jpg")`. */
+   the spectrum. Pages set the image with `--stage-art: url("banner.jxl")`. */
 .stage.art::before {
     inset: 0;
     width: auto;
@@ -881,7 +881,7 @@ h3.group-title {
     border-radius: 7%;
     object-fit: cover;
 }
-/* The landscape iPad (/pad.png), for an app shown on the big screen. */
+/* The landscape iPad (/pad.jxl), for an app shown on the big screen. */
 .pad {
     width: 560px;
 }

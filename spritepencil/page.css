@@ -1,6 +1,6 @@
 .app-hero {
     --app-color: #F0CA00;
-    --stage-art: url("/spritepencil/banner.png");
+    --stage-art: url("/spritepencil/banner.jxl");
 }
 /* The banner is pixel art — keep the pixels crisp. */
 .app-hero::before {

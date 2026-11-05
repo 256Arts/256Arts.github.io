@@ -130,12 +130,21 @@ Time of Use, TV Party.
 no plugin, nothing to maintain — and is advertised in `robots.txt`. Every page
 carries the shared header and footer so nothing is orphaned.
 
+## Images
+
+Every image is **JPEG XL** (`.jxl`, `cjxl` from `brew install jpeg-xl`), with no
+fallback — a deliberate choice, though Chrome and Firefox still gate JXL behind a
+flag. Exceptions stay PNG because their consumers can't read JXL:
+`apple-touch-icon.png` and `global/opengraph.png`. Re-encode from source, not from
+a committed file: icons from `Repo Assets/<App>/App-iOS-Default-1024*.png`, hero art
+from `Repo Assets/<App>/header/default.png` (1920px wide).
+
 ## App screenshots
 
 An app page's screenshots **and the copy beside them** are generated. Running
 `Scripts/screenshots.sh --upload` in the app's own repo sends its shots to App
 Store Connect and, in the same pass, resizes every iPhone shot into this repo as
-`shotN.webp` and writes `_data/screenshots/<slug>.yml`. The page shows what the
+`shotN.jxl` and writes `_data/screenshots/<slug>.yml`. The page shows what the
 store shows, in the same order — there is no pairing to maintain.
 
 Two includes render it, so a page never lists its own shots:
@@ -151,15 +160,15 @@ copy there, not here** — a run rewrites the data file in full. The description
 are deliberately alt-text only: they are written for the listing document and say
 things like "over the seeded account".
 
-Shots are **WebP** at the `.phone` cutout's own 2x size, 584x1260. An app whose
+Shots are **JPEG XL** at the `.phone` cutout's own 2x size, 584x1260. An app whose
 config sets `WEBSITE_DEVICE="ipad"` publishes its iPad shots instead, marked
-`device: pad` and drawn in the landscape `.pad` frame (`/pad.png`, cutout
+`device: pad` and drawn in the landscape `.pad` frame (`/pad.jxl`, cutout
 1532x1149) — `/spaceui/` does, with a device-free hero (`all=true` puts
 shot1 in the sections too). iPad shots are centred at full width,
-headline underneath; an empty `SHOT_PROMOS` line drops the copy. `/spriteparty/` (unreleased, still JPEG) keeps
+headline underneath; an empty `SHOT_PROMOS` line drops the copy. `/spriteparty/` (unreleased) keeps
 hand-written sections. A hand-made image on a
 generated page must not be named `shotN` — the run deletes any it did not write
-(see `/spritepencil/imessage.webp`).
+(see `/spritepencil/imessage.jxl`).
 
 ## Brand
 
@@ -207,12 +216,12 @@ reach for these before writing anything page-specific:
   hero, every app hero and the closing call to action.
 - `.stage.art` — same section, lit by the page's own artwork instead. The page
   sets `--stage-art`, which may be a `url()` **or** a gradient. The URL must be
-  **absolute** (`url("/spritepencil/banner.png")`): a custom property's relative
+  **absolute** (`url("/spritepencil/banner.jxl")`): a custom property's relative
   URL resolves against `global/style.css`, not the page's own `page.css`.
 - `.split` / `.split.reverse` — the alternating two-column feature block
   (`.copy` on one side, a device on the other), collapsing to one column.
-- `.phone` — a screenshot sitting in `/phone.png`'s cutout; `.phone.landscape`
-  uses `/phone_landscape.png`; `.pad` uses the landscape iPad `/pad.png`. `.bleed` runs it off the bottom of a `.clipped`
+- `.phone` — a screenshot sitting in `/phone.jxl`'s cutout; `.phone.landscape`
+  uses `/phone_landscape.jxl`; `.pad` uses the landscape iPad `/pad.jxl`. `.bleed` runs it off the bottom of a `.clipped`
   section.
 - `.card` / `.card-grid` — the app lineup and an app's supported features
   (`.card.compact`).
@@ -232,7 +241,7 @@ stack as fallback. Headings use fluid `clamp()` sizing and negative letter-spaci
 
 Every app page's download link is the **official store badge**, not a styled
 pill: `global/app-store-badge.svg` for the App Store,
-`global/modrinth-badge.webp` for the data packs. Markup is an `<a class="store-badge">`
+`global/modrinth-badge.jxl` for the data packs. Markup is an `<a class="store-badge">`
 wrapping the `<img>` — badge artwork is never recoloured or restyled, only scaled
 to `--badge-height`. Sources live in `Raw Assets/` (excluded from the build).
 

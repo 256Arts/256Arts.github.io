@@ -9,42 +9,42 @@ groups:
       - name: Sprite Pencil
         tagline: Pixel art editor
         url: /spritepencil/
-        icon: /apps/icon_spencil.png
+        icon: /apps/icon_spencil.jxl
       - name: Sprite Cutter
         tagline: Split spritesheets
         url: /spritecutter/
-        icon: /apps/icon_scutter.png
+        icon: /apps/icon_scutter.jxl
       - name: Sprite Catalog
         tagline: Ready-made sprites
         url: /spritecatalog/
-        icon: /apps/icon_scatalog.png
+        icon: /apps/icon_scatalog.jxl
       - name: Palette Studio
         tagline: Colors in 3D space
         url: /palettestudio/
-        icon: /apps/icon_palettestudio.webp
+        icon: /apps/icon_palettestudio.jxl
   - title: Everyday Apps
     short: Everyday
     apps:
       - name: App Sales
         tagline: App Store analytics
         url: /appsales/
-        icon: /apps/icon_appsales.webp
+        icon: /apps/icon_appsales.jxl
       - name: My Assets
         tagline: Income & expenses
         url: /myassets/
-        icon: /apps/icon_myassets.png
+        icon: /apps/icon_myassets.jxl
       - name: Gift Lists
         tagline: Holiday shopping
         url: /giftlists/
-        icon: /apps/icon_giftslist.png
+        icon: /apps/icon_giftslist.jxl
       - name: Countdowns
         tagline: Days until events
         url: /countdowns/
-        icon: /apps/icon_countdowns.png
+        icon: /apps/icon_countdowns.jxl
       - name: Brick Deals
         tagline: LEGO set discounts
         url: /brickdeals/
-        icon: /apps/icon_brickdeals.png
+        icon: /apps/icon_brickdeals.jxl
   - title: Fun Stuff
     short: Fun
     home: false
@@ -52,13 +52,13 @@ groups:
       - name: Space UI
         tagline: Sci-fi interfaces
         url: /spaceui/
-        icon: /apps/icon_spaceui.png
+        icon: /apps/icon_spaceui.jxl
       - name: Insta Grow
         tagline: Minecraft data pack
         url: /instagrow/
-        icon: /apps/icon_instagrow.png
+        icon: /apps/icon_instagrow.jxl
       - name: Letter Banners
         tagline: Minecraft data pack
         url: /letterbanners/
-        icon: /apps/icon_letterbanners.png
+        icon: /apps/icon_letterbanners.jxl
 
