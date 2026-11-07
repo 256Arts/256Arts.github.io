@@ -136,7 +136,7 @@ Every image is **JPEG XL** (`.jxl`, `cjxl` from `brew install jpeg-xl`), with no
 fallback — a deliberate choice, though Chrome and Firefox still gate JXL behind a
 flag. Exceptions stay PNG because their consumers can't read JXL:
 `apple-touch-icon.png` and `global/opengraph.png`. Re-encode from source, not from
-a committed file: icons from `Repo Assets/<App>/App-iOS-Default-1024*.png`, hero art
+a committed file: icons from `Repo Assets/<App>/Icon-iOS-Default-1024@1x.png`, hero art
 from `Repo Assets/<App>/header/default.png` (1920px wide).
 
 ## App screenshots
