@@ -2,6 +2,14 @@
   "applinks": {
     "details": [
       {
+        "appIDs": [ "VA3SY54YU8.com.jaydenirwin.alienfont" ],
+        "components": [
+          {
+            "/": "/alienfont/appstoreevent"
+          }
+        ]
+      },
+      {
         "appIDs": [ "VA3SY54YU8.com.jaydenirwin.appsales" ],
         "components": [
           {
@@ -146,6 +154,7 @@
   },
   "webcredentials": {
     "apps": [
+      "VA3SY54YU8.com.jaydenirwin.alienfont",
       "VA3SY54YU8.com.jaydenirwin.appsales",
       "VA3SY54YU8.com.jaydenirwin.brickdeals",
       "VA3SY54YU8.com.jaydenirwin.burgertycoon",
