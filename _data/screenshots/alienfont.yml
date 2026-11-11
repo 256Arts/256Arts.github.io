@@ -1,0 +1,20 @@
+# Written by the shared `screenshots` runner (Repos/Scripts/screenshots), which rewrites
+# this file in full on every run — write the copy in the app's .screenshots.conf
+# (SHOT_PROMOS, keyed by capture name), not here.
+
+- file: 'shot1.jxl'
+  eyebrow: 'Strokes'
+  title: 'Type in a script nobody has ever seen.'
+  description: 'A stroke-built alien script: the sample line and its full character set, beside the inspector'
+- file: 'shot2.jxl'
+  eyebrow: 'Rings'
+  title: 'Re-seed it as rings, every letter its own emblem.'
+  description: 'The same family re-seeded as rings, every letter a design inside a circle'
+- file: 'shot3.jxl'
+  eyebrow: 'Dots'
+  title: 'Or count in dots, braille-like or ternary.'
+  description: 'A base-3 dot grid with Command-key corners'
+- file: 'shot4.jxl'
+  eyebrow: 'Glyph'
+  title: 'Every glyph up close, with its Unicode name.'
+  description: 'One glyph up close, with its Unicode name and code point'

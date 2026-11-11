@@ -22,6 +22,10 @@ groups:
         tagline: Colors in 3D space
         url: /palettestudio/
         icon: /apps/icon_palettestudio.jxl
+      - name: Alien Font
+        tagline: Invent alien scripts
+        url: /alienfont/
+        icon: /apps/icon_alienfont.jxl
   - title: Everyday Apps
     short: Everyday
     apps:
